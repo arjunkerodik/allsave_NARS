@@ -1,0 +1,379 @@
+{
+  "protected_targets": [
+    "127.0.0.1",
+    "::1",
+    "10.10.0.1",
+    "198.51.100.10",
+    "root",
+    "Administrator",
+    "SYSTEM"
+  ],
+  "actions": {
+    "investigate_source_ip": {
+      "label": "Investigate source IP",
+      "description": "Open a review task for this address and gather its related activity.",
+      "expected_impact": "None on any system. An analyst spends time reviewing.",
+      "target_type": "ip",
+      "disruptive": false
+    },
+    "review_account": {
+      "label": "Review affected account",
+      "description": "Open a review task for this account's recent logins and permissions.",
+      "expected_impact": "None on any system. An analyst spends time reviewing.",
+      "target_type": "account",
+      "disruptive": false
+    },
+    "inspect_process": {
+      "label": "Inspect suspicious process",
+      "description": "Open a review task for this process, its parent and its command line.",
+      "expected_impact": "None on any system. An analyst spends time reviewing.",
+      "target_type": "process",
+      "disruptive": false
+    },
+    "collect_additional_logs": {
+      "label": "Collect additional logs",
+      "description": "Request more logs from this host for the incident's time window.",
+      "expected_impact": "None on any system. Adds log volume for the time window.",
+      "target_type": "host",
+      "disruptive": false
+    },
+    "block_test_ip": {
+      "label": "Block test IP",
+      "description": "Block this address in the simulated firewall.",
+      "expected_impact": "If real: all traffic with this address stops, including any legitimate traffic.",
+      "target_type": "ip",
+      "disruptive": true
+    },
+    "disable_test_account": {
+      "label": "Disable test account",
+      "description": "Disable this account in the simulated directory.",
+      "expected_impact": "If real: the account owner and any service using the account lose access.",
+      "target_type": "account",
+      "disruptive": true
+    },
+    "terminate_test_process": {
+      "label": "Terminate test process",
+      "description": "Stop this process in the simulated endpoint.",
+      "expected_impact": "If real: the process stops and any unsaved work in it is lost.",
+      "target_type": "process",
+      "disruptive": true
+    }
+  },
+  "risk_policy": {
+    "LOW": {
+      "priority": "P4",
+      "summary": "Handled automatically: safe response steps ran in simulation. Disruptive actions are held, and go to the SOC if risk rises.",
+      "automatic": [
+        "enrich",
+        "group_duplicates",
+        "update_monitoring_record"
+      ],
+      "requires_analyst": false,
+      "response": "automatic"
+    },
+    "MEDIUM": {
+      "priority": "P3",
+      "summary": "Handled automatically: evidence gathered and safe response steps ran in simulation. Disruptive actions are held, and go to the SOC if risk rises.",
+      "automatic": [
+        "enrich",
+        "group_duplicates",
+        "update_monitoring_record",
+        "collect_evidence",
+        "create_investigation_task"
+      ],
+      "requires_analyst": false,
+      "response": "automatic"
+    },
+    "HIGH": {
+      "priority": "P2",
+      "summary": "Needs SOC approval: every response action waits for an analyst decision. Evidence is collected and an urgent notification is sent.",
+      "automatic": [
+        "enrich",
+        "group_duplicates",
+        "update_monitoring_record",
+        "collect_evidence",
+        "create_investigation_task"
+      ],
+      "notify": "Urgent",
+      "requires_analyst": true,
+      "response": "approval"
+    },
+    "CRITICAL": {
+      "priority": "P1",
+      "summary": "Needs SOC approval now: every response action waits for an analyst decision. Evidence is collected and an immediate notification is sent.",
+      "automatic": [
+        "enrich",
+        "group_duplicates",
+        "update_monitoring_record",
+        "collect_evidence",
+        "create_investigation_task"
+      ],
+      "notify": "Critical",
+      "requires_analyst": true,
+      "response": "approval"
+    }
+  },
+  "rules": {
+    "UEBA-001": [
+      {
+        "action": "review_account",
+        "entity": "user"
+      },
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "UEBA-002": [
+      {
+        "action": "collect_additional_logs",
+        "entity": "src_ip"
+      }
+    ],
+    "UEBA-003": [
+      {
+        "action": "review_account",
+        "entity": "user"
+      }
+    ],
+    "IOA-017": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      },
+      {
+        "action": "block_test_ip",
+        "entity": "src_ip",
+        "scope": "external"
+      }
+    ],
+    "ML-DOS": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "ML-PORTSCAN": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "ML-BRUTEFORCE": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "ML-WEBATTACK": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "ML-BOT": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "IOA-001": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip",
+        "scope": "external"
+      }
+    ],
+    "IOA-002": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      },
+      {
+        "action": "review_account",
+        "entity": "user"
+      },
+      {
+        "action": "block_test_ip",
+        "entity": "src_ip",
+        "scope": "external"
+      },
+      {
+        "action": "disable_test_account",
+        "entity": "user"
+      }
+    ],
+    "IOA-003": [
+      {
+        "action": "review_account",
+        "entity": "user"
+      },
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-004": [
+      {
+        "action": "review_account",
+        "entity": "user"
+      },
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-005": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ],
+    "IOA-006": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "dst_ip",
+        "scope": "external"
+      },
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-007": [
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      },
+      {
+        "action": "investigate_source_ip",
+        "entity": "dst_ip",
+        "scope": "external"
+      },
+      {
+        "action": "block_test_ip",
+        "entity": "dst_ip",
+        "scope": "external"
+      }
+    ],
+    "IOA-008": [
+      {
+        "action": "inspect_process",
+        "entity": "process_name"
+      },
+      {
+        "action": "terminate_test_process",
+        "entity": "process_name"
+      }
+    ],
+    "IOA-009": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      },
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-010": [
+      {
+        "action": "inspect_process",
+        "entity": "process_name"
+      },
+      {
+        "action": "terminate_test_process",
+        "entity": "process_name"
+      }
+    ],
+    "IOA-011": [
+      {
+        "action": "inspect_process",
+        "entity": "process_name"
+      },
+      {
+        "action": "terminate_test_process",
+        "entity": "process_name"
+      }
+    ],
+    "IOA-012": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      },
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-013": [
+      {
+        "action": "inspect_process",
+        "entity": "process_name"
+      },
+      {
+        "action": "terminate_test_process",
+        "entity": "process_name"
+      }
+    ],
+    "IOA-014": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "dst_ip",
+        "scope": "external"
+      },
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-015": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      },
+      {
+        "action": "block_test_ip",
+        "entity": "src_ip",
+        "scope": "external"
+      }
+    ],
+    "IOA-016": [
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOC-IP": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "dst_ip",
+        "scope": "external"
+      }
+    ],
+    "IOC-DOMAIN": [
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOC-URL": [
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOC-HASH": [
+      {
+        "action": "collect_additional_logs",
+        "entity": "hostname"
+      }
+    ],
+    "IOA-018": [
+      {
+        "action": "investigate_source_ip",
+        "entity": "src_ip"
+      }
+    ]
+  }
+}

@@ -1,0 +1,650 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2447 >>
+stream
+BT 40 800 Td 13 TL
+/F2 9 Tf
+(ALLSAFE Security Analysis Report: Multi-Stage Attack) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Analysis ID: sim-60e687b14a44) Tj T*
+(- Report ID: RPT-75FDCCE3A1) Tj T*
+(- Generated: 2026-10-31T04:31:54.509906+00:00) Tj T*
+(- Log file: Not a file: synthetic simulation run) Tj T*
+(- Log type: Synthetic simulation run) Tj T*
+(- Analysis started: 2026-10-31T04:31:08.993151+00:00) Tj T*
+(- Analysis completed: 2026-10-31T04:31:12.492810+00:00) Tj T*
+() Tj T*
+/F2 9 Tf
+(Overall security assessment) Tj T*
+/F1 9 Tf
+() Tj T*
+(THREATS DETECTED) Tj T*
+() Tj T*
+(8 detection\(s\) have strong supporting evidence and need investigation.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Executive summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(Multi-Stage Attack: 44 of 44 records were processed, producing 11 alert\(s\) and 1) Tj T*
+(    incident\(s\). The highest priority is INC-000003, Multi-Stage Attack on web-01: 7) Tj T*
+(    tactics, 11 detections, at 98/100 \(CRITICAL\). 10 recommended action\(s\) are waiting) Tj T*
+(    for an analyst. No action has changed a real system. All of this data is synthetic.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Threat overview) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Attack categories: Collection, Credential Access, Exfiltration, Initial Access,) Tj T*
+(    Lateral Movement, Persistence, Privilege Escalation) Tj T*
+(- Rules fired: IOA-001, IOA-002, IOA-003, IOA-004, IOA-007, IOA-009, IOA-010, IOA-016,) Tj T*
+(    IOC-IP, UEBA-001, UEBA-002) Tj T*
+() Tj T*
+/F2 9 Tf
+(Processing summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: COMPLETED) Tj T*
+(- Total uploaded records: 44) Tj T*
+(- Successfully processed records: 44) Tj T*
+(- Rejected records: 0) Tj T*
+(- Duplicate records: 0) Tj T*
+() Tj T*
+/F2 9 Tf
+(Data quality) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Malformed records: 0) Tj T*
+(- Invalid timestamps: 0) Tj T*
+(- Missing timestamps: 0) Tj T*
+(- Flows with no timestamp, kept: 0) Tj T*
+(- Missing optional values: none) Tj T*
+(- Fields with no equivalent in the common schema: none) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection engines) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Executed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOC enrichment: evaluated 39 of 44 event\(s\), 1 finding\(s\)) Tj T*
+(- IOA behavior rules: evaluated 44 of 44 event\(s\), 8 finding\(s\)) Tj T*
+(- UEBA baselines: evaluated 23 of 44 event\(s\), 3 finding\(s\)) Tj T*
+(- Anomaly model: evaluated 44 of 44 event\(s\), 2 finding\(s\)) Tj T*
+() Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 1 of 9) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 3408 >>
+stream
+BT 40 800 Td 13 TL
+/F2 9 Tf
+(Skipped or failed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Supervised ML \(saved network model\) \(SKIPPED\): This data has no records with all 78) Tj T*
+(    CIC-IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Finding classification) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Confirmed detections: 8 alert\(s\) over 24 event\(s\), 1 incident\(s\)) Tj T*
+(- Suspicious activity: 3 alert\(s\) over 1 event\(s\), 2 anomaly window\(s\), 0 flow\(s\)) Tj T*
+(    classified as attacks) Tj T*
+(- Benign activity \(normal events\): 19 event\(s\). These events triggered no applicable) Tj T*
+(    detection condition. That is not proof they are safe.) Tj T*
+(- Data quality issues: 0 bad record\(s\), 0 duplicate\(s\)) Tj T*
+(- Detection limitations: 1) Tj T*
+(  - Supervised ML \(saved network model\): This data has no records with all 78 CIC-) Tj T*
+(    IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Alerts: 11) Tj T*
+(- Incidents: 1) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOC matches \(1\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- 39 event\(s\) were checked against the threat intelligence database.) Tj T*
+(- IOC-IP Threat Intelligence Match: IP \(Confirmed detection\)) Tj T*
+(  - Severity MEDIUM, confidence 70%, risk 36/100 \(LOW\), 3 event\(s\), last seen) Tj T*
+(    2026-10-31T04:31:08.976695+00:00) Tj T*
+(  - Why it fired: dst_ip matched ip indicator 198.51.100.77 from feed 'allsafe-) Tj T*
+(    synthetic-demo-feed'. Synthetic: staging server for data theft in the demo) Tj T*
+(    scenarios. This is evidence to investigate, not proof of compromise.) Tj T*
+(  - Triggering conditions: {"type": "ioc", "window_seconds": 3600}) Tj T*
+(  - Matched indicator: 198.51.100.77 \(ip\) in dst_ip, from feed allsafe-synthetic-demo-) Tj T*
+(    feed. Context: Synthetic: staging server for data theft in the demo scenarios.) Tj T*
+(  - MITRE ATT&CK: not mapped) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00041, sim-60e687b14a44-00042,) Tj T*
+(    sim-60e687b14a44-00043) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOA rule matches \(8\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOA-002 Successful Login After Repeated Failures \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 92%, risk 60/100 \(MEDIUM\), 13 event\(s\), last seen) Tj T*
+(    2026-10-31T04:19:08.976695+00:00) Tj T*
+(  - Description: A login succeeded from a source that had just failed repeatedly, which) Tj T*
+(    suggests the password was guessed.) Tj T*
+(  - Why it fired: 203.0.113.50 logged in successfully after 12 failed attempts within) Tj T*
+(    600s.) Tj T*
+(  - Triggering conditions: {"type": "sequence", "group_by": ["src_ip"], "threshold": 5,) Tj T*
+(    "window_seconds": 600, "first": {"field": "event_type", "equals":) Tj T*
+(    "authentication_failure"}, "then": {"field": "event_type", "equals":) Tj T*
+(    "authentication_success"}}) Tj T*
+(  - MITRE ATT&CK: T1110 Brute Force, T1078 Valid Accounts) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00019, sim-60e687b14a44-00020,) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 2 of 9) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 4202 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(    sim-60e687b14a44-00021, sim-60e687b14a44-00022, sim-60e687b14a44-00023,) Tj T*
+(    sim-60e687b14a44-00024, sim-60e687b14a44-00025, sim-60e687b14a44-00026,) Tj T*
+(    sim-60e687b14a44-00027, sim-60e687b14a44-00028) Tj T*
+(  - Evidence: Failed login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(  - Evidence: Failed login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(  - Evidence: Failed login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(- IOA-001 Brute Force Login Attempts \(Confirmed detection\)) Tj T*
+(  - Severity MEDIUM, confidence 77%, risk 46/100 \(MEDIUM\), 12 event\(s\), last seen) Tj T*
+(    2026-10-31T04:18:41.976695+00:00) Tj T*
+(  - Description: Many failed logins from one source address in a short time.) Tj T*
+(  - Why it fired: 12 failed logins from 203.0.113.50 within 300s \(threshold 5\).) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["src_ip"], "threshold": 5,) Tj T*
+(    "window_seconds": 300, "match": {"field": "event_type", "equals":) Tj T*
+(    "authentication_failure"}}) Tj T*
+(  - MITRE ATT&CK: T1110 Brute Force) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00019, sim-60e687b14a44-00020,) Tj T*
+(    sim-60e687b14a44-00021, sim-60e687b14a44-00022, sim-60e687b14a44-00023,) Tj T*
+(    sim-60e687b14a44-00024, sim-60e687b14a44-00025, sim-60e687b14a44-00026,) Tj T*
+(    sim-60e687b14a44-00027, sim-60e687b14a44-00028) Tj T*
+(  - Evidence: Failed login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(  - Evidence: Failed login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(  - Evidence: Failed login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(- IOA-003 Suspicious Privilege Escalation \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 80%, risk 50/100 \(MEDIUM\), 2 event\(s\), last seen) Tj T*
+(    2026-10-31T04:22:18.976695+00:00) Tj T*
+(  - Description: An escalation event, or a command that grants or obtains administrative) Tj T*
+(    rights.) Tj T*
+(  - Why it fired: Privilege-related activity by svc_admin on web-01: net.exe: net) Tj T*
+(    localgroup administrators backup_svc /add.) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname", "user"],) Tj T*
+(    "threshold": 1, "window_seconds": 900, "match": {"any": [{"field": "event_type",) Tj T*
+(    "in": ["privilege_escalation", "privilege_granted"]}, {"field": "command_line",) Tj T*
+(    "regex": "\\\\bsudo\\\\b.*\(\\\\bsu\\\\b|/bash\\\\b|/sh\\\\b|\\\\s-i\\\\b|\\\\s-s\\\\b\)|usermod\\\\s+.*-) Tj T*
+(    a?G\\\\s+\\\\S*\(sudo|wheel|admin\)|net\\\\s+localgroup\\\\s+administrators\\\\s+\\\\S+\\\\s+/add|Ad) Tj T*
+(    d-LocalGroupMember) Tj T*
+(  - MITRE ATT&CK: T1548 Abuse Elevation Control Mechanism, T1098 Account Manipulation) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00032, sim-60e687b14a44-00034) Tj T*
+(  - Evidence: sudo: sudo su -) Tj T*
+(  - Evidence: net.exe: net localgroup administrators backup_svc /add) Tj T*
+(- IOA-004 Unexpected Account Creation \(Confirmed detection\)) Tj T*
+(  - Severity CRITICAL, confidence 85%, risk 58/100 \(MEDIUM\), 1 event\(s\), last seen) Tj T*
+(    2026-10-31T04:22:08.976695+00:00) Tj T*
+(  - Description: A new local account was created.) Tj T*
+(  - Why it fired: Account creation by svc_admin on web-01: net.exe: net user backup_svc) Tj T*
+(    Xy12 /add.) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname", "user"],) Tj T*
+(    "threshold": 1, "window_seconds": 900, "match": {"any": [{"field": "event_type",) Tj T*
+(    "equals": "account_created"}, {"field": "command_line", "regex":) Tj T*
+(    "net\\\\s+user\\\\s+\\\\S+.*\\\\s/add\\\\b|\\\\buseradd\\\\s|\\\\badduser\\\\s+\\\\S+\\\\s*$|New-) Tj T*
+(    LocalUser\\\\b"}]}}) Tj T*
+(  - MITRE ATT&CK: T1136 Create Account) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00033) Tj T*
+(  - Evidence: net.exe: net user backup_svc Xy12 /add) Tj T*
+(- IOA-009 Internal Lateral Movement Pattern \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 76%, risk 52/100 \(MEDIUM\), 4 event\(s\), last seen) Tj T*
+(    2026-10-31T04:25:38.976695+00:00) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 3 of 9) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 4138 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(  - Description: An internal host connected to several other internal hosts on remote) Tj T*
+(    administration ports.) Tj T*
+(  - Why it fired: 10.10.1.10 reached 4 internal hosts on remote administration ports) Tj T*
+(    within 300s \(threshold 3\).) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["src_ip"], "threshold": 3,) Tj T*
+(    "distinct": "dst_ip", "window_seconds": 300, "match": {"all": [{"field": "source",) Tj T*
+(    "equals": "network"}, {"field": "src_ip", "ip_scope": "internal"}, {"field":) Tj T*
+(    "dst_ip", "ip_scope": "internal"}, {"field": "dst_port", "in": [22, 135, 445, 3389,) Tj T*
+(    5985, 5986]}]}}) Tj T*
+(  - MITRE ATT&CK: T1021 Remote Services) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00035, sim-60e687b14a44-00036,) Tj T*
+(    sim-60e687b14a44-00037, sim-60e687b14a44-00038) Tj T*
+(  - Evidence: 10.10.1.10 -> 10.10.1.20:445 TCP) Tj T*
+(  - Evidence: 10.10.1.10 -> 10.10.1.21:3389 TCP) Tj T*
+(  - Evidence: 10.10.1.10 -> 10.10.1.22:445 TCP) Tj T*
+(- IOA-010 Remote Execution Tool \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 80%, risk 52/100 \(MEDIUM\), 1 event\(s\), last seen) Tj T*
+(    2026-10-31T04:25:58.976695+00:00) Tj T*
+(  - Description: A tool commonly used to run commands on other hosts was started.) Tj T*
+(  - Why it fired: Remote execution tool psexec.exe started on web-01: psexec.exe:) Tj T*
+(    psexec.exe \\\\10.10.1.20 cmd.exe.) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname",) Tj T*
+(    "process_name"], "threshold": 1, "window_seconds": 900, "match": {"all": [{"field":) Tj T*
+(    "event_type", "equals": "process_start"}, {"any": [{"field": "process_name",) Tj T*
+(    "regex": "^\(psexec|psexec64|psexesvc|winrs\)\(\\\\.exe\)?$"}, {"field": "command_line",) Tj T*
+(    "regex": "wmic\(\\\\.exe\)?\\\\s.*/node:|Enter-PSSession\\\\b|Invoke-) Tj T*
+(    Command\\\\s.*-ComputerName"}]}]}}) Tj T*
+(  - MITRE ATT&CK: T1569.002 System Services: Service Execution) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00039) Tj T*
+(  - Evidence: psexec.exe: psexec.exe \\\\10.10.1.20 cmd.exe) Tj T*
+(- IOA-016 Archive Staging \(Suspicious activity\)) Tj T*
+(  - Severity LOW, confidence 40%, risk 30/100 \(LOW\), 1 event\(s\), last seen) Tj T*
+(    2026-10-31T04:28:08.976695+00:00) Tj T*
+(  - Description: An archive file was accessed or created. This is weak alone and only) Tj T*
+(    adds context to related activity.) Tj T*
+(  - Why it fired: Archive activity by svc_admin on web-01: 7z.exe: 7z.exe a) Tj T*
+(    C:\\Temp\\export.7z C:\\Finance.) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname", "user"],) Tj T*
+(    "threshold": 1, "window_seconds": 900, "match": {"any": [{"all": [{"field":) Tj T*
+(    "event_type", "in": ["file_access", "file_create"]}, {"field": "file_path", "regex":) Tj T*
+(    "\\\\.\(zip|rar|7z|tar|tgz|gz\)$"}]}, {"field": "command_line", "regex":) Tj T*
+(    "\\\\b\(7z|rar|zip\)\(\\\\.exe\)?\\\\s+a\\\\b|\\\\btar\\\\s+-?c"}]}}) Tj T*
+(  - MITRE ATT&CK: T1560 Archive Collected Data) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00040) Tj T*
+(  - Evidence: 7z.exe: 7z.exe a C:\\Temp\\export.7z C:\\Finance) Tj T*
+(- IOA-007 Possible Data Exfiltration \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 79%, risk 53/100 \(MEDIUM\), 3 event\(s\), last seen) Tj T*
+(    2026-10-31T04:31:08.976695+00:00) Tj T*
+(  - Description: An internal host sent a large volume of data to external addresses.) Tj T*
+(  - Why it fired: 10.10.1.10 sent 90.0 MB to external destinations within 600s) Tj T*
+(    \(threshold 50 MB\).) Tj T*
+(  - Triggering conditions: {"type": "sum", "group_by": ["src_ip"], "threshold":) Tj T*
+(    52428800, "field": "bytes_out", "window_seconds": 600, "match": {"all": [{"field":) Tj T*
+(    "source", "equals": "network"}, {"field": "src_ip", "ip_scope": "internal"},) Tj T*
+(    {"field": "dst_ip", "ip_scope": "external"}, {"not": {"field": "dst_ip", "in":) Tj T*
+(    ["198.51.100.10"]}}]}}) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 4 of 9) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+13 0 obj
+<< /Length 3498 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(  - MITRE ATT&CK: T1041 Exfiltration Over C2 Channel) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00041, sim-60e687b14a44-00042,) Tj T*
+(    sim-60e687b14a44-00043) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+() Tj T*
+/F2 9 Tf
+(UEBA findings \(2\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- UEBA-001 Login From a New Source for an Established User \(Suspicious activity\)) Tj T*
+(  - Severity MEDIUM, confidence 60%, risk 40/100 \(MEDIUM\), 1 event\(s\), last seen) Tj T*
+(    2026-10-31T04:19:08.976695+00:00) Tj T*
+(  - Description: An account with an established login history signed in from an address) Tj T*
+(    it has never used.) Tj T*
+(  - Why it fired: svc_admin logged in from 203.0.113.50, a source not seen in 7 earlier) Tj T*
+(    logins from 1 known source\(s\).) Tj T*
+(  - Triggering conditions: {"type": "baseline", "group_by": ["user", "src_ip"],) Tj T*
+(    "window_seconds": 3600}) Tj T*
+(  - MITRE ATT&CK: T1078 Valid Accounts) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00031) Tj T*
+(  - Evidence: Successful login for svc_admin from 203.0.113.50 to web-01) Tj T*
+(- UEBA-002 Outbound Volume Far Above This Host's Baseline \(Suspicious activity\)) Tj T*
+(  - Severity MEDIUM, confidence 65%, risk 42/100 \(MEDIUM\), 2 event\(s\), last seen) Tj T*
+(    2026-10-31T04:30:38.976695+00:00) Tj T*
+(  - Description: A single transfer was far larger than this address normally sends.) Tj T*
+(  - Why it fired: 10.10.1.10 sent 30.0 MB in one transfer, 3 deviations above its) Tj T*
+(    average of 2.34 MB over 13 earlier transfers.) Tj T*
+(  - Triggering conditions: {"type": "baseline", "group_by": ["src_ip"],) Tj T*
+(    "window_seconds": 3600}) Tj T*
+(  - MITRE ATT&CK: T1048 Exfiltration Over Alternative Protocol) Tj T*
+(  - Supporting event IDs: sim-60e687b14a44-00041, sim-60e687b14a44-00042) Tj T*
+(  - Evidence: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280 bytes) Tj T*
+() Tj T*
+/F2 9 Tf
+(ML classification results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- The saved network model classified nothing in this data. See the detection engines) Tj T*
+(    above for why.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Anomaly detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Unusual activity windows: 2. Statistically unusual activity, not confirmed attacks.) Tj T*
+(- 203.0.113.50 \(strength 71 of 100, 13 event\(s\)\): Unusual compared with the model's) Tj T*
+(    synthetic baseline of normal activity: 12 failed logins \(typically about 0.0\), 13) Tj T*
+(    events \(typically about 1.6\), 1 distinct destinations \(typically about 0.3\). A) Tj T*
+(    statistical anomaly, not a confirmed attack.) Tj T*
+(- 10.10.1.10 \(strength 66 of 100, 4 event\(s\)\): Unusual compared with the model's) Tj T*
+(    synthetic baseline of normal activity: 4 connections to admin ports \(typically about) Tj T*
+(    0.0\), 4 distinct destinations \(typically about 0.3\), 3 distinct destination ports) Tj T*
+(    \(typically about 0.3\). A statistical anomaly, not a confirmed attack.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Incident investigation) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(INC-000003: Multi-Stage Attack on web-01: 7 tactics, 11 detections) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: ACTIVE, priority P1) Tj T*
+(- Severity: CRITICAL) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 5 of 9) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 13 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+15 0 obj
+<< /Length 3602 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- Confidence: 99%) Tj T*
+(- Risk: 98/100 CRITICAL) Tj T*
+(- Affected hosts: web-01) Tj T*
+(- Affected users: svc_admin) Tj T*
+(- Related alerts: IOA-002, IOA-001, UEBA-001, IOA-003, IOA-004, IOA-009, IOA-010,) Tj T*
+(    IOA-016, IOA-007, IOC-IP, UEBA-002) Tj T*
+(- Possible ATT&CK stages: T1021 Remote Services \(Lateral Movement\); T1041 Exfiltration) Tj T*
+(    Over C2 Channel \(Exfiltration\); T1048 Exfiltration Over Alternative Protocol) Tj T*
+(    \(Exfiltration\); T1078 Valid Accounts \(Initial Access\); T1098 Account Manipulation) Tj T*
+(    \(Privilege Escalation\); T1110 Brute Force \(Credential Access\); T1136 Create Account) Tj T*
+(    \(Persistence\); T1548 Abuse Elevation Control Mechanism \(Privilege Escalation\); T1560) Tj T*
+(    Archive Collected Data \(Collection\); T1569.002 System Services: Service Execution) Tj T*
+(    \(Lateral Movement\)) Tj T*
+(- Automation: Needs SOC approval now: every response action waits for an analyst) Tj T*
+(    decision. Evidence is collected and an immediate notification is sent.) Tj T*
+() Tj T*
+(Why this score:) Tj T*
+() Tj T*
+(- severity \(25.0 points\): Incident severity is CRITICAL.) Tj T*
+(- evidence confidence \(24.8 points\): Combined evidence confidence is 99%.) Tj T*
+(- ioc ioa signals \(18.8 points\): 8 distinct behavior rule\(s\), 1 threat intelligence) Tj T*
+(    match\(es\), best confidence 70%.) Tj T*
+(- behavioral anomalies \(10.6 points\): 2 behavioral anomaly\(ies\) against the entity's own) Tj T*
+(    baseline, best confidence 65%; 2 statistically unusual activity window\(s\), strength) Tj T*
+(    71 of 100. The strongest one counts.) Tj T*
+(- attack progression \(15.0 points\): 7 MITRE tactic\(s\) across 11 distinct detection\(s\):) Tj T*
+(    Credential Access, Initial Access, Privilege Escalation, Persistence, Lateral) Tj T*
+(    Movement, Collection, Exfiltration.) Tj T*
+(- asset importance \(4 points\): web-01 has criticality level 2 in the asset list.) Tj T*
+() Tj T*
+(Timeline:) Tj T*
+() Tj T*
+(- 2026-10-31T04:18:08.976695+00:00: Failed login for svc_admin from 203.0.113.50 to) Tj T*
+(    web-01 \(x12\) [IOA-001, IOA-002]) Tj T*
+(- 2026-10-31T04:19:08.976695+00:00: Successful login for svc_admin from 203.0.113.50 to) Tj T*
+(    web-01 [IOA-002, UEBA-001]) Tj T*
+(- 2026-10-31T04:21:08.976695+00:00: sudo: sudo su - [IOA-003]) Tj T*
+(- 2026-10-31T04:22:08.976695+00:00: net.exe: net user backup_svc Xy12 /add [IOA-004]) Tj T*
+(- 2026-10-31T04:22:18.976695+00:00: net.exe: net localgroup administrators backup_svc) Tj T*
+(    /add [IOA-003]) Tj T*
+(- 2026-10-31T04:25:08.976695+00:00: 10.10.1.10 -> 10.10.1.20:445 TCP [IOA-009]) Tj T*
+(- 2026-10-31T04:25:18.976695+00:00: 10.10.1.10 -> 10.10.1.21:3389 TCP [IOA-009]) Tj T*
+(- 2026-10-31T04:25:28.976695+00:00: 10.10.1.10 -> 10.10.1.22:445 TCP [IOA-009]) Tj T*
+(- 2026-10-31T04:25:38.976695+00:00: 10.10.1.10 -> 10.10.1.23:22 TCP [IOA-009]) Tj T*
+(- 2026-10-31T04:25:58.976695+00:00: psexec.exe: psexec.exe \\\\10.10.1.20 cmd.exe) Tj T*
+(    [IOA-010]) Tj T*
+(- 2026-10-31T04:28:08.976695+00:00: 7z.exe: 7z.exe a C:\\Temp\\export.7z C:\\Finance) Tj T*
+(    [IOA-016]) Tj T*
+(- 2026-10-31T04:30:08.976695+00:00: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280) Tj T*
+(    bytes \(x2\) [IOA-007, IOC-IP, UEBA-002]) Tj T*
+(- 2026-10-31T04:31:08.976695+00:00: 10.10.1.10 -> 198.51.100.77:443 HTTPS, 31,457,280) Tj T*
+(    bytes [IOA-007, IOC-IP]) Tj T*
+() Tj T*
+/F2 9 Tf
+(Affected users and hosts) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Users: svc_admin) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 6 of 9) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 15 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+17 0 obj
+<< /Length 3539 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- Hosts: web-01) Tj T*
+() Tj T*
+/F2 9 Tf
+(Risk analysis) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Severity distribution \(alerts\): HIGH 5, MEDIUM 4, CRITICAL 1, LOW 1) Tj T*
+(- Incident risk distribution: CRITICAL 1, HIGH 0, MEDIUM 0, LOW 0) Tj T*
+(- Alert risk distribution: CRITICAL 0, HIGH 0, MEDIUM 9, LOW 2) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real. Each) Tj T*
+(    incident above lists the factors behind its score.) Tj T*
+() Tj T*
+/F2 9 Tf
+(MITRE ATT&CK mappings) Tj T*
+/F1 9 Tf
+() Tj T*
+(- T1021 Remote Services \(Lateral Movement\)) Tj T*
+(- T1041 Exfiltration Over C2 Channel \(Exfiltration\)) Tj T*
+(- T1048 Exfiltration Over Alternative Protocol \(Exfiltration\)) Tj T*
+(- T1078 Valid Accounts \(Initial Access\)) Tj T*
+(- T1098 Account Manipulation \(Privilege Escalation\)) Tj T*
+(- T1110 Brute Force \(Credential Access\)) Tj T*
+(- T1136 Create Account \(Persistence\)) Tj T*
+(- T1548 Abuse Elevation Control Mechanism \(Privilege Escalation\)) Tj T*
+(- T1560 Archive Collected Data \(Collection\)) Tj T*
+(- T1569.002 System Services: Service Execution \(Lateral Movement\)) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended remediation) Tj T*
+/F1 9 Tf
+() Tj T*
+(Historical analysis is read-only. Nothing below has been done, and any disruptive step) Tj T*
+(    needs an analyst to approve it.) Tj T*
+() Tj T*
+(- IOA-001 Brute Force Login Attempts: Review the targeted accounts and whether this) Tj T*
+(    source address is expected. Consider rate limiting or blocking the source address) Tj T*
+(    after review.) Tj T*
+(- IOA-002 Successful Login After Repeated Failures: Confirm with the account owner) Tj T*
+(    whether this login was theirs. If not, reset the account's password and revoke its) Tj T*
+(    active sessions. Review what the account did after this login.) Tj T*
+(- IOA-003 Suspicious Privilege Escalation: Check whether a change ticket or admin task) Tj T*
+(    explains this. Review the group membership of the affected account.) Tj T*
+(- IOA-004 Unexpected Account Creation: Verify the account against approved change) Tj T*
+(    records. If it is unauthorized, disable the account after analyst review. Check for) Tj T*
+(    unauthorized remote access to this host.) Tj T*
+(- IOA-007 Possible Data Exfiltration: Identify the destination and the process that sent) Tj T*
+(    the data. Check whether the user recently accessed sensitive file shares. Consider) Tj T*
+(    isolating the host after analyst review.) Tj T*
+(- IOA-009 Internal Lateral Movement Pattern: Check the destination hosts for new) Tj T*
+(    sessions, processes and accounts. Determine whether this host normally administers) Tj T*
+(    those systems.) Tj T*
+(- IOA-010 Remote Execution Tool: Scan the source workstation for unauthorized admin) Tj T*
+(    tools. Identify the target hosts and review their activity.) Tj T*
+(- IOA-016 Archive Staging: Check what the archive contains and whether it left this) Tj T*
+(    host.) Tj T*
+(- IOC-IP Threat Intelligence Match: IP: Verify the indicator is still current. Threat) Tj T*
+(    intelligence can be stale or wrong. Look for other activity that confirms or rules) Tj T*
+(    out compromise.) Tj T*
+(- UEBA-001 Login From a New Source for an Established User: Confirm with the account) Tj T*
+(    owner that this login was expected.) Tj T*
+(- UEBA-002 Outbound Volume Far Above This Host's Baseline: Review what this host sent,) Tj T*
+(    and to where.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 7 of 9) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 17 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+19 0 obj
+<< /Length 3708 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Recommended actions \(simulation only\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- INC-000003, PENDING: Investigate source IP on 203.0.113.50) Tj T*
+(- INC-000003, PENDING: Review affected account on svc_admin) Tj T*
+(- INC-000003, EXECUTED: Block test IP on 203.0.113.50 \(disruptive, needs approval\)) Tj T*
+(- INC-000003, PENDING: Disable test account on svc_admin \(disruptive, needs approval\)) Tj T*
+(- INC-000003, PENDING: Collect additional logs on web-01) Tj T*
+(- INC-000003, PENDING: Investigate source IP on 10.10.1.10) Tj T*
+(- INC-000003, PENDING: Inspect suspicious process on psexec.exe) Tj T*
+(- INC-000003, PENDING: Terminate test process on psexec.exe \(disruptive, needs approval\)) Tj T*
+(- INC-000003, PENDING: Investigate source IP on 198.51.100.77) Tj T*
+(- INC-000003, PENDING: Block test IP on 198.51.100.77 \(disruptive, needs approval\)) Tj T*
+(- INC-000003, PENDING: Collect additional logs on 10.10.1.10) Tj T*
+() Tj T*
+/F2 9 Tf
+(Analyst decisions) Tj T*
+/F1 9 Tf
+() Tj T*
+(- INC-000003, EXECUTED: Block test IP on 203.0.113.50 by Demo Analyst at) Tj T*
+(    2026-10-31T04:31:13.955901+00:00. Reason: Confirmed in the timeline) Tj T*
+() Tj T*
+/F2 9 Tf
+(Model performance) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Event level: TP 25, FP 0, FN 0, TN 19, precision 1.0, recall 1.0, F1 1.0, false-) Tj T*
+(    positive rate 0.0) Tj T*
+(- Alert level: TP 11, FP 0, FN 0, precision 1.0, recall 1.0, F1 1.0) Tj T*
+(- Incident level: TP 1, FP 0, FN 0, precision 1.0, recall 1.0, F1 1.0) Tj T*
+(- Anomaly model, event level: TP 17, FP 0, FN 8, TN 19, precision 1.0, recall 0.68, F1) Tj T*
+(    0.8095, false-positive rate 0.0) Tj T*
+(- Detection latency: 0.27 seconds) Tj T*
+(- Expected rules that did not fire: none) Tj T*
+(- Rules that fired unexpectedly: none) Tj T*
+(- These numbers come from labelled data, and risk scores play no part in them.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Known limitations) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Detection combines behavior rules, threat intelligence matches, statistical baselines) Tj T*
+(    and two models. None of them proves an attack happened, and none proves that one did) Tj T*
+(    not.) Tj T*
+(- The saved network model runs only on flow data with its 78 CIC-IDS2017 features. It) Tj T*
+(    has not been validated here, no preprocessing pipeline was saved with it, and its) Tj T*
+(    output is uncalibrated, so no accuracy or prediction confidence is claimed.) Tj T*
+(- The anomaly model was trained on synthetic normal activity, and does not run on live) Tj T*
+(    telemetry. Its findings are statistical anomalies, not confirmed attacks.) Tj T*
+(- Threat intelligence only covers known indicators, and the bundled feed is synthetic.) Tj T*
+(    No match does not mean an event is safe.) Tj T*
+(- Performance metrics compare results with labels on synthetic or supplied data. They do) Tj T*
+(    not predict performance on real attacks.) Tj T*
+(- The synthetic scenarios and the detection rules were written by the same team, so) Tj T*
+(    scenario results show the pipeline works as designed.) Tj T*
+(- Behavioral checks need history. An entity with too little history is not judged.) Tj T*
+(- Window-based rules cite every matching event in their window, so a normal event inside) Tj T*
+(    an attack window counts as an event-level false positive.) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real.) Tj T*
+(- Historical analysis is read-only. Every response action is a recommendation that needs) Tj T*
+(    an analyst, and runs only in simulation. No firewall, account, host or process is) Tj T*
+(    changed.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 8 of 9) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 19 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+21 0 obj
+<< /Length 167 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- Analyst names are self-reported: there are no user accounts.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 9 of 9) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 21 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000170 00000 n 
+0000000265 00000 n 
+0000000365 00000 n 
+0000002864 00000 n 
+0000003000 00000 n 
+0000006460 00000 n 
+0000006596 00000 n 
+0000010850 00000 n 
+0000010987 00000 n 
+0000015178 00000 n 
+0000015316 00000 n 
+0000018867 00000 n 
+0000019005 00000 n 
+0000022660 00000 n 
+0000022798 00000 n 
+0000026390 00000 n 
+0000026528 00000 n 
+0000030289 00000 n 
+0000030427 00000 n 
+0000030646 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+30784
+%%EOF

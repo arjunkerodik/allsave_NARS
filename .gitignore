@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments & secrets
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Databases
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Large archives and temporary files
+*.zip
+*.tar.gz
+*.log
+hack4hire_project/nids_model.pkl
+temp/
+scratch/
+.tools/
+
+hack4hire_project/nids_model.pkl.gz

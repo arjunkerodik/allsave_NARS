@@ -1,0 +1,798 @@
+{
+  "rules": [
+    {
+      "id": "IOA-001",
+      "name": "Brute Force Login Attempts",
+      "description": "Many failed logins from one source address in a short time.",
+      "type": "threshold",
+      "match": {
+        "field": "event_type",
+        "equals": "authentication_failure"
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "threshold": 5,
+      "window_seconds": 300,
+      "severity": "MEDIUM",
+      "confidence": 70,
+      "max_confidence": 85,
+      "mitre": [
+        {
+          "id": "T1110",
+          "name": "Brute Force",
+          "tactic": "Credential Access"
+        }
+      ],
+      "explanation": "{observed} failed logins from {src_ip} within {window_seconds}s (threshold {threshold}).",
+      "recommendations": [
+        "Review the targeted accounts and whether this source address is expected.",
+        "Consider rate limiting or blocking the source address after review."
+      ]
+    },
+    {
+      "id": "IOA-002",
+      "name": "Successful Login After Repeated Failures",
+      "description": "A login succeeded from a source that had just failed repeatedly, which suggests the password was guessed.",
+      "type": "sequence",
+      "first": {
+        "field": "event_type",
+        "equals": "authentication_failure"
+      },
+      "then": {
+        "field": "event_type",
+        "equals": "authentication_success"
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "threshold": 5,
+      "window_seconds": 600,
+      "severity": "HIGH",
+      "confidence": 85,
+      "max_confidence": 95,
+      "mitre": [
+        {
+          "id": "T1110",
+          "name": "Brute Force",
+          "tactic": "Credential Access"
+        },
+        {
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "tactic": "Initial Access"
+        }
+      ],
+      "explanation": "{src_ip} logged in successfully after {observed} failed attempts within {window_seconds}s.",
+      "recommendations": [
+        "Confirm with the account owner whether this login was theirs.",
+        "If not, reset the account's password and revoke its active sessions.",
+        "Review what the account did after this login."
+      ]
+    },
+    {
+      "id": "IOA-003",
+      "name": "Suspicious Privilege Escalation",
+      "description": "An escalation event, or a command that grants or obtains administrative rights.",
+      "type": "threshold",
+      "match": {
+        "any": [
+          {
+            "field": "event_type",
+            "in": [
+              "privilege_escalation",
+              "privilege_granted"
+            ]
+          },
+          {
+            "field": "command_line",
+            "regex": "\\bsudo\\b.*(\\bsu\\b|/bash\\b|/sh\\b|\\s-i\\b|\\s-s\\b)|usermod\\s+.*-a?G\\s+\\S*(sudo|wheel|admin)|net\\s+localgroup\\s+administrators\\s+\\S+\\s+/add|Add-LocalGroupMember.*Administrators|chmod\\s+[ug]?\\+s\\s"
+          }
+        ]
+      },
+      "group_by": [
+        "hostname",
+        "user"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "HIGH",
+      "confidence": 80,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1548",
+          "name": "Abuse Elevation Control Mechanism",
+          "tactic": "Privilege Escalation"
+        },
+        {
+          "id": "T1098",
+          "name": "Account Manipulation",
+          "tactic": "Privilege Escalation"
+        }
+      ],
+      "explanation": "Privilege-related activity by {user} on {hostname}: {sample}.",
+      "recommendations": [
+        "Check whether a change ticket or admin task explains this.",
+        "Review the group membership of the affected account."
+      ]
+    },
+    {
+      "id": "IOA-004",
+      "name": "Unexpected Account Creation",
+      "description": "A new local account was created.",
+      "type": "threshold",
+      "match": {
+        "any": [
+          {
+            "field": "event_type",
+            "equals": "account_created"
+          },
+          {
+            "field": "command_line",
+            "regex": "net\\s+user\\s+\\S+.*\\s/add\\b|\\buseradd\\s|\\badduser\\s+\\S+\\s*$|New-LocalUser\\b"
+          }
+        ]
+      },
+      "group_by": [
+        "hostname",
+        "user"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "CRITICAL",
+      "confidence": 85,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1136",
+          "name": "Create Account",
+          "tactic": "Persistence"
+        }
+      ],
+      "explanation": "Account creation by {user} on {hostname}: {sample}.",
+      "recommendations": [
+        "Verify the account against approved change records.",
+        "If it is unauthorized, disable the account after analyst review.",
+        "Check for unauthorized remote access to this host."
+      ]
+    },
+    {
+      "id": "IOA-005",
+      "name": "Port Scan",
+      "description": "One source sent connection attempts to many destination ports in a short time.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "source",
+            "equals": "network"
+          },
+          {
+            "any": [
+              {
+                "field": "connection_status",
+                "equals": "attempted"
+              },
+              {
+                "field": "flags",
+                "regex": "^(S|SYN)$"
+              },
+              {
+                "field": "connection_status",
+                "equals": "blocked"
+              }
+            ]
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "distinct": "dst_port",
+      "threshold": 15,
+      "window_seconds": 60,
+      "severity": "MEDIUM",
+      "confidence": 75,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1046",
+          "name": "Network Service Discovery",
+          "tactic": "Discovery"
+        }
+      ],
+      "explanation": "{src_ip} attempted connections to {observed} distinct ports within {window_seconds}s (threshold {threshold}).",
+      "recommendations": [
+        "Determine whether this is an approved vulnerability scanner.",
+        "Check the targets for connections that followed the scan."
+      ]
+    },
+    {
+      "id": "IOA-006",
+      "name": "Unusual Outbound Port",
+      "description": "An internal host connected to an external address on a port often used by remote-access tools.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "source",
+            "equals": "network"
+          },
+          {
+            "field": "src_ip",
+            "ip_scope": "internal"
+          },
+          {
+            "field": "dst_ip",
+            "ip_scope": "external"
+          },
+          {
+            "field": "dst_port",
+            "in": [
+              1337,
+              4444,
+              5555,
+              6666,
+              6667,
+              12345,
+              31337
+            ]
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip",
+        "dst_ip",
+        "dst_port"
+      ],
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "MEDIUM",
+      "confidence": 60,
+      "max_confidence": 70,
+      "mitre": [
+        {
+          "id": "T1571",
+          "name": "Non-Standard Port",
+          "tactic": "Command and Control"
+        }
+      ],
+      "explanation": "{src_ip} connected to external {dst_ip} on port {dst_port}, which is on the configured list of unusual outbound ports.",
+      "recommendations": [
+        "Identify the process that opened this connection.",
+        "Check the destination's reputation and whether the host should reach it."
+      ]
+    },
+    {
+      "id": "IOA-007",
+      "name": "Possible Data Exfiltration",
+      "description": "An internal host sent a large volume of data to external addresses.",
+      "type": "sum",
+      "field": "bytes_out",
+      "match": {
+        "all": [
+          {
+            "field": "source",
+            "equals": "network"
+          },
+          {
+            "field": "src_ip",
+            "ip_scope": "internal"
+          },
+          {
+            "field": "dst_ip",
+            "ip_scope": "external"
+          },
+          {
+            "not": {
+              "field": "dst_ip",
+              "in": [
+                "198.51.100.10"
+              ]
+            }
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "threshold": 52428800,
+      "window_seconds": 600,
+      "severity": "HIGH",
+      "confidence": 75,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1041",
+          "name": "Exfiltration Over C2 Channel",
+          "tactic": "Exfiltration"
+        }
+      ],
+      "explanation": "{src_ip} sent {observed_mb:.1f} MB to external destinations within {window_seconds}s (threshold {threshold_mb:.0f} MB).",
+      "recommendations": [
+        "Identify the destination and the process that sent the data.",
+        "Check whether the user recently accessed sensitive file shares.",
+        "Consider isolating the host after analyst review."
+      ]
+    },
+    {
+      "id": "IOA-008",
+      "name": "Suspicious Process Execution",
+      "description": "A known offensive tool, or a command pattern often used to run or download payloads.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "event_type",
+            "equals": "process_start"
+          },
+          {
+            "any": [
+              {
+                "field": "process_name",
+                "regex": "^(mimikatz|procdump|rubeus|lazagne|sharphound|bloodhound|nc|ncat|netcat)(\\.exe)?$"
+              },
+              {
+                "field": "command_line",
+                "regex": "powershell(\\.exe)?[\"']?\\s(.*\\s)?-(e|ec|en|enc|encodedcommand)\\s|powershell(\\.exe)?[\"']?\\s(.*\\s)?-nop\\s(.*\\s)?-w\\s+hidden\\s|io\\.compression\\.(gzip|deflate)stream|frombase64string\\(|downloadstring\\(|certutil(\\.exe)?\\s.*-urlcache|bitsadmin(\\.exe)?\\s.*/transfer|(curl|wget)\\s.*\\|\\s*(ba)?sh\\b|rundll32(\\.exe)?\\s+javascript:"
+              }
+            ]
+          }
+        ]
+      },
+      "group_by": [
+        "hostname",
+        "process_name"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "HIGH",
+      "confidence": 80,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1059",
+          "name": "Command and Scripting Interpreter",
+          "tactic": "Execution"
+        }
+      ],
+      "explanation": "Suspicious execution of {process_name} on {hostname}: {sample}.",
+      "recommendations": [
+        "Inspect the process, its parent and its command line.",
+        "Collect the binary's hash and check it against threat intelligence."
+      ]
+    },
+    {
+      "id": "IOA-009",
+      "name": "Internal Lateral Movement Pattern",
+      "description": "An internal host connected to several other internal hosts on remote administration ports.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "source",
+            "equals": "network"
+          },
+          {
+            "field": "src_ip",
+            "ip_scope": "internal"
+          },
+          {
+            "field": "dst_ip",
+            "ip_scope": "internal"
+          },
+          {
+            "field": "dst_port",
+            "in": [
+              22,
+              135,
+              445,
+              3389,
+              5985,
+              5986
+            ]
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "distinct": "dst_ip",
+      "threshold": 3,
+      "window_seconds": 300,
+      "severity": "HIGH",
+      "confidence": 75,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1021",
+          "name": "Remote Services",
+          "tactic": "Lateral Movement"
+        }
+      ],
+      "explanation": "{src_ip} reached {observed} internal hosts on remote administration ports within {window_seconds}s (threshold {threshold}).",
+      "recommendations": [
+        "Check the destination hosts for new sessions, processes and accounts.",
+        "Determine whether this host normally administers those systems."
+      ]
+    },
+    {
+      "id": "IOA-010",
+      "name": "Remote Execution Tool",
+      "description": "A tool commonly used to run commands on other hosts was started.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "event_type",
+            "equals": "process_start"
+          },
+          {
+            "any": [
+              {
+                "field": "process_name",
+                "regex": "^(psexec|psexec64|psexesvc|winrs)(\\.exe)?$"
+              },
+              {
+                "field": "command_line",
+                "regex": "wmic(\\.exe)?\\s.*/node:|Enter-PSSession\\b|Invoke-Command\\s.*-ComputerName"
+              }
+            ]
+          }
+        ]
+      },
+      "group_by": [
+        "hostname",
+        "process_name"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "HIGH",
+      "confidence": 80,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1569.002",
+          "name": "System Services: Service Execution",
+          "tactic": "Lateral Movement"
+        }
+      ],
+      "explanation": "Remote execution tool {process_name} started on {hostname}: {sample}.",
+      "recommendations": [
+        "Scan the source workstation for unauthorized admin tools.",
+        "Identify the target hosts and review their activity."
+      ]
+    },
+    {
+      "id": "IOA-011",
+      "name": "Credential Dumping",
+      "description": "A process accessed LSASS memory, which holds credentials.",
+      "type": "threshold",
+      "match": {
+        "any": [
+          {
+            "all": [
+              {
+                "field": "event_type",
+                "equals": "memory_access"
+              },
+              {
+                "field": "details",
+                "regex": "lsass"
+              }
+            ]
+          },
+          {
+            "field": "command_line",
+            "regex": "sekurlsa|lsass(\\.exe)?\\.dmp|procdump.*lsass|comsvcs.*MiniDump"
+          }
+        ]
+      },
+      "group_by": [
+        "hostname",
+        "process_name"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "HIGH",
+      "confidence": 85,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1003.001",
+          "name": "OS Credential Dumping: LSASS Memory",
+          "tactic": "Credential Access"
+        }
+      ],
+      "explanation": "{process_name} touched LSASS on {hostname}: {sample}.",
+      "recommendations": [
+        "Treat credentials used on this host as potentially exposed and plan resets.",
+        "Check whether LSA Protection is enabled."
+      ]
+    },
+    {
+      "id": "IOA-012",
+      "name": "Web Shell Upload",
+      "description": "A server-side script was uploaded through the web application.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "event_type",
+            "equals": "file_upload"
+          },
+          {
+            "any": [
+              {
+                "field": "endpoint",
+                "regex": "\\.(php\\d?|phtml|jsp|jspx|asp|aspx)$"
+              },
+              {
+                "field": "file_path",
+                "regex": "\\.(php\\d?|phtml|jsp|jspx|asp|aspx)$"
+              }
+            ]
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "HIGH",
+      "confidence": 75,
+      "max_confidence": 85,
+      "mitre": [
+        {
+          "id": "T1505.003",
+          "name": "Server Software Component: Web Shell",
+          "tactic": "Persistence"
+        }
+      ],
+      "explanation": "{src_ip} uploaded a server-side script: {sample}.",
+      "recommendations": [
+        "Inspect the uploaded file before removing it, and keep a copy as evidence.",
+        "Review upload validation on this endpoint."
+      ]
+    },
+    {
+      "id": "IOA-013",
+      "name": "Web Server Spawned a Shell",
+      "description": "A web server process started a command shell, a common sign of remote code execution.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "event_type",
+            "equals": "process_start"
+          },
+          {
+            "field": "process_name",
+            "regex": "^(cmd|powershell|pwsh|sh|bash|dash)(\\.exe)?$"
+          },
+          {
+            "field": "parent_process_name",
+            "regex": "^(w3wp|httpd|apache2?|nginx|php-fpm|php-cgi|tomcat\\d*)(\\.exe)?$"
+          }
+        ]
+      },
+      "group_by": [
+        "hostname"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "CRITICAL",
+      "confidence": 85,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1505.003",
+          "name": "Server Software Component: Web Shell",
+          "tactic": "Execution"
+        }
+      ],
+      "explanation": "{process_name} was started by web server process on {hostname}: {sample}.",
+      "recommendations": [
+        "Consider isolating the web server after analyst review.",
+        "Scan the web root for unauthorized scripts."
+      ]
+    },
+    {
+      "id": "IOA-014",
+      "name": "Periodic Outbound Beaconing",
+      "description": "Repeated connections to one external address at regular intervals, which can indicate command-and-control check-ins.",
+      "type": "periodic",
+      "match": {
+        "all": [
+          {
+            "field": "source",
+            "equals": "network"
+          },
+          {
+            "field": "src_ip",
+            "ip_scope": "internal"
+          },
+          {
+            "field": "dst_ip",
+            "ip_scope": "external"
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip",
+        "dst_ip"
+      ],
+      "min_events": 5,
+      "min_interval_seconds": 10,
+      "max_jitter_ratio": 0.15,
+      "window_seconds": 1800,
+      "severity": "MEDIUM",
+      "confidence": 65,
+      "max_confidence": 80,
+      "mitre": [
+        {
+          "id": "T1071",
+          "name": "Application Layer Protocol",
+          "tactic": "Command and Control"
+        }
+      ],
+      "explanation": "{src_ip} contacted {dst_ip} {observed} times at a regular interval of about {interval_seconds:.0f}s (timing variation {jitter_percent:.0f}%).",
+      "recommendations": [
+        "Identify the process making these connections.",
+        "Check whether the destination is a known update or monitoring service."
+      ]
+    },
+    {
+      "id": "IOA-015",
+      "name": "Password Spraying",
+      "description": "One source failed logins across many different accounts.",
+      "type": "threshold",
+      "match": {
+        "field": "event_type",
+        "equals": "authentication_failure"
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "distinct": "user",
+      "threshold": 5,
+      "window_seconds": 600,
+      "severity": "HIGH",
+      "confidence": 80,
+      "max_confidence": 90,
+      "mitre": [
+        {
+          "id": "T1110.003",
+          "name": "Brute Force: Password Spraying",
+          "tactic": "Credential Access"
+        }
+      ],
+      "explanation": "{src_ip} failed logins for {observed} different accounts within {window_seconds}s (threshold {threshold}).",
+      "recommendations": [
+        "Review all targeted accounts for any successful logins from this source.",
+        "Check whether multi-factor authentication covers these accounts."
+      ]
+    },
+    {
+      "id": "IOA-016",
+      "name": "Archive Staging",
+      "description": "An archive file was accessed or created. This is weak alone and only adds context to related activity.",
+      "type": "threshold",
+      "match": {
+        "any": [
+          {
+            "all": [
+              {
+                "field": "event_type",
+                "in": [
+                  "file_access",
+                  "file_create"
+                ]
+              },
+              {
+                "field": "file_path",
+                "regex": "\\.(zip|rar|7z|tar|tgz|gz)$"
+              }
+            ]
+          },
+          {
+            "field": "command_line",
+            "regex": "\\b(7z|rar|zip)(\\.exe)?\\s+a\\b|\\btar\\s+-?c"
+          }
+        ]
+      },
+      "group_by": [
+        "hostname",
+        "user"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 900,
+      "severity": "LOW",
+      "confidence": 40,
+      "max_confidence": 50,
+      "mitre": [
+        {
+          "id": "T1560",
+          "name": "Archive Collected Data",
+          "tactic": "Collection"
+        }
+      ],
+      "explanation": "Archive activity by {user} on {hostname}: {sample}.",
+      "recommendations": [
+        "Check what the archive contains and whether it left this host."
+      ]
+    },
+    {
+      "id": "IOA-017",
+      "name": "Suspicious Application Access",
+      "description": "One source repeatedly requested paths that ordinary users have no reason to reach, such as configuration files, admin consoles or directory traversal.",
+      "type": "threshold",
+      "match": {
+        "all": [
+          {
+            "field": "source",
+            "equals": "application"
+          },
+          {
+            "field": "endpoint",
+            "regex": "(\\.\\./|%2e%2e|/etc/passwd|/\\.env|/\\.git|/wp-admin|/wp-login|/phpmyadmin|/admin|/manager/html|/cgi-bin/)"
+          }
+        ]
+      },
+      "group_by": [
+        "src_ip"
+      ],
+      "threshold": 3,
+      "window_seconds": 300,
+      "severity": "MEDIUM",
+      "confidence": 65,
+      "max_confidence": 80,
+      "mitre": [
+        {
+          "id": "T1190",
+          "name": "Exploit Public-Facing Application",
+          "tactic": "Initial Access"
+        }
+      ],
+      "explanation": "{src_ip} made {observed} requests to sensitive application paths within {window_seconds}s (threshold {threshold}). Latest: {sample}.",
+      "recommendations": [
+        "Check which of these requests succeeded, and what they returned.",
+        "Consider blocking the source at the web application firewall after review."
+      ]
+    },
+    {
+      "id": "IOA-018",
+      "name": "Alert Reported by Another Security Tool",
+      "description": "A log says that another security tool raised an alert, or names an attack itself. ALLSAFE did not verify it, so it stays suspicious until something else supports it.",
+      "type": "threshold",
+      "match": {
+        "field": "event_type",
+        "equals": "ids_alert"
+      },
+      "group_by": [
+        "src_ip",
+        "hostname"
+      ],
+      "group_optional": true,
+      "threshold": 1,
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 65,
+      "max_confidence": 69,
+      "mitre": [],
+      "explanation": "{observed} log(s) from {src_ip} on {hostname} carry an alert from another tool or name an attack. ALLSAFE did not verify it. Latest: {sample}.",
+      "recommendations": [
+        "Check the tool that raised this alert, and whether other evidence supports it."
+      ]
+    }
+  ]
+}

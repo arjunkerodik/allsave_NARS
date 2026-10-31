@@ -1,0 +1,392 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2444 >>
+stream
+BT 40 800 Td 13 TL
+/F2 9 Tf
+(ALLSAFE Security Analysis Report: brute_force_windows.csv) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Analysis ID: ds-6e8498492f01) Tj T*
+(- Report ID: RPT-7B3CE04101) Tj T*
+(- Generated: 2026-10-31T04:31:17.891817+00:00) Tj T*
+(- Log file: brute_force_windows.csv) Tj T*
+(- Log type: Windows authentication events) Tj T*
+(- Analysis started: 2026-10-31T04:31:16.678600+00:00) Tj T*
+(- Analysis completed: 2026-10-31T04:31:17.754089+00:00) Tj T*
+() Tj T*
+/F2 9 Tf
+(Overall security assessment) Tj T*
+/F1 9 Tf
+() Tj T*
+(THREATS DETECTED) Tj T*
+() Tj T*
+(2 detection\(s\) have strong supporting evidence and need investigation.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Executive summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(brute_force_windows.csv: 15 of 15 records were processed, producing 2 alert\(s\) and 1) Tj T*
+(    incident\(s\). The highest priority is INC-000005, Successful Login After Repeated) Tj T*
+(    Failures \(dc-01.corp.example\), at 74/100 \(HIGH\). 4 recommended action\(s\) are waiting) Tj T*
+(    for an analyst. No action has changed a real system.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Threat overview) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Attack categories: Credential Access, Initial Access) Tj T*
+(- Rules fired: IOA-001, IOA-002) Tj T*
+() Tj T*
+/F2 9 Tf
+(Processing summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: COMPLETED) Tj T*
+(- Total uploaded records: 15) Tj T*
+(- Successfully processed records: 15) Tj T*
+(- Rejected records: 0) Tj T*
+(- Duplicate records: 0) Tj T*
+() Tj T*
+/F2 9 Tf
+(Data quality) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Malformed records: 0) Tj T*
+(- Invalid timestamps: 0) Tj T*
+(- Missing timestamps: 0) Tj T*
+(- Flows with no timestamp, kept: 0) Tj T*
+(- Missing optional values: dst_ip 15) Tj T*
+(- Fields with no equivalent in the common schema: TimeCreated, EventID, TargetUserName,) Tj T*
+(    LogonType, Channel) Tj T*
+(- Warning: 5 field\(s\) have no equivalent in the common schema. They are preserved with) Tj T*
+(    each event, but no detection reads them.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection engines) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Executed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOC enrichment: evaluated 15 of 15 event\(s\), 0 finding\(s\)) Tj T*
+(- IOA behavior rules: evaluated 15 of 15 event\(s\), 2 finding\(s\)) Tj T*
+(- UEBA baselines: evaluated 6 of 15 event\(s\), 0 finding\(s\)) Tj T*
+(- Anomaly model: evaluated 15 of 15 event\(s\), 1 finding\(s\)) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 1 of 5) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 3343 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Skipped or failed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Supervised ML \(saved network model\) \(SKIPPED\): This data has no records with all 78) Tj T*
+(    CIC-IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Finding classification) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Confirmed detections: 2 alert\(s\) over 10 event\(s\), 1 incident\(s\)) Tj T*
+(- Suspicious activity: 0 alert\(s\) over 0 event\(s\), 1 anomaly window\(s\), 0 flow\(s\)) Tj T*
+(    classified as attacks) Tj T*
+(- Benign activity \(normal events\): 5 event\(s\). These events triggered no applicable) Tj T*
+(    detection condition. That is not proof they are safe.) Tj T*
+(- Data quality issues: 0 bad record\(s\), 0 duplicate\(s\)) Tj T*
+(- Detection limitations: 1) Tj T*
+(  - Supervised ML \(saved network model\): This data has no records with all 78 CIC-) Tj T*
+(    IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Alerts: 2) Tj T*
+(- Incidents: 1) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOC matches \(0\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- 15 event\(s\) were checked against the threat intelligence database.) Tj T*
+(- No known indicator was matched. This does not mean these events are safe: the feed) Tj T*
+(    only holds known indicators.) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOA rule matches \(2\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOA-002 Successful Login After Repeated Failures \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 89%, risk 55/100 \(MEDIUM\), 10 event\(s\), last seen) Tj T*
+(    2026-01-15T09:01:30+00:00) Tj T*
+(  - Description: A login succeeded from a source that had just failed repeatedly, which) Tj T*
+(    suggests the password was guessed.) Tj T*
+(  - Why it fired: 203.0.113.44 logged in successfully after 9 failed attempts within) Tj T*
+(    600s.) Tj T*
+(  - Triggering conditions: {"type": "sequence", "group_by": ["src_ip"], "threshold": 5,) Tj T*
+(    "window_seconds": 600, "first": {"field": "event_type", "equals":) Tj T*
+(    "authentication_failure"}, "then": {"field": "event_type", "equals":) Tj T*
+(    "authentication_success"}}) Tj T*
+(  - MITRE ATT&CK: T1110 Brute Force, T1078 Valid Accounts) Tj T*
+(  - Supporting event IDs: ds-6e8498492f01-d1fd1da35204e42f,) Tj T*
+(    ds-6e8498492f01-810fe33728e23854, ds-6e8498492f01-2efcab1eb1c79387,) Tj T*
+(    ds-6e8498492f01-1015ae535cf876d9, ds-6e8498492f01-5ca72c1fe136f8e1,) Tj T*
+(    ds-6e8498492f01-85331f5ad1684eae, ds-6e8498492f01-f5bc3c613ab89a60,) Tj T*
+(    ds-6e8498492f01-316bb973e12fc286, ds-6e8498492f01-af1a7d29c4b2160d,) Tj T*
+(    ds-6e8498492f01-0303cb6d4831d065) Tj T*
+(  - Evidence: Failed login for svc_backup from 203.0.113.44 to dc-01.corp.example) Tj T*
+(  - Evidence: Failed login for svc_backup from 203.0.113.44 to dc-01.corp.example) Tj T*
+(  - Evidence: Failed login for svc_backup from 203.0.113.44 to dc-01.corp.example) Tj T*
+(- IOA-001 Brute Force Login Attempts \(Confirmed detection\)) Tj T*
+(  - Severity MEDIUM, confidence 74%, risk 41/100 \(MEDIUM\), 9 event\(s\), last seen) Tj T*
+(    2026-01-15T09:01:04+00:00) Tj T*
+(  - Description: Many failed logins from one source address in a short time.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 2 of 5) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 3146 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(  - Why it fired: 9 failed logins from 203.0.113.44 within 300s \(threshold 5\).) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["src_ip"], "threshold": 5,) Tj T*
+(    "window_seconds": 300, "match": {"field": "event_type", "equals":) Tj T*
+(    "authentication_failure"}}) Tj T*
+(  - MITRE ATT&CK: T1110 Brute Force) Tj T*
+(  - Supporting event IDs: ds-6e8498492f01-d1fd1da35204e42f,) Tj T*
+(    ds-6e8498492f01-810fe33728e23854, ds-6e8498492f01-2efcab1eb1c79387,) Tj T*
+(    ds-6e8498492f01-1015ae535cf876d9, ds-6e8498492f01-5ca72c1fe136f8e1,) Tj T*
+(    ds-6e8498492f01-85331f5ad1684eae, ds-6e8498492f01-f5bc3c613ab89a60,) Tj T*
+(    ds-6e8498492f01-316bb973e12fc286, ds-6e8498492f01-af1a7d29c4b2160d) Tj T*
+(  - Evidence: Failed login for svc_backup from 203.0.113.44 to dc-01.corp.example) Tj T*
+(  - Evidence: Failed login for svc_backup from 203.0.113.44 to dc-01.corp.example) Tj T*
+(  - Evidence: Failed login for svc_backup from 203.0.113.44 to dc-01.corp.example) Tj T*
+() Tj T*
+/F2 9 Tf
+(UEBA findings \(0\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None.) Tj T*
+() Tj T*
+/F2 9 Tf
+(ML classification results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- The saved network model classified nothing in this data. See the detection engines) Tj T*
+(    above for why.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Anomaly detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Unusual activity windows: 1. Statistically unusual activity, not confirmed attacks.) Tj T*
+(- 203.0.113.44 \(strength 73 of 100, 10 event\(s\)\): Unusual compared with the model's) Tj T*
+(    synthetic baseline of normal activity: 9 failed logins \(typically about 0.0\), 10) Tj T*
+(    events \(typically about 1.6\), 1 successful logins \(typically about 0.3\). A) Tj T*
+(    statistical anomaly, not a confirmed attack.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Incident investigation) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(INC-000005: Successful Login After Repeated Failures \(dc-01.corp.example\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: ACTIVE, priority P2) Tj T*
+(- Severity: HIGH) Tj T*
+(- Confidence: 97%) Tj T*
+(- Risk: 74/100 HIGH) Tj T*
+(- Affected hosts: dc-01.corp.example) Tj T*
+(- Affected users: svc_backup) Tj T*
+(- Related alerts: IOA-002, IOA-001) Tj T*
+(- Possible ATT&CK stages: T1078 Valid Accounts \(Initial Access\); T1110 Brute Force) Tj T*
+(    \(Credential Access\)) Tj T*
+(- Automation: Needs SOC approval: every response action waits for an analyst decision.) Tj T*
+(    Evidence is collected and an urgent notification is sent.) Tj T*
+() Tj T*
+(Why this score:) Tj T*
+() Tj T*
+(- severity \(18.8 points\): Incident severity is HIGH.) Tj T*
+(- evidence confidence \(24.2 points\): Combined evidence confidence is 97%.) Tj T*
+(- ioc ioa signals \(16.0 points\): 2 distinct behavior rule\(s\), 0 threat intelligence) Tj T*
+(    match\(es\).) Tj T*
+(- behavioral anomalies \(10.9 points\): 1 statistically unusual activity window\(s\),) Tj T*
+(    strength 73 of 100. The strongest one counts.) Tj T*
+(- attack progression \(4.4 points\): 2 MITRE tactic\(s\) across 2 distinct detection\(s\):) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 3 of 5) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 2579 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(    Credential Access, Initial Access.) Tj T*
+() Tj T*
+(Timeline:) Tj T*
+() Tj T*
+(- 2026-01-15T09:00:00+00:00: Failed login for svc_backup from 203.0.113.44 to) Tj T*
+(    dc-01.corp.example \(x9\) [IOA-001, IOA-002]) Tj T*
+(- 2026-01-15T09:01:30+00:00: Successful login for svc_backup from 203.0.113.44 to) Tj T*
+(    dc-01.corp.example [IOA-002]) Tj T*
+() Tj T*
+/F2 9 Tf
+(Affected users and hosts) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Users: svc_backup) Tj T*
+(- Hosts: dc-01.corp.example) Tj T*
+() Tj T*
+/F2 9 Tf
+(Risk analysis) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Severity distribution \(alerts\): HIGH 1, MEDIUM 1) Tj T*
+(- Incident risk distribution: CRITICAL 0, HIGH 1, MEDIUM 0, LOW 0) Tj T*
+(- Alert risk distribution: CRITICAL 0, HIGH 0, MEDIUM 2, LOW 0) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real. Each) Tj T*
+(    incident above lists the factors behind its score.) Tj T*
+() Tj T*
+/F2 9 Tf
+(MITRE ATT&CK mappings) Tj T*
+/F1 9 Tf
+() Tj T*
+(- T1078 Valid Accounts \(Initial Access\)) Tj T*
+(- T1110 Brute Force \(Credential Access\)) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended remediation) Tj T*
+/F1 9 Tf
+() Tj T*
+(Historical analysis is read-only. Nothing below has been done, and any disruptive step) Tj T*
+(    needs an analyst to approve it.) Tj T*
+() Tj T*
+(- IOA-001 Brute Force Login Attempts: Review the targeted accounts and whether this) Tj T*
+(    source address is expected. Consider rate limiting or blocking the source address) Tj T*
+(    after review.) Tj T*
+(- IOA-002 Successful Login After Repeated Failures: Confirm with the account owner) Tj T*
+(    whether this login was theirs. If not, reset the account's password and revoke its) Tj T*
+(    active sessions. Review what the account did after this login.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended actions \(simulation only\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- INC-000005, PENDING: Investigate source IP on 203.0.113.44) Tj T*
+(- INC-000005, PENDING: Review affected account on svc_backup) Tj T*
+(- INC-000005, PENDING: Block test IP on 203.0.113.44 \(disruptive, needs approval\)) Tj T*
+(- INC-000005, PENDING: Disable test account on svc_backup \(disruptive, needs approval\)) Tj T*
+() Tj T*
+/F2 9 Tf
+(Analyst decisions) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None yet.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Model performance) Tj T*
+/F1 9 Tf
+() Tj T*
+(- This data has no ground truth labels, so these are descriptive counts, not performance) Tj T*
+(    metrics.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Known limitations) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 4 of 5) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+13 0 obj
+<< /Length 1858 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+() Tj T*
+(- Detection combines behavior rules, threat intelligence matches, statistical baselines) Tj T*
+(    and two models. None of them proves an attack happened, and none proves that one did) Tj T*
+(    not.) Tj T*
+(- The saved network model runs only on flow data with its 78 CIC-IDS2017 features. It) Tj T*
+(    has not been validated here, no preprocessing pipeline was saved with it, and its) Tj T*
+(    output is uncalibrated, so no accuracy or prediction confidence is claimed.) Tj T*
+(- The anomaly model was trained on synthetic normal activity, and does not run on live) Tj T*
+(    telemetry. Its findings are statistical anomalies, not confirmed attacks.) Tj T*
+(- Threat intelligence only covers known indicators, and the bundled feed is synthetic.) Tj T*
+(    No match does not mean an event is safe.) Tj T*
+(- Performance metrics compare results with labels on synthetic or supplied data. They do) Tj T*
+(    not predict performance on real attacks.) Tj T*
+(- The synthetic scenarios and the detection rules were written by the same team, so) Tj T*
+(    scenario results show the pipeline works as designed.) Tj T*
+(- Behavioral checks need history. An entity with too little history is not judged.) Tj T*
+(- Window-based rules cite every matching event in their window, so a normal event inside) Tj T*
+(    an attack window counts as an event-level false positive.) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real.) Tj T*
+(- Historical analysis is read-only. Every response action is a recommendation that needs) Tj T*
+(    an analyst, and runs only in simulation. No firewall, account, host or process is) Tj T*
+(    changed.) Tj T*
+(- Analyst names are self-reported: there are no user accounts.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 5 of 5) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 13 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000142 00000 n 
+0000000237 00000 n 
+0000000337 00000 n 
+0000002833 00000 n 
+0000002969 00000 n 
+0000006364 00000 n 
+0000006500 00000 n 
+0000009698 00000 n 
+0000009835 00000 n 
+0000012467 00000 n 
+0000012605 00000 n 
+0000014516 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+14654
+%%EOF

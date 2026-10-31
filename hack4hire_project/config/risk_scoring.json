@@ -1,0 +1,49 @@
+{
+  "risk": {
+    "weights": {
+      "severity": 25,
+      "evidence_confidence": 25,
+      "ioc_ioa_signals": 20,
+      "behavioral_anomalies": 15,
+      "attack_progression": 15
+    },
+    "severity_factor": {"LOW": 0.25, "MEDIUM": 0.5, "HIGH": 0.75, "CRITICAL": 1.0},
+    "signals": {"ioa_share": 0.8, "ioc_share": 0.2, "rules_for_full_share": 2},
+    "progression": {"tactic_share": 0.7, "tactics_for_full_share": 3, "detections_for_full_share": 5},
+    "points_per_asset_level": 2,
+    "max_asset_points": 5,
+    "levels": {"CRITICAL": 90, "HIGH": 70, "MEDIUM": 40, "LOW": 0}
+  },
+  "classification": {"confirmed_min_confidence": 70},
+  "asset_criticality": {
+    "web-01": 2,
+    "db-01": 3,
+    "fin-db-01": 3,
+    "dc-01": 3,
+    "10.10.1.10": 2
+  },
+  "correlation": {
+    "window_seconds": 1800,
+    "min_link_score": 0.5,
+    "min_severity_to_open_incident": "MEDIUM",
+    "multi_stage_min_tactics": 3,
+    "host_addresses": {
+      "web-01": ["10.10.1.10"],
+      "web-03": ["10.10.3.10"]
+    },
+    "entity_weights": {
+      "session_id": 0.9,
+      "src_ip": 0.8,
+      "user": 0.6,
+      "hostname": 0.6,
+      "dst_ip": 0.2,
+      "pivot": 0.7,
+      "asset_mapping": 0.6
+    },
+    "ignored_entities": [
+      "127.0.0.1", "::1", "0.0.0.0", "localhost",
+      "SYSTEM", "NT AUTHORITY\\SYSTEM", "LOCAL SERVICE", "NETWORK SERVICE",
+      "anonymous", "unknown", "-"
+    ]
+  }
+}

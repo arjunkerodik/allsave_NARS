@@ -1,0 +1,74 @@
+{
+  "rules": [
+    {
+      "id": "ML-DOS",
+      "name": "ML: Denial-of-Service Flow Pattern",
+      "description": "The saved network model classified these flows as denial-of-service traffic.",
+      "classes": ["DDoS", "DoS GoldenEye", "DoS Hulk", "DoS Slowhttptest", "DoS slowloris"],
+      "type": "classifier",
+      "detection_type": "ML",
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 55,
+      "mitre": [{"id": "T1499", "name": "Endpoint Denial of Service", "tactic": "Impact"}],
+      "explanation": "The saved network model classified {observed} flow(s) from {src_ip} to {dst_ip} as {predicted_class}. This is one uncalibrated model's prediction, so it needs corroboration.",
+      "recommendations": ["Check the target's load and availability at that time.", "Corroborate with firewall and server logs before acting on this prediction."]
+    },
+    {
+      "id": "ML-PORTSCAN",
+      "name": "ML: Port Scan Flow Pattern",
+      "description": "The saved network model classified these flows as a port scan.",
+      "classes": ["PortScan"],
+      "type": "classifier",
+      "detection_type": "ML",
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 55,
+      "mitre": [{"id": "T1046", "name": "Network Service Discovery", "tactic": "Discovery"}],
+      "explanation": "The saved network model classified {observed} flow(s) from {src_ip} to {dst_ip} as {predicted_class}. This is one uncalibrated model's prediction, so it needs corroboration.",
+      "recommendations": ["Determine whether this is an approved vulnerability scanner.", "Check the targets for connections that followed."]
+    },
+    {
+      "id": "ML-BRUTEFORCE",
+      "name": "ML: Credential Attack Flow Pattern",
+      "description": "The saved network model classified these flows as a password attack on a service.",
+      "classes": ["FTP-Patator", "SSH-Patator", "Web Attack - Brute Force"],
+      "type": "classifier",
+      "detection_type": "ML",
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 55,
+      "mitre": [{"id": "T1110", "name": "Brute Force", "tactic": "Credential Access"}],
+      "explanation": "The saved network model classified {observed} flow(s) from {src_ip} to {dst_ip} as {predicted_class}. This is one uncalibrated model's prediction, so it needs corroboration.",
+      "recommendations": ["Review authentication logs on the target for the same period.", "Consider rate limiting the service after review."]
+    },
+    {
+      "id": "ML-WEBATTACK",
+      "name": "ML: Web Attack Flow Pattern",
+      "description": "The saved network model classified these flows as a web application attack.",
+      "classes": ["Web Attack - XSS"],
+      "type": "classifier",
+      "detection_type": "ML",
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 55,
+      "mitre": [{"id": "T1190", "name": "Exploit Public-Facing Application", "tactic": "Initial Access"}],
+      "explanation": "The saved network model classified {observed} flow(s) from {src_ip} to {dst_ip} as {predicted_class}. This is one uncalibrated model's prediction, so it needs corroboration.",
+      "recommendations": ["Review the web server's logs for the same requests.", "Corroborate before treating this as an attack."]
+    },
+    {
+      "id": "ML-BOT",
+      "name": "ML: Bot Traffic Flow Pattern",
+      "description": "The saved network model classified these flows as bot traffic.",
+      "classes": ["Bot", "*"],
+      "type": "classifier",
+      "detection_type": "ML",
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 55,
+      "mitre": [{"id": "T1071", "name": "Application Layer Protocol", "tactic": "Command and Control"}],
+      "explanation": "The saved network model classified {observed} flow(s) from {src_ip} to {dst_ip} as {predicted_class}. This is one uncalibrated model's prediction, so it needs corroboration.",
+      "recommendations": ["Identify the process behind this traffic on the source host.", "Check the destination's reputation."]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Keywords,Date and Time,Source,Event ID,Task Category,Computer,Message
+Audit Failure,1/15/2026 9:00:00 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:01 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:02 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:03 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:04 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:05 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:06 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23
+Audit Failure,1/15/2026 9:00:07 AM,Microsoft-Windows-Security-Auditing,4625,Logon,dc-01,An account failed to log on. Account Name: bob Source Network Address: 198.51.100.23

@@ -1,0 +1,708 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2560 >>
+stream
+BT 40 800 Td 13 TL
+/F2 9 Tf
+(ALLSAFE Security Analysis Report: Mixed benign and malicious \(seed 42\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Analysis ID: ds-832d440f3cd2) Tj T*
+(- Report ID: RPT-47DEBC8BBD) Tj T*
+(- Generated: 2026-10-31T04:31:53.746153+00:00) Tj T*
+(- Log file: Mixed benign and malicious \(seed 42\)) Tj T*
+(- Log type: Mixed: Application security events, Endpoint and process events, Linux) Tj T*
+(    authentication events, Network flow events, Other logs) Tj T*
+(- Analysis started: 2026-10-31T04:31:46.139706+00:00) Tj T*
+(- Analysis completed: 2026-10-31T04:31:53.383708+00:00) Tj T*
+() Tj T*
+/F2 9 Tf
+(Overall security assessment) Tj T*
+/F1 9 Tf
+() Tj T*
+(THREATS DETECTED) Tj T*
+() Tj T*
+(7 detection\(s\) have strong supporting evidence and need investigation.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Executive summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(Mixed benign and malicious \(seed 42\): 2000 of 2000 records were processed, producing 9) Tj T*
+(    alert\(s\) and 4 incident\(s\). The highest priority is INC-000023, Possible Data) Tj T*
+(    Exfiltration \(fin-02\), at 78/100 \(HIGH\). 8 recommended action\(s\) are waiting for an) Tj T*
+(    analyst. No action has changed a real system. All of this data is synthetic.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Threat overview) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Attack categories: Collection, Credential Access, Exfiltration, Initial Access,) Tj T*
+(    Lateral Movement, Privilege Escalation) Tj T*
+(- Rules fired: IOA-001, IOA-002, IOA-003, IOA-007, IOA-009, IOA-010, IOA-016, IOC-IP,) Tj T*
+(    UEBA-002) Tj T*
+() Tj T*
+/F2 9 Tf
+(Processing summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: COMPLETED) Tj T*
+(- Total uploaded records: 2000) Tj T*
+(- Successfully processed records: 2000) Tj T*
+(- Rejected records: 0) Tj T*
+(- Duplicate records: 0) Tj T*
+() Tj T*
+/F2 9 Tf
+(Data quality) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Malformed records: 0) Tj T*
+(- Invalid timestamps: 0) Tj T*
+(- Missing timestamps: 0) Tj T*
+(- Flows with no timestamp, kept: 0) Tj T*
+(- Missing optional values: none) Tj T*
+(- Fields with no equivalent in the common schema: none) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection engines) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Executed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOC enrichment: evaluated 1570 of 2000 event\(s\), 1 finding\(s\)) Tj T*
+(- IOA behavior rules: evaluated 2000 of 2000 event\(s\), 7 finding\(s\)) Tj T*
+(- UEBA baselines: evaluated 931 of 2000 event\(s\), 2 finding\(s\)) Tj T*
+(- Anomaly model: evaluated 2000 of 2000 event\(s\), 3 finding\(s\)) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 1 of 9) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 3475 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Skipped or failed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Supervised ML \(saved network model\) \(SKIPPED\): This data has no records with all 78) Tj T*
+(    CIC-IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Finding classification) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Confirmed detections: 7 alert\(s\) over 20 event\(s\), 4 incident\(s\)) Tj T*
+(- Suspicious activity: 2 alert\(s\) over 5 event\(s\), 3 anomaly window\(s\), 0 flow\(s\)) Tj T*
+(    classified as attacks) Tj T*
+(- Benign activity \(normal events\): 1975 event\(s\). These events triggered no applicable) Tj T*
+(    detection condition. That is not proof they are safe.) Tj T*
+(- Data quality issues: 0 bad record\(s\), 0 duplicate\(s\)) Tj T*
+(- Detection limitations: 1) Tj T*
+(  - Supervised ML \(saved network model\): This data has no records with all 78 CIC-) Tj T*
+(    IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Alerts: 9) Tj T*
+(- Incidents: 4) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOC matches \(1\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- 1570 event\(s\) were checked against the threat intelligence database.) Tj T*
+(- IOC-IP Threat Intelligence Match: IP \(Confirmed detection\)) Tj T*
+(  - Severity MEDIUM, confidence 70%, risk 32/100 \(LOW\), 2 event\(s\), last seen) Tj T*
+(    2026-10-31T03:00:06.253849+00:00) Tj T*
+(  - Why it fired: dst_ip matched ip indicator 198.51.100.77 from feed 'allsafe-) Tj T*
+(    synthetic-demo-feed'. Synthetic: staging server for data theft in the demo) Tj T*
+(    scenarios. This is evidence to investigate, not proof of compromise.) Tj T*
+(  - Triggering conditions: {"type": "ioc", "window_seconds": 3600}) Tj T*
+(  - Matched indicator: 198.51.100.77 \(ip\) in dst_ip, from feed allsafe-synthetic-demo-) Tj T*
+(    feed. Context: Synthetic: staging server for data theft in the demo scenarios.) Tj T*
+(  - MITRE ATT&CK: not mapped) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-000452, ds-832d440f3cd2-000472) Tj T*
+(  - Evidence: 10.40.0.2 -> 198.51.100.77:443 HTTPS, 41,943,040 bytes) Tj T*
+(  - Evidence: 10.40.0.2 -> 198.51.100.77:443 HTTPS, 41,943,040 bytes) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOA rule matches \(7\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOA-003 Suspicious Privilege Escalation \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 80%, risk 50/100 \(MEDIUM\), 2 event\(s\), last seen) Tj T*
+(    2026-10-31T02:35:15.248938+00:00) Tj T*
+(  - Description: An escalation event, or a command that grants or obtains administrative) Tj T*
+(    rights.) Tj T*
+(  - Why it fired: Privilege-related activity by deploy on app-02: usermod: usermod -aG) Tj T*
+(    sudo deploy.) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname", "user"],) Tj T*
+(    "threshold": 1, "window_seconds": 900, "match": {"any": [{"field": "event_type",) Tj T*
+(    "in": ["privilege_escalation", "privilege_granted"]}, {"field": "command_line",) Tj T*
+(    "regex": "\\\\bsudo\\\\b.*\(\\\\bsu\\\\b|/bash\\\\b|/sh\\\\b|\\\\s-i\\\\b|\\\\s-s\\\\b\)|usermod\\\\s+.*-) Tj T*
+(    a?G\\\\s+\\\\S*\(sudo|wheel|admin\)|net\\\\s+localgroup\\\\s+administrators\\\\s+\\\\S+\\\\s+/add|Ad) Tj T*
+(    d-LocalGroupMember) Tj T*
+(  - MITRE ATT&CK: T1548 Abuse Elevation Control Mechanism, T1098 Account Manipulation) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 2 of 9) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 4055 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(  - Supporting event IDs: ds-832d440f3cd2-000053, ds-832d440f3cd2-000061) Tj T*
+(  - Evidence: sudo: sudo su -) Tj T*
+(  - Evidence: usermod: usermod -aG sudo deploy) Tj T*
+(- IOA-016 Archive Staging \(Suspicious activity\)) Tj T*
+(  - Severity LOW, confidence 40%, risk 23/100 \(LOW\), 1 event\(s\), last seen) Tj T*
+(    2026-10-31T02:58:06.253849+00:00) Tj T*
+(  - Description: An archive file was accessed or created. This is weak alone and only) Tj T*
+(    adds context to related activity.) Tj T*
+(  - Why it fired: Archive activity by analyst1 on fin-02: Archive file accessed.) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname", "user"],) Tj T*
+(    "threshold": 1, "window_seconds": 900, "match": {"any": [{"all": [{"field":) Tj T*
+(    "event_type", "in": ["file_access", "file_create"]}, {"field": "file_path", "regex":) Tj T*
+(    "\\\\.\(zip|rar|7z|tar|tgz|gz\)$"}]}, {"field": "command_line", "regex":) Tj T*
+(    "\\\\b\(7z|rar|zip\)\(\\\\.exe\)?\\\\s+a\\\\b|\\\\btar\\\\s+-?c"}]}}) Tj T*
+(  - MITRE ATT&CK: T1560 Archive Collected Data) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-000438) Tj T*
+(  - Evidence: Archive file accessed) Tj T*
+(- IOA-007 Possible Data Exfiltration \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 78%, risk 49/100 \(MEDIUM\), 2 event\(s\), last seen) Tj T*
+(    2026-10-31T03:00:06.253849+00:00) Tj T*
+(  - Description: An internal host sent a large volume of data to external addresses.) Tj T*
+(  - Why it fired: 10.40.0.2 sent 80.0 MB to external destinations within 600s \(threshold) Tj T*
+(    50 MB\).) Tj T*
+(  - Triggering conditions: {"type": "sum", "group_by": ["src_ip"], "threshold":) Tj T*
+(    52428800, "field": "bytes_out", "window_seconds": 600, "match": {"all": [{"field":) Tj T*
+(    "source", "equals": "network"}, {"field": "src_ip", "ip_scope": "internal"},) Tj T*
+(    {"field": "dst_ip", "ip_scope": "external"}, {"not": {"field": "dst_ip", "in":) Tj T*
+(    ["198.51.100.10"]}}]}}) Tj T*
+(  - MITRE ATT&CK: T1041 Exfiltration Over C2 Channel) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-000452, ds-832d440f3cd2-000472) Tj T*
+(  - Evidence: 10.40.0.2 -> 198.51.100.77:443 HTTPS, 41,943,040 bytes) Tj T*
+(  - Evidence: 10.40.0.2 -> 198.51.100.77:443 HTTPS, 41,943,040 bytes) Tj T*
+(- IOA-009 Internal Lateral Movement Pattern \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 76%, risk 48/100 \(MEDIUM\), 4 event\(s\), last seen) Tj T*
+(    2026-10-31T03:04:52.882036+00:00) Tj T*
+(  - Description: An internal host connected to several other internal hosts on remote) Tj T*
+(    administration ports.) Tj T*
+(  - Why it fired: 10.30.0.7 reached 4 internal hosts on remote administration ports) Tj T*
+(    within 300s \(threshold 3\).) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["src_ip"], "threshold": 3,) Tj T*
+(    "distinct": "dst_ip", "window_seconds": 300, "match": {"all": [{"field": "source",) Tj T*
+(    "equals": "network"}, {"field": "src_ip", "ip_scope": "internal"}, {"field":) Tj T*
+(    "dst_ip", "ip_scope": "internal"}, {"field": "dst_port", "in": [22, 135, 445, 3389,) Tj T*
+(    5985, 5986]}]}}) Tj T*
+(  - MITRE ATT&CK: T1021 Remote Services) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-000546, ds-832d440f3cd2-000548,) Tj T*
+(    ds-832d440f3cd2-000550, ds-832d440f3cd2-000553) Tj T*
+(  - Evidence: 10.30.0.7 -> 10.30.0.20:445 TCP) Tj T*
+(  - Evidence: 10.30.0.7 -> 10.30.0.21:3389 TCP) Tj T*
+(  - Evidence: 10.30.0.7 -> 10.30.0.22:445 TCP) Tj T*
+(- IOA-010 Remote Execution Tool \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 80%, risk 42/100 \(MEDIUM\), 1 event\(s\), last seen) Tj T*
+(    2026-10-31T03:05:07.882036+00:00) Tj T*
+(  - Description: A tool commonly used to run commands on other hosts was started.) Tj T*
+(  - Why it fired: Remote execution tool psexec.exe started on wks-07: psexec.exe:) Tj T*
+(    psexec.exe \\\\10.30.0.20 cmd.exe.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 3 of 9) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 4036 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(  - Triggering conditions: {"type": "threshold", "group_by": ["hostname",) Tj T*
+(    "process_name"], "threshold": 1, "window_seconds": 900, "match": {"all": [{"field":) Tj T*
+(    "event_type", "equals": "process_start"}, {"any": [{"field": "process_name",) Tj T*
+(    "regex": "^\(psexec|psexec64|psexesvc|winrs\)\(\\\\.exe\)?$"}, {"field": "command_line",) Tj T*
+(    "regex": "wmic\(\\\\.exe\)?\\\\s.*/node:|Enter-PSSession\\\\b|Invoke-) Tj T*
+(    Command\\\\s.*-ComputerName"}]}]}}) Tj T*
+(  - MITRE ATT&CK: T1569.002 System Services: Service Execution) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-000558) Tj T*
+(  - Evidence: psexec.exe: psexec.exe \\\\10.30.0.20 cmd.exe) Tj T*
+(- IOA-002 Successful Login After Repeated Failures \(Confirmed detection\)) Tj T*
+(  - Severity HIGH, confidence 90%, risk 56/100 \(MEDIUM\), 11 event\(s\), last seen) Tj T*
+(    2026-10-31T03:48:38.809102+00:00) Tj T*
+(  - Description: A login succeeded from a source that had just failed repeatedly, which) Tj T*
+(    suggests the password was guessed.) Tj T*
+(  - Why it fired: 203.0.113.10 logged in successfully after 10 failed attempts within) Tj T*
+(    600s.) Tj T*
+(  - Triggering conditions: {"type": "sequence", "group_by": ["src_ip"], "threshold": 5,) Tj T*
+(    "window_seconds": 600, "first": {"field": "event_type", "equals":) Tj T*
+(    "authentication_failure"}, "then": {"field": "event_type", "equals":) Tj T*
+(    "authentication_success"}}) Tj T*
+(  - MITRE ATT&CK: T1110 Brute Force, T1078 Valid Accounts) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-001268, ds-832d440f3cd2-001269,) Tj T*
+(    ds-832d440f3cd2-001271, ds-832d440f3cd2-001272, ds-832d440f3cd2-001273,) Tj T*
+(    ds-832d440f3cd2-001274, ds-832d440f3cd2-001275, ds-832d440f3cd2-001277,) Tj T*
+(    ds-832d440f3cd2-001278, ds-832d440f3cd2-001279) Tj T*
+(  - Evidence: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+(  - Evidence: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+(  - Evidence: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+(- IOA-001 Brute Force Login Attempts \(Confirmed detection\)) Tj T*
+(  - Severity MEDIUM, confidence 75%, risk 41/100 \(MEDIUM\), 10 event\(s\), last seen) Tj T*
+(    2026-10-31T03:48:31.809102+00:00) Tj T*
+(  - Description: Many failed logins from one source address in a short time.) Tj T*
+(  - Why it fired: 10 failed logins from 203.0.113.10 within 300s \(threshold 5\).) Tj T*
+(  - Triggering conditions: {"type": "threshold", "group_by": ["src_ip"], "threshold": 5,) Tj T*
+(    "window_seconds": 300, "match": {"field": "event_type", "equals":) Tj T*
+(    "authentication_failure"}}) Tj T*
+(  - MITRE ATT&CK: T1110 Brute Force) Tj T*
+(  - Supporting event IDs: ds-832d440f3cd2-001268, ds-832d440f3cd2-001269,) Tj T*
+(    ds-832d440f3cd2-001271, ds-832d440f3cd2-001272, ds-832d440f3cd2-001273,) Tj T*
+(    ds-832d440f3cd2-001274, ds-832d440f3cd2-001275, ds-832d440f3cd2-001277,) Tj T*
+(    ds-832d440f3cd2-001278, ds-832d440f3cd2-001279) Tj T*
+(  - Evidence: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+(  - Evidence: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+(  - Evidence: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+() Tj T*
+/F2 9 Tf
+(UEBA findings \(1\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- UEBA-002 Outbound Volume Far Above This Host's Baseline \(Suspicious activity\)) Tj T*
+(  - Severity MEDIUM, confidence 65%, risk 38/100 \(LOW\), 2 event\(s\), last seen) Tj T*
+(    2026-10-31T03:00:06.253849+00:00) Tj T*
+(  - Description: A single transfer was far larger than this address normally sends.) Tj T*
+(  - Why it fired: 10.40.0.2 sent 40.0 MB in one transfer, 3 deviations above its average) Tj T*
+(    of 3.36 MB over 12 earlier transfers.) Tj T*
+(  - Triggering conditions: {"type": "baseline", "group_by": ["src_ip"],) Tj T*
+(    "window_seconds": 3600}) Tj T*
+(  - MITRE ATT&CK: T1048 Exfiltration Over Alternative Protocol) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 4 of 9) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+13 0 obj
+<< /Length 3049 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(  - Supporting event IDs: ds-832d440f3cd2-000452, ds-832d440f3cd2-000472) Tj T*
+(  - Evidence: 10.40.0.2 -> 198.51.100.77:443 HTTPS, 41,943,040 bytes) Tj T*
+() Tj T*
+/F2 9 Tf
+(ML classification results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- The saved network model classified nothing in this data. See the detection engines) Tj T*
+(    above for why.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Anomaly detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Unusual activity windows: 3. Statistically unusual activity, not confirmed attacks.) Tj T*
+(- 203.0.113.10 \(strength 73 of 100, 11 event\(s\)\): Unusual compared with the model's) Tj T*
+(    synthetic baseline of normal activity: 10 failed logins \(typically about 0.0\), 11) Tj T*
+(    events \(typically about 1.6\), 1 successful logins \(typically about 0.3\). A) Tj T*
+(    statistical anomaly, not a confirmed attack.) Tj T*
+(- 10.30.0.7 \(strength 66 of 100, 4 event\(s\)\): Unusual compared with the model's) Tj T*
+(    synthetic baseline of normal activity: 4 connections to admin ports \(typically about) Tj T*
+(    0.0\), 4 distinct destinations \(typically about 0.3\), 3 distinct destination ports) Tj T*
+(    \(typically about 0.3\). A statistical anomaly, not a confirmed attack.) Tj T*
+(- 10.90.0.45 \(strength 63 of 100, 4 event\(s\)\): Unusual compared with the model's) Tj T*
+(    synthetic baseline of normal activity: 4 distinct destinations \(typically about) Tj T*
+(    0.3\), 4 events \(typically about 1.6\), 594,934 bytes transferred \(typically about) Tj T*
+(    49.6\). A statistical anomaly, not a confirmed attack.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Incident investigation) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(INC-000022: Suspicious Privilege Escalation \(app-02\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: ACTIVE, priority P3) Tj T*
+(- Severity: HIGH) Tj T*
+(- Confidence: 80%) Tj T*
+(- Risk: 50/100 MEDIUM) Tj T*
+(- Affected hosts: app-02) Tj T*
+(- Affected users: deploy) Tj T*
+(- Related alerts: IOA-003) Tj T*
+(- Possible ATT&CK stages: T1098 Account Manipulation \(Privilege Escalation\); T1548 Abuse) Tj T*
+(    Elevation Control Mechanism \(Privilege Escalation\)) Tj T*
+(- Automation: Handled automatically: evidence gathered and safe response steps ran in) Tj T*
+(    simulation. Disruptive actions are held, and go to the SOC if risk rises.) Tj T*
+() Tj T*
+(Why this score:) Tj T*
+() Tj T*
+(- severity \(18.8 points\): Incident severity is HIGH.) Tj T*
+(- evidence confidence \(20.0 points\): Combined evidence confidence is 80%.) Tj T*
+(- ioc ioa signals \(10.7 points\): 1 distinct behavior rule\(s\), 0 threat intelligence) Tj T*
+(    match\(es\).) Tj T*
+() Tj T*
+(Timeline:) Tj T*
+() Tj T*
+(- 2026-10-31T02:34:45.248938+00:00: sudo: sudo su - [IOA-003]) Tj T*
+(- 2026-10-31T02:35:15.248938+00:00: usermod: usermod -aG sudo deploy [IOA-003]) Tj T*
+() Tj T*
+/F2 9 Tf
+(INC-000023: Possible Data Exfiltration \(fin-02\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: ACTIVE, priority P2) Tj T*
+(- Severity: HIGH) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 5 of 9) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 13 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+15 0 obj
+<< /Length 2924 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- Confidence: 98%) Tj T*
+(- Risk: 78/100 HIGH) Tj T*
+(- Affected hosts: fin-02) Tj T*
+(- Affected users: analyst1) Tj T*
+(- Related alerts: IOA-016, IOA-007, IOC-IP, UEBA-002) Tj T*
+(- Possible ATT&CK stages: T1041 Exfiltration Over C2 Channel \(Exfiltration\); T1048) Tj T*
+(    Exfiltration Over Alternative Protocol \(Exfiltration\); T1560 Archive Collected Data) Tj T*
+(    \(Collection\)) Tj T*
+(- Automation: Needs SOC approval: every response action waits for an analyst decision.) Tj T*
+(    Evidence is collected and an urgent notification is sent.) Tj T*
+() Tj T*
+(Why this score:) Tj T*
+() Tj T*
+(- severity \(18.8 points\): Incident severity is HIGH.) Tj T*
+(- evidence confidence \(24.5 points\): Combined evidence confidence is 98%.) Tj T*
+(- ioc ioa signals \(18.8 points\): 2 distinct behavior rule\(s\), 1 threat intelligence) Tj T*
+(    match\(es\), best confidence 70%.) Tj T*
+(- behavioral anomalies \(9.8 points\): 1 behavioral anomaly\(ies\) against the entity's own) Tj T*
+(    baseline, best confidence 65%. The strongest one counts.) Tj T*
+(- attack progression \(6.2 points\): 2 MITRE tactic\(s\) across 4 distinct detection\(s\):) Tj T*
+(    Collection, Exfiltration.) Tj T*
+() Tj T*
+(Timeline:) Tj T*
+() Tj T*
+(- 2026-10-31T02:58:06.253849+00:00: Archive file accessed [IOA-016]) Tj T*
+(- 2026-10-31T02:59:06.253849+00:00: 10.40.0.2 -> 198.51.100.77:443 HTTPS, 41,943,040) Tj T*
+(    bytes \(x2\) [IOA-007, IOC-IP, UEBA-002]) Tj T*
+() Tj T*
+/F2 9 Tf
+(INC-000024: Remote Execution Tool \(wks-07\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: ACTIVE, priority P3) Tj T*
+(- Severity: HIGH) Tj T*
+(- Confidence: 88%) Tj T*
+(- Risk: 68/100 MEDIUM) Tj T*
+(- Affected hosts: wks-07) Tj T*
+(- Affected users: it_admin) Tj T*
+(- Related alerts: IOA-009, IOA-010) Tj T*
+(- Possible ATT&CK stages: T1021 Remote Services \(Lateral Movement\); T1569.002 System) Tj T*
+(    Services: Service Execution \(Lateral Movement\)) Tj T*
+(- Automation: Handled automatically: evidence gathered and safe response steps ran in) Tj T*
+(    simulation. Disruptive actions are held, and go to the SOC if risk rises.) Tj T*
+() Tj T*
+(Why this score:) Tj T*
+() Tj T*
+(- severity \(18.8 points\): Incident severity is HIGH.) Tj T*
+(- evidence confidence \(22.0 points\): Combined evidence confidence is 88%.) Tj T*
+(- ioc ioa signals \(16.0 points\): 2 distinct behavior rule\(s\), 0 threat intelligence) Tj T*
+(    match\(es\).) Tj T*
+(- behavioral anomalies \(9.9 points\): 1 statistically unusual activity window\(s\),) Tj T*
+(    strength 66 of 100. The strongest one counts.) Tj T*
+(- attack progression \(0.9 points\): 1 MITRE tactic\(s\) across 2 distinct detection\(s\):) Tj T*
+(    Lateral Movement.) Tj T*
+() Tj T*
+(Timeline:) Tj T*
+() Tj T*
+(- 2026-10-31T03:04:37.882036+00:00: 10.30.0.7 -> 10.30.0.20:445 TCP [IOA-009]) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 6 of 9) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 15 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+17 0 obj
+<< /Length 2839 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- 2026-10-31T03:04:42.882036+00:00: 10.30.0.7 -> 10.30.0.21:3389 TCP [IOA-009]) Tj T*
+(- 2026-10-31T03:04:47.882036+00:00: 10.30.0.7 -> 10.30.0.22:445 TCP [IOA-009]) Tj T*
+(- 2026-10-31T03:04:52.882036+00:00: 10.30.0.7 -> 10.30.0.23:22 TCP [IOA-009]) Tj T*
+(- 2026-10-31T03:05:07.882036+00:00: psexec.exe: psexec.exe \\\\10.30.0.20 cmd.exe) Tj T*
+(    [IOA-010]) Tj T*
+() Tj T*
+/F2 9 Tf
+(INC-000025: Successful Login After Repeated Failures \(app-01\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: ACTIVE, priority P2) Tj T*
+(- Severity: HIGH) Tj T*
+(- Confidence: 97%) Tj T*
+(- Risk: 74/100 HIGH) Tj T*
+(- Affected hosts: app-01) Tj T*
+(- Affected users: admin) Tj T*
+(- Related alerts: IOA-002, IOA-001) Tj T*
+(- Possible ATT&CK stages: T1078 Valid Accounts \(Initial Access\); T1110 Brute Force) Tj T*
+(    \(Credential Access\)) Tj T*
+(- Automation: Needs SOC approval: every response action waits for an analyst decision.) Tj T*
+(    Evidence is collected and an urgent notification is sent.) Tj T*
+() Tj T*
+(Why this score:) Tj T*
+() Tj T*
+(- severity \(18.8 points\): Incident severity is HIGH.) Tj T*
+(- evidence confidence \(24.2 points\): Combined evidence confidence is 97%.) Tj T*
+(- ioc ioa signals \(16.0 points\): 2 distinct behavior rule\(s\), 0 threat intelligence) Tj T*
+(    match\(es\).) Tj T*
+(- behavioral anomalies \(10.9 points\): 1 statistically unusual activity window\(s\),) Tj T*
+(    strength 73 of 100. The strongest one counts.) Tj T*
+(- attack progression \(4.4 points\): 2 MITRE tactic\(s\) across 2 distinct detection\(s\):) Tj T*
+(    Credential Access, Initial Access.) Tj T*
+() Tj T*
+(Timeline:) Tj T*
+() Tj T*
+(- 2026-10-31T03:48:13.809102+00:00: Failed login for admin from 203.0.113.10 to app-01) Tj T*
+(    \(x10\) [IOA-001, IOA-002]) Tj T*
+(- 2026-10-31T03:48:38.809102+00:00: Successful login for admin from 203.0.113.10 to) Tj T*
+(    app-01 [IOA-002]) Tj T*
+() Tj T*
+/F2 9 Tf
+(Affected users and hosts) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Users: admin, analyst1, deploy, it_admin) Tj T*
+(- Hosts: app-01, app-02, fin-02, wks-07) Tj T*
+() Tj T*
+/F2 9 Tf
+(Risk analysis) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Severity distribution \(alerts\): HIGH 5, LOW 1, MEDIUM 3) Tj T*
+(- Incident risk distribution: CRITICAL 0, HIGH 2, MEDIUM 2, LOW 0) Tj T*
+(- Alert risk distribution: CRITICAL 0, HIGH 0, MEDIUM 6, LOW 3) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real. Each) Tj T*
+(    incident above lists the factors behind its score.) Tj T*
+() Tj T*
+/F2 9 Tf
+(MITRE ATT&CK mappings) Tj T*
+/F1 9 Tf
+() Tj T*
+(- T1021 Remote Services \(Lateral Movement\)) Tj T*
+(- T1041 Exfiltration Over C2 Channel \(Exfiltration\)) Tj T*
+(- T1048 Exfiltration Over Alternative Protocol \(Exfiltration\)) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 7 of 9) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 17 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+19 0 obj
+<< /Length 3671 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- T1078 Valid Accounts \(Initial Access\)) Tj T*
+(- T1098 Account Manipulation \(Privilege Escalation\)) Tj T*
+(- T1110 Brute Force \(Credential Access\)) Tj T*
+(- T1548 Abuse Elevation Control Mechanism \(Privilege Escalation\)) Tj T*
+(- T1560 Archive Collected Data \(Collection\)) Tj T*
+(- T1569.002 System Services: Service Execution \(Lateral Movement\)) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended remediation) Tj T*
+/F1 9 Tf
+() Tj T*
+(Historical analysis is read-only. Nothing below has been done, and any disruptive step) Tj T*
+(    needs an analyst to approve it.) Tj T*
+() Tj T*
+(- IOA-001 Brute Force Login Attempts: Review the targeted accounts and whether this) Tj T*
+(    source address is expected. Consider rate limiting or blocking the source address) Tj T*
+(    after review.) Tj T*
+(- IOA-002 Successful Login After Repeated Failures: Confirm with the account owner) Tj T*
+(    whether this login was theirs. If not, reset the account's password and revoke its) Tj T*
+(    active sessions. Review what the account did after this login.) Tj T*
+(- IOA-003 Suspicious Privilege Escalation: Check whether a change ticket or admin task) Tj T*
+(    explains this. Review the group membership of the affected account.) Tj T*
+(- IOA-007 Possible Data Exfiltration: Identify the destination and the process that sent) Tj T*
+(    the data. Check whether the user recently accessed sensitive file shares. Consider) Tj T*
+(    isolating the host after analyst review.) Tj T*
+(- IOA-009 Internal Lateral Movement Pattern: Check the destination hosts for new) Tj T*
+(    sessions, processes and accounts. Determine whether this host normally administers) Tj T*
+(    those systems.) Tj T*
+(- IOA-010 Remote Execution Tool: Scan the source workstation for unauthorized admin) Tj T*
+(    tools. Identify the target hosts and review their activity.) Tj T*
+(- IOA-016 Archive Staging: Check what the archive contains and whether it left this) Tj T*
+(    host.) Tj T*
+(- IOC-IP Threat Intelligence Match: IP: Verify the indicator is still current. Threat) Tj T*
+(    intelligence can be stale or wrong. Look for other activity that confirms or rules) Tj T*
+(    out compromise.) Tj T*
+(- UEBA-002 Outbound Volume Far Above This Host's Baseline: Review what this host sent,) Tj T*
+(    and to where.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended actions \(simulation only\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- INC-000022, EXECUTED: Review affected account on deploy) Tj T*
+(- INC-000022, EXECUTED: Collect additional logs on app-02) Tj T*
+(- INC-000023, PENDING: Collect additional logs on fin-02) Tj T*
+(- INC-000023, PENDING: Investigate source IP on 198.51.100.77) Tj T*
+(- INC-000023, PENDING: Block test IP on 198.51.100.77 \(disruptive, needs approval\)) Tj T*
+(- INC-000023, PENDING: Collect additional logs on 10.40.0.2) Tj T*
+(- INC-000024, EXECUTED: Investigate source IP on 10.30.0.7) Tj T*
+(- INC-000024, EXECUTED: Collect additional logs on wks-07) Tj T*
+(- INC-000024, EXECUTED: Inspect suspicious process on psexec.exe) Tj T*
+(- INC-000024, HELD: Terminate test process on psexec.exe \(disruptive, needs approval\)) Tj T*
+(- INC-000025, PENDING: Investigate source IP on 203.0.113.10) Tj T*
+(- INC-000025, PENDING: Review affected account on admin) Tj T*
+(- INC-000025, PENDING: Block test IP on 203.0.113.10 \(disruptive, needs approval\)) Tj T*
+(- INC-000025, PENDING: Disable test account on admin \(disruptive, needs approval\)) Tj T*
+() Tj T*
+/F2 9 Tf
+(Analyst decisions) Tj T*
+/F1 9 Tf
+() Tj T*
+(- INC-000022, EXECUTED: Review affected account on deploy by automation at) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 8 of 9) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 19 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+21 0 obj
+<< /Length 3540 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(    2026-10-31T04:31:51.490747+00:00. Reason: MEDIUM risk: safe steps are handled) Tj T*
+(    automatically) Tj T*
+(- INC-000022, EXECUTED: Collect additional logs on app-02 by automation at) Tj T*
+(    2026-10-31T04:31:51.677153+00:00. Reason: MEDIUM risk: safe steps are handled) Tj T*
+(    automatically) Tj T*
+(- INC-000024, EXECUTED: Investigate source IP on 10.30.0.7 by automation at) Tj T*
+(    2026-10-31T04:31:49.630451+00:00. Reason: MEDIUM risk: safe steps are handled) Tj T*
+(    automatically) Tj T*
+(- INC-000024, EXECUTED: Collect additional logs on wks-07 by automation at) Tj T*
+(    2026-10-31T04:31:50.113967+00:00. Reason: MEDIUM risk: safe steps are handled) Tj T*
+(    automatically) Tj T*
+(- INC-000024, EXECUTED: Inspect suspicious process on psexec.exe by automation at) Tj T*
+(    2026-10-31T04:31:50.275161+00:00. Reason: MEDIUM risk: safe steps are handled) Tj T*
+(    automatically) Tj T*
+() Tj T*
+/F2 9 Tf
+(Model performance) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Event level: TP 21, FP 0, FN 0, TN 1979, precision 1.0, recall 1.0, F1 1.0, false-) Tj T*
+(    positive rate 0.0) Tj T*
+(- Alert level: TP 9, FP 0, FN 0, precision 1.0, recall 1.0, F1 1.0) Tj T*
+(- Incident level: TP 4, FP 0, FN 0, precision 1.0, recall 1.0, F1 1.0) Tj T*
+(- Anomaly model, event level: TP 15, FP 4, FN 6, TN 1975, precision 0.7895, recall) Tj T*
+(    0.7143, F1 0.75, false-positive rate 0.002) Tj T*
+(- Detection latency: 1.902 seconds) Tj T*
+(- Expected rules that did not fire: none) Tj T*
+(- Rules that fired unexpectedly: none) Tj T*
+(- These numbers come from labelled data, and risk scores play no part in them.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Known limitations) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Detection combines behavior rules, threat intelligence matches, statistical baselines) Tj T*
+(    and two models. None of them proves an attack happened, and none proves that one did) Tj T*
+(    not.) Tj T*
+(- The saved network model runs only on flow data with its 78 CIC-IDS2017 features. It) Tj T*
+(    has not been validated here, no preprocessing pipeline was saved with it, and its) Tj T*
+(    output is uncalibrated, so no accuracy or prediction confidence is claimed.) Tj T*
+(- The anomaly model was trained on synthetic normal activity, and does not run on live) Tj T*
+(    telemetry. Its findings are statistical anomalies, not confirmed attacks.) Tj T*
+(- Threat intelligence only covers known indicators, and the bundled feed is synthetic.) Tj T*
+(    No match does not mean an event is safe.) Tj T*
+(- Performance metrics compare results with labels on synthetic or supplied data. They do) Tj T*
+(    not predict performance on real attacks.) Tj T*
+(- The synthetic scenarios and the detection rules were written by the same team, so) Tj T*
+(    scenario results show the pipeline works as designed.) Tj T*
+(- Behavioral checks need history. An entity with too little history is not judged.) Tj T*
+(- Window-based rules cite every matching event in their window, so a normal event inside) Tj T*
+(    an attack window counts as an event-level false positive.) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real.) Tj T*
+(- Historical analysis is read-only. Every response action is a recommendation that needs) Tj T*
+(    an analyst, and runs only in simulation. No firewall, account, host or process is) Tj T*
+(    changed.) Tj T*
+(- Analyst names are self-reported: there are no user accounts.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 9 of 9) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 21 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000170 00000 n 
+0000000265 00000 n 
+0000000365 00000 n 
+0000002977 00000 n 
+0000003113 00000 n 
+0000006640 00000 n 
+0000006776 00000 n 
+0000010883 00000 n 
+0000011020 00000 n 
+0000015109 00000 n 
+0000015247 00000 n 
+0000018349 00000 n 
+0000018487 00000 n 
+0000021464 00000 n 
+0000021602 00000 n 
+0000024494 00000 n 
+0000024632 00000 n 
+0000028356 00000 n 
+0000028494 00000 n 
+0000032087 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+32225
+%%EOF

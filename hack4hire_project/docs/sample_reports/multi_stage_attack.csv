@@ -1,0 +1,77 @@
+section,item,value,detail
+report,id,RPT-75FDCCE3A1,ALLSAFE Security Analysis Report: Multi-Stage Attack
+report,generated_at,2026-10-31T04:31:54.509906+00:00,
+assessment,verdict,THREATS_DETECTED,8 detection(s) have strong supporting evidence and need investigation.
+processing,kind,Simulation,
+processing,status,COMPLETED,
+processing,started_at,2026-10-31T04:31:08.993151+00:00,
+processing,completed_at,2026-10-31T04:31:12.492810+00:00,
+processing,total,44,
+processing,processed,44,
+processing,failed,0,
+processing,duplicates,0,
+engine,IOC enrichment,COMPLETED,5 of 44 events did not apply to this engine.
+engine,IOA behavior rules,COMPLETED,
+engine,Supervised ML (saved network model),SKIPPED,This data has no records with all 78 CIC-IDS2017 flow features the model needs. Logs of other kinds are never fed to it.
+engine,UEBA baselines,COMPLETED,21 of 44 events did not apply to this engine.
+engine,Anomaly model,COMPLETED,
+detection,alerts,11,
+detection,incidents,1,
+incident_risk,CRITICAL,1,
+incident_risk,HIGH,0,
+incident_risk,MEDIUM,0,
+incident_risk,LOW,0,
+ioa_matches,IOA-002,HIGH,203.0.113.50 logged in successfully after 12 failed attempts within 600s.
+ioa_matches,IOA-001,MEDIUM,12 failed logins from 203.0.113.50 within 300s (threshold 5).
+ioa_matches,IOA-003,HIGH,Privilege-related activity by svc_admin on web-01: net.exe: net localgroup administrators backup_svc /add.
+ioa_matches,IOA-004,CRITICAL,Account creation by svc_admin on web-01: net.exe: net user backup_svc Xy12 /add.
+ioa_matches,IOA-009,HIGH,10.10.1.10 reached 4 internal hosts on remote administration ports within 300s (threshold 3).
+ioa_matches,IOA-010,HIGH,Remote execution tool psexec.exe started on web-01: psexec.exe: psexec.exe \\10.10.1.20 cmd.exe.
+ioa_matches,IOA-016,LOW,Archive activity by svc_admin on web-01: 7z.exe: 7z.exe a C:\Temp\export.7z C:\Finance.
+ioa_matches,IOA-007,HIGH,10.10.1.10 sent 90.0 MB to external destinations within 600s (threshold 50 MB).
+ioc_matches,IOC-IP,MEDIUM,"dst_ip matched ip indicator 198.51.100.77 from feed 'allsafe-synthetic-demo-feed'. Synthetic: staging server for data theft in the demo scenarios. This is evidence to investigate, not proof of compromise."
+ueba_findings,UEBA-001,MEDIUM,"svc_admin logged in from 203.0.113.50, a source not seen in 7 earlier logins from 1 known source(s)."
+ueba_findings,UEBA-002,MEDIUM,"10.10.1.10 sent 30.0 MB in one transfer, 3 deviations above its average of 2.34 MB over 13 earlier transfers."
+anomaly,203.0.113.50,71,"Unusual compared with the model's synthetic baseline of normal activity: 12 failed logins (typically about 0.0), 13 events (typically about 1.6), 1 distinct destinations (typically about 0.3). A statistical anomaly, not a confirmed attack."
+anomaly,10.10.1.10,66,"Unusual compared with the model's synthetic baseline of normal activity: 4 connections to admin ports (typically about 0.0), 4 distinct destinations (typically about 0.3), 3 distinct destination ports (typically about 0.3). A statistical anomaly, not a confirmed attack."
+incident,INC-000003,98/100 CRITICAL,"Multi-Stage Attack on web-01: 7 tactics, 11 detections"
+action,INC-000003,PENDING,Investigate source IP on 203.0.113.50
+action,INC-000003,PENDING,Review affected account on svc_admin
+action,INC-000003,EXECUTED,Block test IP on 203.0.113.50
+action,INC-000003,PENDING,Disable test account on svc_admin
+action,INC-000003,PENDING,Collect additional logs on web-01
+action,INC-000003,PENDING,Investigate source IP on 10.10.1.10
+action,INC-000003,PENDING,Inspect suspicious process on psexec.exe
+action,INC-000003,PENDING,Terminate test process on psexec.exe
+action,INC-000003,PENDING,Investigate source IP on 198.51.100.77
+action,INC-000003,PENDING,Block test IP on 198.51.100.77
+action,INC-000003,PENDING,Collect additional logs on 10.10.1.10
+event_level,true_positives,25,
+event_level,false_positives,0,
+event_level,false_negatives,0,
+event_level,precision,1.0,
+event_level,recall,1.0,
+event_level,f1,1.0,
+event_level,true_negatives,19,
+event_level,false_positive_rate,0.0,
+alert_level,true_positives,11,
+alert_level,false_positives,0,
+alert_level,false_negatives,0,
+alert_level,precision,1.0,
+alert_level,recall,1.0,
+alert_level,f1,1.0,
+incident_level,true_positives,1,
+incident_level,false_positives,0,
+incident_level,false_negatives,0,
+incident_level,precision,1.0,
+incident_level,recall,1.0,
+incident_level,f1,1.0,
+anomaly_level,true_positives,17,
+anomaly_level,false_positives,0,
+anomaly_level,false_negatives,8,
+anomaly_level,precision,1.0,
+anomaly_level,recall,0.68,
+anomaly_level,f1,0.8095,
+anomaly_level,true_negatives,19,
+anomaly_level,false_positive_rate,0.0,
+metrics,detection_latency_seconds,0.27,

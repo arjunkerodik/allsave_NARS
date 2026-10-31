@@ -1,0 +1,56 @@
+{
+  "rules": [
+    {
+      "id": "UEBA-001",
+      "name": "Login From a New Source for an Established User",
+      "description": "An account with an established login history signed in from an address it has never used.",
+      "type": "baseline",
+      "detection_type": "UEBA",
+      "group_by": ["user", "src_ip"],
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 60,
+      "min_baseline_events": 5,
+      "logic": "A successful login from a new source, after at least 5 logins from other sources",
+      "explanation": "{user} logged in from {src_ip}, a source not seen in {baseline_logins} earlier logins from {known_sources} known source(s).",
+      "mitre": [{"id": "T1078", "name": "Valid Accounts", "tactic": "Initial Access"}],
+      "recommendations": ["Confirm with the account owner that this login was expected."]
+    },
+    {
+      "id": "UEBA-002",
+      "name": "Outbound Volume Far Above This Host's Baseline",
+      "description": "A single transfer was far larger than this address normally sends.",
+      "type": "baseline",
+      "detection_type": "UEBA",
+      "group_by": ["src_ip"],
+      "window_seconds": 3600,
+      "severity": "MEDIUM",
+      "confidence": 65,
+      "min_baseline_events": 10,
+      "min_bytes": 10485760,
+      "min_deviations": 3,
+      "logic": "One transfer of 10 MB or more, at least 3 deviations above at least 10 earlier transfers",
+      "explanation": "{src_ip} sent {observed_size_mb:.1f} MB in one transfer, {deviations:.0f} deviations above its average of {baseline_mean_mb:.2f} MB over {baseline_events} earlier transfers.",
+      "mitre": [{"id": "T1048", "name": "Exfiltration Over Alternative Protocol", "tactic": "Exfiltration"}],
+      "recommendations": ["Review what this host sent, and to where."]
+    },
+    {
+      "id": "UEBA-003",
+      "name": "Login Outside This User's Usual Hours",
+      "description": "An account with a regular pattern of login times signed in well outside it.",
+      "type": "baseline",
+      "detection_type": "UEBA",
+      "group_by": ["user"],
+      "window_seconds": 3600,
+      "severity": "LOW",
+      "confidence": 50,
+      "min_baseline_events": 10,
+      "max_usual_hours": 10,
+      "min_hours_outside": 3,
+      "logic": "A login at least 3 hours outside a span of 10 hours or fewer that holds at least 10 earlier logins",
+      "explanation": "{user} logged in at {login_hour} UTC. Their {baseline_logins} earlier logins were all between {usual_start} and {usual_end} UTC.",
+      "mitre": [{"id": "T1078", "name": "Valid Accounts", "tactic": "Initial Access"}],
+      "recommendations": ["Confirm with the account owner that this login was expected."]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"timestamp": "2026-01-15T09:00:00Z", "source": "network", "src_ip": "10.0.9.5", "dst_ip": "198.51.100.77", "dst_port": 443, "protocol": "TCP", "bytes": 2400, "hostname": "wks-05"}
+{"timestamp": "2026-01-15T09:01:00Z", "source": "network", "src_ip": "10.0.9.5", "dst_ip": "198.51.100.45", "dst_port": 443, "protocol": "TCP", "bytes": 900, "hostname": "wks-05"}
+{"timestamp": "2026-01-15T09:02:00Z", "source": "endpoint", "event_type": "file_create", "hostname": "wks-06", "user": "asha", "file_path": "C:\\Temp\\tool.exe", "file_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "details": "New file written"}
+{"timestamp": "2026-01-15T09:03:00Z", "source": "application", "event_type": "http_request", "src_ip": "10.0.9.7", "method": "GET", "url": "http://update-check.malware-demo.example/check", "status_code": 200, "hostname": "proxy-01"}

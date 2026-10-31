@@ -1,0 +1,401 @@
+timestamp,source,label,event_type,src_ip,user,hostname,method,endpoint,status_code,session_id,details,process_name,command_line,dst_ip,src_port,dst_port,protocol,bytes
+2026-01-15T09:00:09.835488+00:00,application,normal,authentication_success,10.90.0.5,user0004,wks-n0004,POST,/api/v1/auth/login,200,sess-10.90.0.5,Successful login for user0004,,,,,,,
+2026-01-15T09:00:19.404377+00:00,application,normal,http_request,10.90.0.9,user0008,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:01:29.778336+00:00,application,normal,http_request,10.90.0.2,user0001,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:02:12.724056+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:02:20.277082+00:00,application,normal,http_request,10.90.0.18,user0017,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:02:40.484561+00:00,endpoint,normal,process_start,,user0000,wks-n0000,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T09:02:46.289191+00:00,application,normal,http_request,10.90.0.17,user0016,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:02:50.126776+00:00,application,normal,authentication_success,10.90.0.20,user0019,wks-n0019,POST,/api/v1/auth/login,200,sess-10.90.0.20,Successful login for user0019,,,,,,,
+2026-01-15T09:03:38.030797+00:00,application,normal,authentication_success,10.90.0.14,user0013,wks-n0013,POST,/api/v1/auth/login,200,sess-10.90.0.14,Successful login for user0013,,,,,,,
+2026-01-15T09:04:35.299176+00:00,network,normal,network_connection,10.90.0.7,,wks-n0006,,,,,,,,198.51.100.45,49152,443,HTTPS,107715
+2026-01-15T09:05:54.652818+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T09:06:30.707503+00:00,network,normal,network_connection,10.90.0.17,,wks-n0016,,,,,,,,198.51.100.42,49152,443,HTTPS,7278
+2026-01-15T09:06:49.122504+00:00,application,normal,http_request,10.90.0.7,user0006,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:07:12.973830+00:00,application,normal,http_request,10.90.0.13,user0012,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:07:28.184316+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.47,49152,443,HTTPS,43046
+2026-01-15T09:07:36.255633+00:00,endpoint,normal,process_start,,user0010,wks-n0010,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:07:46.077786+00:00,application,normal,http_request,10.90.0.2,user0001,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:07:59.682251+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:08:05.513692+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.44,49152,443,HTTPS,51338
+2026-01-15T09:08:22.959050+00:00,endpoint,normal,process_start,,user0002,wks-n0002,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T09:08:26.272148+00:00,endpoint,normal,process_start,,user0006,wks-n0006,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:08:29.204272+00:00,application,normal,http_request,10.90.0.9,user0008,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:08:41.541264+00:00,application,normal,authentication_success,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,200,sess-10.90.0.18,Successful login for user0017,,,,,,,
+2026-01-15T09:08:42.331918+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:08:46.592752+00:00,network,normal,network_connection,10.90.0.17,,wks-n0016,,,,,,,,198.51.100.47,49152,443,HTTPS,65633
+2026-01-15T09:09:01.331707+00:00,endpoint,normal,process_start,,user0013,wks-n0013,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T09:09:12.527090+00:00,network,normal,network_connection,10.90.0.10,,wks-n0009,,,,,,,,198.51.100.49,49152,443,HTTPS,166382
+2026-01-15T09:10:05.241122+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T09:10:08.291084+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.44,49152,443,HTTPS,157466
+2026-01-15T09:10:15.032023+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T09:10:21.319873+00:00,endpoint,normal,process_start,,user0019,wks-n0019,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:11:41.500147+00:00,endpoint,normal,process_start,,user0002,wks-n0002,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:11:59.115050+00:00,network,normal,network_connection,10.90.0.4,,wks-n0003,,,,,,,,198.51.100.43,49152,443,HTTPS,77690
+2026-01-15T09:12:22.001130+00:00,endpoint,normal,process_start,,user0018,wks-n0018,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T09:12:35.408389+00:00,endpoint,normal,process_start,,user0019,wks-n0019,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:12:45.811096+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:12:48.084327+00:00,application,normal,http_request,10.90.0.6,user0005,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:13:04.858075+00:00,application,normal,http_request,10.90.0.20,user0019,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:13:11.483796+00:00,application,normal,authentication_failure,10.90.0.20,user0019,wks-n0019,POST,/api/v1/auth/login,401,,Failed login for user0019,,,,,,,
+2026-01-15T09:13:48.566646+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T09:14:07.663310+00:00,application,normal,http_request,10.90.0.20,user0019,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:14:22.146154+00:00,application,normal,authentication_success,10.90.0.6,user0005,wks-n0005,POST,/api/v1/auth/login,200,sess-10.90.0.6,Successful login for user0005,,,,,,,
+2026-01-15T09:14:44.464061+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.47,49152,443,HTTPS,126432
+2026-01-15T09:14:54.351560+00:00,application,normal,http_request,10.90.0.14,user0013,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:15:30.418559+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T09:15:35.820688+00:00,endpoint,normal,process_start,,user0001,wks-n0001,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T09:15:50.567713+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T09:15:55.492379+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T09:16:27.367939+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:17:04.319123+00:00,application,normal,http_request,10.90.0.7,user0006,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:17:15.829017+00:00,application,normal,authentication_success,10.90.0.19,user0018,wks-n0018,POST,/api/v1/auth/login,200,sess-10.90.0.19,Successful login for user0018,,,,,,,
+2026-01-15T09:17:19.830031+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T09:17:55.449221+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T09:17:56.163424+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T09:18:09.107512+00:00,network,normal,network_connection,10.90.0.4,,wks-n0003,,,,,,,,198.51.100.49,49152,443,HTTPS,7184
+2026-01-15T09:18:42.569465+00:00,application,normal,authentication_failure,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,401,,Failed login for user0017,,,,,,,
+2026-01-15T09:19:16.985181+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.41,49152,443,HTTPS,69939
+2026-01-15T09:19:18.655352+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.44,49152,443,HTTPS,191532
+2026-01-15T09:19:25.066008+00:00,network,normal,network_connection,10.90.0.6,,wks-n0005,,,,,,,,198.51.100.41,49152,443,HTTPS,101093
+2026-01-15T09:19:48.713992+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T09:19:53.695402+00:00,application,normal,http_request,10.90.0.3,user0002,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:20:09.948328+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:20:18.678784+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T09:21:27.100215+00:00,endpoint,normal,process_start,,user0000,wks-n0000,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T09:21:51.093990+00:00,endpoint,normal,process_start,,user0005,wks-n0005,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T09:22:15.687768+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T09:22:46.913140+00:00,network,normal,network_connection,10.90.0.12,,wks-n0011,,,,,,,,198.51.100.46,49152,443,HTTPS,8105
+2026-01-15T09:23:10.838589+00:00,endpoint,normal,process_start,,user0017,wks-n0017,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:23:14.243611+00:00,network,normal,network_connection,10.90.0.20,,wks-n0019,,,,,,,,198.51.100.47,49152,443,HTTPS,190063
+2026-01-15T09:23:14.692583+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:23:39.851449+00:00,application,normal,authentication_failure,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,401,,Failed login for user0012,,,,,,,
+2026-01-15T09:23:46.173395+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:24:14.653213+00:00,application,normal,authentication_success,10.90.0.2,user0001,wks-n0001,POST,/api/v1/auth/login,200,sess-10.90.0.2,Successful login for user0001,,,,,,,
+2026-01-15T09:24:24.535959+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:24:24.737859+00:00,application,normal,authentication_success,10.90.0.3,user0002,wks-n0002,POST,/api/v1/auth/login,200,sess-10.90.0.3,Successful login for user0002,,,,,,,
+2026-01-15T09:24:42.902732+00:00,application,normal,http_request,10.90.0.18,user0017,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:25:12.643790+00:00,application,normal,http_request,10.90.0.6,user0005,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:25:26.491991+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.41,49152,443,HTTPS,166777
+2026-01-15T09:25:49.304061+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:26:50.727623+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.46,49152,443,HTTPS,89397
+2026-01-15T09:27:41.300115+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:27:41.823453+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:27:56.827282+00:00,application,normal,authentication_success,10.90.0.2,user0001,wks-n0001,POST,/api/v1/auth/login,200,sess-10.90.0.2,Successful login for user0001,,,,,,,
+2026-01-15T09:28:19.986908+00:00,network,normal,network_connection,10.90.0.7,,wks-n0006,,,,,,,,198.51.100.45,49152,443,HTTPS,50815
+2026-01-15T09:29:03.933125+00:00,application,normal,authentication_success,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,200,sess-10.90.0.10,Successful login for user0009,,,,,,,
+2026-01-15T09:29:13.835519+00:00,application,normal,http_request,10.90.0.5,user0004,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:29:17.416557+00:00,application,normal,http_request,10.90.0.6,user0005,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:29:20.829690+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T09:29:26.450138+00:00,application,normal,http_request,10.90.0.5,user0004,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:29:35.357269+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T09:29:42.583436+00:00,endpoint,normal,process_start,,user0010,wks-n0010,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T09:29:46.891643+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T09:29:55.137958+00:00,application,normal,http_request,10.90.0.9,user0008,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:30:08.806365+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T09:30:13.210642+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:30:17.695567+00:00,application,normal,http_request,10.90.0.13,user0012,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:30:28.370028+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:30:48.256316+00:00,application,normal,authentication_success,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,200,sess-10.90.0.10,Successful login for user0009,,,,,,,
+2026-01-15T09:30:51.937630+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T09:31:07.426526+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.40,49152,443,HTTPS,194466
+2026-01-15T09:31:22.272536+00:00,application,normal,authentication_success,10.90.0.2,user0001,wks-n0001,POST,/api/v1/auth/login,200,sess-10.90.0.2,Successful login for user0001,,,,,,,
+2026-01-15T09:31:27.641810+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.44,49152,443,HTTPS,1488
+2026-01-15T09:31:31.775659+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T09:32:17.064284+00:00,application,normal,http_request,10.90.0.1,user0000,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:32:27.211902+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.44,49152,443,HTTPS,106916
+2026-01-15T09:32:51.508019+00:00,endpoint,normal,process_start,,user0003,wks-n0003,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T09:33:41.791713+00:00,application,normal,http_request,10.90.0.13,user0012,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:34:02.854222+00:00,network,normal,network_connection,10.90.0.7,,wks-n0006,,,,,,,,198.51.100.43,49152,443,HTTPS,131130
+2026-01-15T09:34:05.887619+00:00,application,normal,http_request,10.90.0.11,user0010,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:34:47.718010+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T09:35:33.960494+00:00,application,normal,http_request,10.90.0.17,user0016,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:36:01.916397+00:00,network,normal,network_connection,10.90.0.2,,wks-n0001,,,,,,,,198.51.100.47,49152,443,HTTPS,188037
+2026-01-15T09:36:10.855402+00:00,application,normal,authentication_success,10.90.0.20,user0019,wks-n0019,POST,/api/v1/auth/login,200,sess-10.90.0.20,Successful login for user0019,,,,,,,
+2026-01-15T09:36:30.560834+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T09:37:24.057565+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.40,49152,443,HTTPS,76413
+2026-01-15T09:37:25.155430+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.45,49152,443,HTTPS,116481
+2026-01-15T09:37:26.345309+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:38:03.076771+00:00,application,normal,authentication_success,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,200,sess-10.90.0.10,Successful login for user0009,,,,,,,
+2026-01-15T09:38:17.799933+00:00,application,normal,http_request,10.90.0.14,user0013,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:38:18.871739+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:38:26.307693+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:38:51.595907+00:00,application,normal,http_request,10.90.0.5,user0004,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:38:56.742626+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.41,49152,443,HTTPS,51812
+2026-01-15T09:39:09.633018+00:00,application,normal,http_request,10.90.0.13,user0012,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:39:14.749225+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T09:40:14.396044+00:00,application,normal,http_request,10.90.0.3,user0002,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:40:33.971307+00:00,application,normal,http_request,10.90.0.14,user0013,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:40:48.881008+00:00,endpoint,normal,process_start,,user0011,wks-n0011,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:40:57.442124+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:41:14.372539+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:41:16.513054+00:00,application,normal,authentication_success,10.90.0.11,user0010,wks-n0010,POST,/api/v1/auth/login,200,sess-10.90.0.11,Successful login for user0010,,,,,,,
+2026-01-15T09:41:38.407359+00:00,network,normal,network_connection,10.90.0.1,,wks-n0000,,,,,,,,198.51.100.40,49152,443,HTTPS,4522
+2026-01-15T09:42:15.300006+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T09:42:22.548358+00:00,application,normal,http_request,10.90.0.14,user0013,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:42:27.244972+00:00,endpoint,normal,process_start,,user0014,wks-n0014,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:42:41.012423+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:44:14.701585+00:00,application,normal,authentication_success,10.90.0.5,user0004,wks-n0004,POST,/api/v1/auth/login,200,sess-10.90.0.5,Successful login for user0004,,,,,,,
+2026-01-15T09:44:30.074097+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T09:44:38.039961+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:44:45.391469+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T09:44:59.696719+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.41,49152,443,HTTPS,47821
+2026-01-15T09:45:13.433858+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.47,49152,443,HTTPS,73249
+2026-01-15T09:45:30.997055+00:00,network,normal,network_connection,10.90.0.8,,wks-n0007,,,,,,,,198.51.100.42,49152,443,HTTPS,139841
+2026-01-15T09:45:36.933769+00:00,network,normal,network_connection,10.90.0.10,,wks-n0009,,,,,,,,198.51.100.46,49152,443,HTTPS,23505
+2026-01-15T09:46:06.476842+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.44,49152,443,HTTPS,114512
+2026-01-15T09:46:07.280817+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:46:08.837467+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:46:12.796980+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.45,49152,443,HTTPS,37305
+2026-01-15T09:46:25.308098+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T09:46:38.700669+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.41,49152,443,HTTPS,10499
+2026-01-15T09:46:42.326792+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:46:54.837862+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T09:47:08.875551+00:00,application,normal,authentication_success,10.90.0.19,user0018,wks-n0018,POST,/api/v1/auth/login,200,sess-10.90.0.19,Successful login for user0018,,,,,,,
+2026-01-15T09:47:17.379743+00:00,application,normal,authentication_success,10.90.0.6,user0005,wks-n0005,POST,/api/v1/auth/login,200,sess-10.90.0.6,Successful login for user0005,,,,,,,
+2026-01-15T09:47:46.101340+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T09:47:47.449498+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T09:47:52.952102+00:00,endpoint,normal,process_start,,user0013,wks-n0013,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T09:47:58.168198+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T09:48:03.439383+00:00,network,normal,network_connection,10.90.0.17,,wks-n0016,,,,,,,,198.51.100.46,49152,443,HTTPS,121641
+2026-01-15T09:48:26.853855+00:00,network,normal,network_connection,10.90.0.17,,wks-n0016,,,,,,,,198.51.100.48,49152,443,HTTPS,90889
+2026-01-15T09:48:33.823503+00:00,network,normal,network_connection,10.90.0.12,,wks-n0011,,,,,,,,198.51.100.42,49152,443,HTTPS,4236
+2026-01-15T09:48:34.362790+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T09:48:43.118816+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T09:48:44.706709+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:48:58.824325+00:00,endpoint,normal,process_start,,user0012,wks-n0012,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:49:41.376194+00:00,network,normal,network_connection,10.90.0.1,,wks-n0000,,,,,,,,198.51.100.45,49152,443,HTTPS,169446
+2026-01-15T09:50:25.318745+00:00,endpoint,normal,process_start,,user0003,wks-n0003,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:50:28.523549+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T09:50:32.314584+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T09:50:33.190613+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T09:50:55.121305+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T09:51:02.282694+00:00,application,normal,http_request,10.90.0.3,user0002,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:51:30.561858+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T09:51:40.312849+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.48,49152,443,HTTPS,134235
+2026-01-15T09:52:03.427945+00:00,network,normal,network_connection,10.90.0.7,,wks-n0006,,,,,,,,198.51.100.43,49152,443,HTTPS,7838
+2026-01-15T09:52:04.260545+00:00,application,normal,authentication_success,10.90.0.11,user0010,wks-n0010,POST,/api/v1/auth/login,200,sess-10.90.0.11,Successful login for user0010,,,,,,,
+2026-01-15T09:53:04.427721+00:00,endpoint,normal,process_start,,user0005,wks-n0005,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T09:53:33.701992+00:00,application,normal,http_request,10.90.0.11,user0010,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T09:53:53.619776+00:00,network,normal,network_connection,10.90.0.9,,wks-n0008,,,,,,,,198.51.100.40,49152,443,HTTPS,28229
+2026-01-15T09:54:05.474164+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T09:54:06.195045+00:00,endpoint,normal,process_start,,user0004,wks-n0004,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T09:55:04.589925+00:00,network,normal,network_connection,10.90.0.17,,wks-n0016,,,,,,,,198.51.100.47,49152,443,HTTPS,70926
+2026-01-15T09:55:16.972515+00:00,endpoint,normal,process_start,,user0010,wks-n0010,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T09:55:18.651114+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T09:55:45.572544+00:00,network,normal,network_connection,10.90.0.15,,wks-n0014,,,,,,,,198.51.100.48,49152,443,HTTPS,52732
+2026-01-15T09:55:49.966580+00:00,network,normal,network_connection,10.90.0.15,,wks-n0014,,,,,,,,198.51.100.47,49152,443,HTTPS,47572
+2026-01-15T09:55:52.333434+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T09:56:24.575872+00:00,application,normal,authentication_success,10.90.0.11,user0010,wks-n0010,POST,/api/v1/auth/login,200,sess-10.90.0.11,Successful login for user0010,,,,,,,
+2026-01-15T09:56:47.340976+00:00,application,normal,authentication_success,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,200,sess-10.90.0.18,Successful login for user0017,,,,,,,
+2026-01-15T09:57:02.190384+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:58:03.609526+00:00,application,normal,authentication_success,10.90.0.3,user0002,wks-n0002,POST,/api/v1/auth/login,200,sess-10.90.0.3,Successful login for user0002,,,,,,,
+2026-01-15T09:58:06.033984+00:00,application,normal,authentication_success,10.90.0.5,user0004,wks-n0004,POST,/api/v1/auth/login,200,sess-10.90.0.5,Successful login for user0004,,,,,,,
+2026-01-15T09:58:16.140578+00:00,application,normal,authentication_success,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,200,sess-10.90.0.18,Successful login for user0017,,,,,,,
+2026-01-15T09:58:51.669478+00:00,application,normal,http_request,10.90.0.7,user0006,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T09:58:58.685490+00:00,network,normal,network_connection,10.90.0.6,,wks-n0005,,,,,,,,198.51.100.49,49152,443,HTTPS,91512
+2026-01-15T09:59:24.837789+00:00,endpoint,normal,process_start,,user0010,wks-n0010,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:00:31.471569+00:00,network,normal,network_connection,10.90.0.1,,wks-n0000,,,,,,,,198.51.100.49,49152,443,HTTPS,186933
+2026-01-15T10:00:43.250204+00:00,application,normal,http_request,10.90.0.11,user0010,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:00:52.736495+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:00:55.540741+00:00,application,normal,authentication_success,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,200,sess-10.90.0.18,Successful login for user0017,,,,,,,
+2026-01-15T10:00:58.724313+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:01:15.938488+00:00,network,normal,network_connection,10.90.0.15,,wks-n0014,,,,,,,,198.51.100.49,49152,443,HTTPS,1530
+2026-01-15T10:01:25.570417+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.43,49152,443,HTTPS,107390
+2026-01-15T10:01:42.491363+00:00,network,normal,network_connection,10.90.0.8,,wks-n0007,,,,,,,,198.51.100.41,49152,443,HTTPS,173074
+2026-01-15T10:02:11.416315+00:00,network,normal,network_connection,10.90.0.6,,wks-n0005,,,,,,,,198.51.100.45,49152,443,HTTPS,3287
+2026-01-15T10:02:14.081042+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:02:36.155545+00:00,endpoint,normal,process_start,,user0013,wks-n0013,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:03:07.129090+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:03:40.664307+00:00,endpoint,normal,process_start,,user0011,wks-n0011,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:03:41.229756+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.41,49152,443,HTTPS,147378
+2026-01-15T10:03:41.727441+00:00,endpoint,normal,process_start,,user0014,wks-n0014,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:04:04.037885+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.46,49152,443,HTTPS,28579
+2026-01-15T10:04:32.739918+00:00,endpoint,normal,process_start,,user0006,wks-n0006,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:04:36.525665+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.47,49152,443,HTTPS,21596
+2026-01-15T10:04:52.938376+00:00,application,normal,http_request,10.90.0.19,user0018,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:04:55.454293+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:05:55.967346+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.48,49152,443,HTTPS,73486
+2026-01-15T10:06:36.459306+00:00,application,normal,http_request,10.90.0.9,user0008,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:06:47.987265+00:00,application,normal,http_request,10.90.0.5,user0004,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:07:01.396175+00:00,endpoint,normal,process_start,,user0000,wks-n0000,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T10:07:49.472940+00:00,application,normal,authentication_success,10.90.0.6,user0005,wks-n0005,POST,/api/v1/auth/login,200,sess-10.90.0.6,Successful login for user0005,,,,,,,
+2026-01-15T10:08:54.821532+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:08:56.694565+00:00,application,normal,authentication_failure,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,401,,Failed login for user0009,,,,,,,
+2026-01-15T10:09:15.141230+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T10:09:16.995686+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:09:20.128760+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:09:47.383782+00:00,application,normal,authentication_success,10.90.0.17,user0016,wks-n0016,POST,/api/v1/auth/login,200,sess-10.90.0.17,Successful login for user0016,,,,,,,
+2026-01-15T10:09:58.995112+00:00,application,normal,http_request,10.90.0.3,user0002,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:10:01.854621+00:00,application,normal,authentication_success,10.90.0.19,user0018,wks-n0018,POST,/api/v1/auth/login,200,sess-10.90.0.19,Successful login for user0018,,,,,,,
+2026-01-15T10:10:53.848577+00:00,network,normal,network_connection,10.90.0.15,,wks-n0014,,,,,,,,198.51.100.42,49152,443,HTTPS,160820
+2026-01-15T10:11:17.436076+00:00,endpoint,normal,process_start,,user0019,wks-n0019,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:11:57.131703+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T10:12:13.546558+00:00,endpoint,normal,process_start,,user0016,wks-n0016,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T10:12:40.437280+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:12:44.191309+00:00,endpoint,normal,process_start,,user0006,wks-n0006,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:12:59.044234+00:00,application,normal,authentication_success,10.90.0.19,user0018,wks-n0018,POST,/api/v1/auth/login,200,sess-10.90.0.19,Successful login for user0018,,,,,,,
+2026-01-15T10:13:00.243443+00:00,endpoint,normal,process_start,,user0002,wks-n0002,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:13:04.504937+00:00,application,normal,authentication_success,10.90.0.3,user0002,wks-n0002,POST,/api/v1/auth/login,200,sess-10.90.0.3,Successful login for user0002,,,,,,,
+2026-01-15T10:13:10.649534+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.48,49152,443,HTTPS,162398
+2026-01-15T10:14:11.586167+00:00,network,normal,network_connection,10.90.0.1,,wks-n0000,,,,,,,,198.51.100.40,49152,443,HTTPS,114912
+2026-01-15T10:14:57.131328+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T10:15:02.000559+00:00,application,normal,authentication_success,10.90.0.11,user0010,wks-n0010,POST,/api/v1/auth/login,200,sess-10.90.0.11,Successful login for user0010,,,,,,,
+2026-01-15T10:15:04.449593+00:00,application,normal,http_request,10.90.0.14,user0013,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:15:21.111845+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:15:33.313722+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T10:16:03.922515+00:00,endpoint,normal,process_start,,user0002,wks-n0002,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:16:07.748966+00:00,endpoint,normal,process_start,,user0011,wks-n0011,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:16:07.964445+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T10:16:18.234756+00:00,endpoint,normal,process_start,,user0013,wks-n0013,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:16:21.295901+00:00,application,normal,authentication_success,10.90.0.4,user0003,wks-n0003,POST,/api/v1/auth/login,200,sess-10.90.0.4,Successful login for user0003,,,,,,,
+2026-01-15T10:16:22.381862+00:00,network,normal,network_connection,10.90.0.20,,wks-n0019,,,,,,,,198.51.100.43,49152,443,HTTPS,63254
+2026-01-15T10:16:26.694594+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T10:16:27.263115+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:16:29.692511+00:00,application,normal,http_request,10.90.0.20,user0019,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:16:35.112695+00:00,application,normal,http_request,10.90.0.9,user0008,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:16:42.110009+00:00,endpoint,normal,process_start,,user0002,wks-n0002,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:16:50.335875+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:17:07.446711+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:17:07.893423+00:00,endpoint,normal,process_start,,user0002,wks-n0002,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:17:11.180038+00:00,network,normal,network_connection,10.90.0.2,,wks-n0001,,,,,,,,198.51.100.48,49152,443,HTTPS,164951
+2026-01-15T10:17:12.897591+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:17:27.641590+00:00,network,normal,network_connection,10.90.0.10,,wks-n0009,,,,,,,,198.51.100.44,49152,443,HTTPS,138978
+2026-01-15T10:17:39.327753+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:17:53.000573+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:18:23.951175+00:00,application,normal,authentication_success,10.90.0.2,user0001,wks-n0001,POST,/api/v1/auth/login,200,sess-10.90.0.2,Successful login for user0001,,,,,,,
+2026-01-15T10:18:35.758539+00:00,application,normal,http_request,10.90.0.2,user0001,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:18:51.089582+00:00,endpoint,normal,process_start,,user0001,wks-n0001,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:18:52.583196+00:00,network,normal,network_connection,10.90.0.7,,wks-n0006,,,,,,,,198.51.100.44,49152,443,HTTPS,66042
+2026-01-15T10:19:01.320074+00:00,application,normal,http_request,10.90.0.1,user0000,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:19:06.703893+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:19:27.121279+00:00,application,normal,authentication_success,10.90.0.11,user0010,wks-n0010,POST,/api/v1/auth/login,200,sess-10.90.0.11,Successful login for user0010,,,,,,,
+2026-01-15T10:20:20.199446+00:00,network,normal,network_connection,10.90.0.4,,wks-n0003,,,,,,,,198.51.100.42,49152,443,HTTPS,188226
+2026-01-15T10:21:23.902129+00:00,endpoint,normal,process_start,,user0005,wks-n0005,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:21:33.695676+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T10:21:50.940444+00:00,application,normal,authentication_success,10.90.0.15,user0014,wks-n0014,POST,/api/v1/auth/login,200,sess-10.90.0.15,Successful login for user0014,,,,,,,
+2026-01-15T10:21:56.846660+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T10:22:20.164489+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T10:22:29.650790+00:00,endpoint,normal,process_start,,user0013,wks-n0013,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:22:38.846724+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:23:03.733243+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:23:26.922391+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.44,49152,443,HTTPS,110035
+2026-01-15T10:23:30.376019+00:00,endpoint,normal,process_start,,user0015,wks-n0015,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:23:38.702888+00:00,application,normal,authentication_success,10.90.0.3,user0002,wks-n0002,POST,/api/v1/auth/login,200,sess-10.90.0.3,Successful login for user0002,,,,,,,
+2026-01-15T10:23:54.368752+00:00,network,normal,network_connection,10.90.0.9,,wks-n0008,,,,,,,,198.51.100.43,49152,443,HTTPS,117816
+2026-01-15T10:24:05.326675+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T10:24:24.026679+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:24:46.056308+00:00,endpoint,normal,process_start,,user0011,wks-n0011,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:25:10.352431+00:00,application,normal,authentication_success,10.90.0.15,user0014,wks-n0014,POST,/api/v1/auth/login,200,sess-10.90.0.15,Successful login for user0014,,,,,,,
+2026-01-15T10:25:33.769674+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:26:28.876354+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T10:26:35.318900+00:00,network,normal,network_connection,10.90.0.20,,wks-n0019,,,,,,,,198.51.100.41,49152,443,HTTPS,6858
+2026-01-15T10:26:37.138062+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:26:58.550393+00:00,network,normal,network_connection,10.90.0.6,,wks-n0005,,,,,,,,198.51.100.40,49152,443,HTTPS,40123
+2026-01-15T10:27:01.391547+00:00,application,normal,authentication_success,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,200,sess-10.90.0.18,Successful login for user0017,,,,,,,
+2026-01-15T10:27:29.566697+00:00,application,normal,http_request,10.90.0.20,user0019,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:27:43.228746+00:00,network,normal,network_connection,10.90.0.1,,wks-n0000,,,,,,,,198.51.100.47,49152,443,HTTPS,68441
+2026-01-15T10:27:55.611115+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.45,49152,443,HTTPS,50486
+2026-01-15T10:27:57.879184+00:00,application,normal,authentication_success,10.90.0.2,user0001,wks-n0001,POST,/api/v1/auth/login,200,sess-10.90.0.2,Successful login for user0001,,,,,,,
+2026-01-15T10:28:23.097364+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.41,49152,443,HTTPS,134357
+2026-01-15T10:28:33.046474+00:00,application,normal,http_request,10.90.0.12,user0011,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:28:37.113696+00:00,endpoint,normal,process_start,,user0004,wks-n0004,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:28:50.528816+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.42,49152,443,HTTPS,135853
+2026-01-15T10:29:00.635615+00:00,application,normal,authentication_success,10.90.0.15,user0014,wks-n0014,POST,/api/v1/auth/login,200,sess-10.90.0.15,Successful login for user0014,,,,,,,
+2026-01-15T10:29:41.900482+00:00,network,normal,network_connection,10.90.0.9,,wks-n0008,,,,,,,,198.51.100.42,49152,443,HTTPS,158668
+2026-01-15T10:29:47.510666+00:00,network,normal,network_connection,10.90.0.17,,wks-n0016,,,,,,,,198.51.100.41,49152,443,HTTPS,173331
+2026-01-15T10:30:40.726033+00:00,application,normal,http_request,10.90.0.2,user0001,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:30:44.494321+00:00,application,normal,http_request,10.90.0.6,user0005,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:30:51.414693+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.46,49152,443,HTTPS,10777
+2026-01-15T10:30:53.721035+00:00,endpoint,normal,process_start,,user0001,wks-n0001,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:30:58.629309+00:00,network,normal,network_connection,10.90.0.10,,wks-n0009,,,,,,,,198.51.100.41,49152,443,HTTPS,183003
+2026-01-15T10:31:08.879831+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:31:11.193099+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.47,49152,443,HTTPS,93494
+2026-01-15T10:31:38.573536+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.47,49152,443,HTTPS,546
+2026-01-15T10:32:11.277517+00:00,endpoint,normal,process_start,,user0004,wks-n0004,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:32:48.733330+00:00,application,normal,authentication_success,10.90.0.19,user0018,wks-n0018,POST,/api/v1/auth/login,200,sess-10.90.0.19,Successful login for user0018,,,,,,,
+2026-01-15T10:33:07.480552+00:00,application,normal,authentication_success,10.90.0.5,user0004,wks-n0004,POST,/api/v1/auth/login,200,sess-10.90.0.5,Successful login for user0004,,,,,,,
+2026-01-15T10:33:09.400137+00:00,network,normal,network_connection,10.90.0.12,,wks-n0011,,,,,,,,198.51.100.43,49152,443,HTTPS,106008
+2026-01-15T10:33:52.580765+00:00,application,normal,http_request,10.90.0.7,user0006,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:33:58.371730+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T10:34:01.872964+00:00,application,normal,http_request,10.90.0.8,user0007,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:34:05.095962+00:00,application,normal,http_request,10.90.0.20,user0019,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:34:34.131559+00:00,application,normal,authentication_success,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,200,sess-10.90.0.10,Successful login for user0009,,,,,,,
+2026-01-15T10:34:51.507819+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T10:35:00.055318+00:00,endpoint,normal,process_start,,user0005,wks-n0005,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T10:35:19.532267+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T10:35:37.622226+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.44,49152,443,HTTPS,124782
+2026-01-15T10:35:57.434963+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.41,49152,443,HTTPS,102352
+2026-01-15T10:36:46.571330+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T10:37:15.811354+00:00,application,normal,authentication_success,10.90.0.13,user0012,wks-n0012,POST,/api/v1/auth/login,200,sess-10.90.0.13,Successful login for user0012,,,,,,,
+2026-01-15T10:37:25.151183+00:00,application,normal,authentication_success,10.90.0.18,user0017,wks-n0017,POST,/api/v1/auth/login,200,sess-10.90.0.18,Successful login for user0017,,,,,,,
+2026-01-15T10:37:26.128326+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.48,49152,443,HTTPS,144476
+2026-01-15T10:37:36.341794+00:00,application,normal,http_request,10.90.0.6,user0005,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:38:11.997192+00:00,application,normal,authentication_success,10.90.0.8,user0007,wks-n0007,POST,/api/v1/auth/login,200,sess-10.90.0.8,Successful login for user0007,,,,,,,
+2026-01-15T10:38:16.225010+00:00,endpoint,normal,process_start,,user0013,wks-n0013,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:38:17.539485+00:00,network,normal,network_connection,10.90.0.15,,wks-n0014,,,,,,,,198.51.100.40,49152,443,HTTPS,77485
+2026-01-15T10:38:25.562476+00:00,application,normal,http_request,10.90.0.17,user0016,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:39:07.331960+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:39:10.875445+00:00,endpoint,normal,process_start,,user0015,wks-n0015,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:39:12.418987+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:39:13.335298+00:00,network,normal,network_connection,10.90.0.4,,wks-n0003,,,,,,,,198.51.100.49,49152,443,HTTPS,16716
+2026-01-15T10:39:24.996250+00:00,application,normal,authentication_success,10.90.0.6,user0005,wks-n0005,POST,/api/v1/auth/login,200,sess-10.90.0.6,Successful login for user0005,,,,,,,
+2026-01-15T10:40:09.220320+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.44,49152,443,HTTPS,180787
+2026-01-15T10:40:09.667164+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T10:41:27.222680+00:00,application,normal,http_request,10.90.0.17,user0016,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:41:32.162129+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T10:41:33.729930+00:00,application,normal,authentication_success,10.90.0.16,user0015,wks-n0015,POST,/api/v1/auth/login,200,sess-10.90.0.16,Successful login for user0015,,,,,,,
+2026-01-15T10:41:43.564180+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.44,49152,443,HTTPS,125572
+2026-01-15T10:41:50.522469+00:00,application,normal,authentication_success,10.90.0.1,user0000,wks-n0000,POST,/api/v1/auth/login,200,sess-10.90.0.1,Successful login for user0000,,,,,,,
+2026-01-15T10:41:55.978490+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:42:20.817516+00:00,endpoint,normal,process_start,,user0018,wks-n0018,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T10:42:23.381994+00:00,endpoint,normal,process_start,,user0004,wks-n0004,,,,,net.exe started,net.exe,net view,,,,,
+2026-01-15T10:42:46.785439+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:42:50.904801+00:00,endpoint,normal,process_start,,user0019,wks-n0019,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:42:54.163844+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.43,49152,443,HTTPS,150011
+2026-01-15T10:43:20.945073+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:45:36.556142+00:00,network,normal,network_connection,10.90.0.19,,wks-n0018,,,,,,,,198.51.100.42,49152,443,HTTPS,168675
+2026-01-15T10:45:37.186542+00:00,endpoint,normal,process_start,,user0010,wks-n0010,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:46:10.262681+00:00,application,normal,http_request,10.90.0.7,user0006,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:46:10.909381+00:00,application,normal,authentication_success,10.90.0.14,user0013,wks-n0013,POST,/api/v1/auth/login,200,sess-10.90.0.14,Successful login for user0013,,,,,,,
+2026-01-15T10:46:26.690104+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:46:28.210506+00:00,application,normal,http_request,10.90.0.14,user0013,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:47:01.260411+00:00,application,normal,http_request,10.90.0.3,user0002,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:47:07.271212+00:00,endpoint,normal,process_start,,user0019,wks-n0019,,,,,code.exe started,code.exe,code .,,,,,
+2026-01-15T10:47:22.158441+00:00,network,normal,network_connection,10.90.0.8,,wks-n0007,,,,,,,,198.51.100.42,49152,443,HTTPS,66051
+2026-01-15T10:47:34.628503+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:48:02.220033+00:00,application,normal,http_request,10.90.0.1,user0000,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:48:11.740187+00:00,application,normal,authentication_success,10.90.0.14,user0013,wks-n0013,POST,/api/v1/auth/login,200,sess-10.90.0.14,Successful login for user0013,,,,,,,
+2026-01-15T10:48:36.447820+00:00,application,normal,authentication_success,10.90.0.15,user0014,wks-n0014,POST,/api/v1/auth/login,200,sess-10.90.0.15,Successful login for user0014,,,,,,,
+2026-01-15T10:48:54.492437+00:00,application,normal,http_request,10.90.0.18,user0017,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:49:09.869255+00:00,application,normal,authentication_success,10.90.0.7,user0006,wks-n0006,POST,/api/v1/auth/login,200,sess-10.90.0.7,Successful login for user0006,,,,,,,
+2026-01-15T10:49:14.405826+00:00,application,normal,http_request,10.90.0.20,user0019,intranet-01,GET,/search,200,,Page view,,,,,,,
+2026-01-15T10:50:23.336246+00:00,endpoint,normal,process_start,,user0006,wks-n0006,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:50:24.552390+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T10:50:39.307151+00:00,network,normal,network_connection,10.90.0.11,,wks-n0010,,,,,,,,198.51.100.48,49152,443,HTTPS,21463
+2026-01-15T10:51:01.282970+00:00,endpoint,normal,process_start,,user0008,wks-n0008,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:52:52.231554+00:00,application,normal,http_request,10.90.0.17,user0016,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:53:13.491299+00:00,application,normal,http_request,10.90.0.7,user0006,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:53:51.081387+00:00,network,normal,network_connection,10.90.0.5,,wks-n0004,,,,,,,,198.51.100.40,49152,443,HTTPS,56323
+2026-01-15T10:54:22.959626+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,python.exe started,python.exe,python report.py,,,,,
+2026-01-15T10:54:28.156177+00:00,network,normal,network_connection,10.90.0.13,,wks-n0012,,,,,,,,198.51.100.46,49152,443,HTTPS,129861
+2026-01-15T10:54:51.887614+00:00,application,normal,http_request,10.90.0.17,user0016,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:54:55.664669+00:00,application,normal,authentication_success,10.90.0.5,user0004,wks-n0004,POST,/api/v1/auth/login,200,sess-10.90.0.5,Successful login for user0004,,,,,,,
+2026-01-15T10:55:16.422455+00:00,application,normal,authentication_success,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,200,sess-10.90.0.10,Successful login for user0009,,,,,,,
+2026-01-15T10:55:17.577932+00:00,network,normal,network_connection,10.90.0.4,,wks-n0003,,,,,,,,198.51.100.43,49152,443,HTTPS,27967
+2026-01-15T10:55:26.537400+00:00,network,normal,network_connection,10.90.0.3,,wks-n0002,,,,,,,,198.51.100.49,49152,443,HTTPS,82747
+2026-01-15T10:55:52.800745+00:00,application,normal,authentication_success,10.90.0.10,user0009,wks-n0009,POST,/api/v1/auth/login,200,sess-10.90.0.10,Successful login for user0009,,,,,,,
+2026-01-15T10:55:56.315403+00:00,endpoint,normal,process_start,,user0014,wks-n0014,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:56:03.374878+00:00,endpoint,normal,process_start,,user0001,wks-n0001,,,,,powershell.exe started,powershell.exe,powershell.exe Get-Date,,,,,
+2026-01-15T10:56:06.322435+00:00,endpoint,normal,process_start,,user0007,wks-n0007,,,,,dotnet.exe started,dotnet.exe,dotnet build,,,,,
+2026-01-15T10:56:18.332278+00:00,application,normal,authentication_success,10.90.0.9,user0008,wks-n0008,POST,/api/v1/auth/login,200,sess-10.90.0.9,Successful login for user0008,,,,,,,
+2026-01-15T10:56:30.409276+00:00,application,normal,http_request,10.90.0.4,user0003,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:56:37.620478+00:00,endpoint,normal,process_start,,user0009,wks-n0009,,,,,git.exe started,git.exe,git status,,,,,
+2026-01-15T10:56:42.885585+00:00,application,normal,http_request,10.90.0.18,user0017,intranet-01,GET,/home,200,,Page view,,,,,,,
+2026-01-15T10:56:59.967996+00:00,network,normal,network_connection,10.90.0.16,,wks-n0015,,,,,,,,198.51.100.45,49152,443,HTTPS,50912
+2026-01-15T10:57:03.935397+00:00,application,normal,http_request,10.90.0.16,user0015,intranet-01,GET,/profile,200,,Page view,,,,,,,
+2026-01-15T10:57:42.345205+00:00,application,normal,http_request,10.90.0.10,user0009,intranet-01,GET,/reports,200,,Page view,,,,,,,
+2026-01-15T10:58:33.874019+00:00,application,normal,authentication_success,10.90.0.12,user0011,wks-n0011,POST,/api/v1/auth/login,200,sess-10.90.0.12,Successful login for user0011,,,,,,,
+2026-01-15T10:59:19.002411+00:00,network,normal,network_connection,10.90.0.14,,wks-n0013,,,,,,,,198.51.100.44,49152,443,HTTPS,163475
+2026-01-15T10:59:23.462418+00:00,network,normal,network_connection,10.90.0.6,,wks-n0005,,,,,,,,198.51.100.41,49152,443,HTTPS,51731
+2026-01-15T10:59:34.620818+00:00,application,normal,http_request,10.90.0.15,user0014,intranet-01,GET,/reports,200,,Page view,,,,,,,

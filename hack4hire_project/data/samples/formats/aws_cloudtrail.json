@@ -1,0 +1,119 @@
+{
+ "Records": [
+  {
+   "eventVersion": "1.08",
+   "eventTime": "2026-01-15T09:00:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "awsRegion": "us-east-1",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice",
+    "arn": "arn:aws:iam::000000000000:user/alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Failure"
+   },
+   "errorMessage": "Failed authentication"
+  },
+  {
+   "eventVersion": "1.08",
+   "eventTime": "2026-01-15T09:01:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "awsRegion": "us-east-1",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice",
+    "arn": "arn:aws:iam::000000000000:user/alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Failure"
+   },
+   "errorMessage": "Failed authentication"
+  },
+  {
+   "eventVersion": "1.08",
+   "eventTime": "2026-01-15T09:02:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "awsRegion": "us-east-1",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice",
+    "arn": "arn:aws:iam::000000000000:user/alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Failure"
+   },
+   "errorMessage": "Failed authentication"
+  },
+  {
+   "eventVersion": "1.08",
+   "eventTime": "2026-01-15T09:03:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "awsRegion": "us-east-1",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice",
+    "arn": "arn:aws:iam::000000000000:user/alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Failure"
+   },
+   "errorMessage": "Failed authentication"
+  },
+  {
+   "eventVersion": "1.08",
+   "eventTime": "2026-01-15T09:04:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "awsRegion": "us-east-1",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice",
+    "arn": "arn:aws:iam::000000000000:user/alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Failure"
+   },
+   "errorMessage": "Failed authentication"
+  },
+  {
+   "eventVersion": "1.08",
+   "eventTime": "2026-01-15T09:05:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "awsRegion": "us-east-1",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice",
+    "arn": "arn:aws:iam::000000000000:user/alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Failure"
+   },
+   "errorMessage": "Failed authentication"
+  },
+  {
+   "eventTime": "2026-01-15T09:07:00Z",
+   "eventSource": "signin.amazonaws.com",
+   "eventName": "ConsoleLogin",
+   "sourceIPAddress": "198.51.100.23",
+   "userIdentity": {
+    "type": "IAMUser",
+    "userName": "alice"
+   },
+   "responseElements": {
+    "ConsoleLogin": "Success"
+   }
+  }
+ ]
+}

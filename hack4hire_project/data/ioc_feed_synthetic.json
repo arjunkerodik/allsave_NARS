@@ -1,0 +1,11 @@
+{
+  "feed": "allsafe-synthetic-demo-feed",
+  "note": "Synthetic demonstration indicators only. Addresses are from the RFC 5737 documentation ranges, domains use the reserved .example TLD, and hashes do not correspond to known files. Nothing here describes a real threat.",
+  "indicators": [
+    {"ioc_type": "ip", "value": "198.51.100.77", "severity": "MEDIUM", "confidence": 70, "description": "Synthetic: staging server for data theft in the demo scenarios."},
+    {"ioc_type": "ip", "value": "203.0.113.99", "severity": "MEDIUM", "confidence": 60, "description": "Synthetic: scanning source in the demo scenarios."},
+    {"ioc_type": "domain", "value": "update-check.malware-demo.example", "severity": "MEDIUM", "confidence": 65, "description": "Synthetic: command-and-control domain."},
+    {"ioc_type": "url", "value": "http://files.malware-demo.example/payload.bin", "severity": "MEDIUM", "confidence": 65, "description": "Synthetic: payload download location."},
+    {"ioc_type": "file_hash", "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "severity": "HIGH", "confidence": 80, "description": "Synthetic: placeholder hash for a demo credential-theft tool."}
+  ]
+}

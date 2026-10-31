@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <title>ALLSAFE // AI-Driven SIEM &amp; Threat Detection Command Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='vendor/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='flow.js') }}"></script>
+</head>
+<body class="landing-page cyber-theme">
+    <!-- Background Cyber Grid & Ambient Glows -->
+    <div class="cyber-grid-overlay" aria-hidden="true"></div>
+    <div class="ambient-glow glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="landing-bar cyber-glass-bar">
+        <a class="logo cyber-logo" href="/"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ALL<span>SAFE</span> <span class="logo-tag">SOC</span></a>
+        <nav aria-label="Sections">
+            <a href="#flow"><i class="fa-solid fa-stream"></i> Live flow</a>
+            <a href="#how"><i class="fa-solid fa-diagram-project"></i> Pipeline</a>
+            <a href="#features"><i class="fa-solid fa-microchip"></i> Features</a>
+            <a href="#smtp-section"><i class="fa-solid fa-envelope-shield"></i> SMTP Alerts</a>
+            <a href="#parameters"><i class="fa-solid fa-sliders"></i> Threat rules</a>
+            <div class="nav-cta-group">
+                <a class="btn btn-portal" href="/login" id="landing-login"><i class="fa-solid fa-user-shield"></i> Analyst Portal</a>
+                <a class="btn btn-primary" href="/dashboard" id="landing-open"><i class="fa-solid fa-gauge-high"></i> Open the console</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="landing-main">
+        <!-- Hero Section -->
+        <section class="landing-hero cyber-hero">
+            <div class="hero-badge-wrap">
+                <span class="cyber-badge-pulse"><span class="pulse-dot"></span> AI-ASSISTED THREAT DETECTION // HACK4HIRE 2026</span>
+            </div>
+            <h1>Separate genuine threats from noise, with explainable AI and human-in-the-loop response.</h1>
+            <p class="landing-lead">ALLSAFE ingests network packets, endpoint processes and application logs, normalizes them into one unified schema, and detects brute force, privilege misuse, lateral movement and data exfiltration. Detections are correlated into explainable incidents with timeline forensics, automated response recommendations, and real-time SMTP alerting.</p>
+            
+            <div class="hero-action-buttons">
+                <a class="btn btn-primary btn-lg" href="/dashboard"><i class="fa-solid fa-gauge-high"></i> Launch SOC Console</a>
+                <a class="btn btn-portal btn-lg" href="/login"><i class="fa-solid fa-user-shield"></i> Analyst Sign In / Register</a>
+                <a class="btn btn-lg" href="/dashboard#simulation"><i class="fa-solid fa-bug"></i> Run Attack Simulation</a>
+                <a class="btn btn-lg" href="/dashboard#upload"><i class="fa-solid fa-file-arrow-up"></i> Analyze Log File</a>
+            </div>
+
+            <div class="trust-strip">
+                <span class="trust-item"><i class="fa-solid fa-shield-check"></i> MITRE ATT&amp;CK Mapped</span>
+                <span class="trust-item"><i class="fa-solid fa-brain"></i> Rules, Threat Intel and ML</span>
+                <span class="trust-item"><i class="fa-solid fa-envelope-circle-check"></i> Real-Time SMTP Dispatch</span>
+                <span class="trust-item"><i class="fa-solid fa-lock"></i> Safe Simulated Enforcement</span>
+            </div>
+        </section>
+
+        <!-- Live Telemetry KPI Tiles -->
+        <section class="tiles tiles-4 cyber-tiles" id="landing-tiles" aria-label="Current totals">
+            <div class="tile tile tile-logs">
+                <i class="fa-solid fa-database tile-icon"></i>
+                <span class="tile-value" id="tile-logs">—</span>
+                <span class="tile-label">Logs Ingested</span>
+            </div>
+            <div class="tile tile-alerts">
+                <i class="fa-solid fa-triangle-exclamation tile-icon"></i>
+                <span class="tile-value" id="tile-alerts">—</span>
+                <span class="tile-label">Active Alerts</span>
+            </div>
+            <div class="tile tile-incidents">
+                <i class="fa-solid fa-fire tile-icon"></i>
+                <span class="tile-value" id="tile-incidents">—</span>
+                <span class="tile-label">Open Incidents</span>
+            </div>
+            <div class="tile tile-rules">
+                <i class="fa-solid fa-shield-halved tile-icon"></i>
+                <span class="tile-value" id="tile-rules">—</span>
+                <span class="tile-label">IOA Rules Active</span>
+            </div>
+        </section>
+
+        <!-- Live Data Flow Section -->
+        <section id="flow" class="card landing-flow cyber-card">
+            <div class="card-head">
+                <div class="head-left">
+                    <span class="section-tag"><i class="fa-solid fa-network-wired"></i> REAL-TIME INGESTION</span>
+                    <h2>Live telemetry data flow</h2>
+                </div>
+                <span class="muted cyber-live-badge" id="landing-flow-note" role="status"><i class="fa-solid fa-circle-dot fa-fade"></i> Connecting to packet stream...</span>
+            </div>
+            <div class="flow-wrap"><div id="landing-flow"></div></div>
+            <div class="flow-footer">
+                <div class="flow-legend">
+                    <span><i class="fa-solid fa-circle flow-dot-normal"></i> Normal Ingestion</span>
+                    <span><i class="fa-solid fa-circle flow-dot-suspicious"></i> Suspicious Activity</span>
+                    <span><i class="fa-solid fa-circle flow-dot-alert"></i> Correlated Threat</span>
+                </div>
+                <p class="muted flow-explainer">Band widths use a square-root scale so low-volume reconnaissance stays visible. Each travelling pulse represents real network or host telemetry traversing the normalization and IOA rule pipeline.</p>
+            </div>
+        </section>
+
+        <!-- Architecture & Pipeline Section -->
+        <section id="how" class="cyber-section">
+            <div class="section-heading">
+                <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> END-TO-END WORKFLOW</span>
+                <h2 class="section-title">How a log becomes a decision</h2>
+                <p class="section-sub">Transparent, auditable progression from raw bytes to analyst-approved containment.</p>
+            </div>
+            <ol class="landing-steps cyber-steps">
+                <li class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="step-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                    <strong>Ingest</strong>
+                    <span>Any log file: syslog, Windows EVTX, Zeek, Suricata, CEF, CSV, JSON and more, plus simulations and this machine's own activity.</span>
+                </li>
+                <li class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="step-icon"><i class="fa-solid fa-filter"></i></div>
+                    <strong>Normalize</strong>
+                    <span>Maps heterogeneous inputs to an unified schema with timestamps, entity IDs, and preserved raw payloads.</span>
+                </li>
+                <li class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="step-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                    <strong>Detect</strong>
+                    <span>IOA rules mapped to MITRE ATT&amp;CK, threat intelligence matching, statistical baselines and two ML models.</span>
+                </li>
+                <li class="step-card">
+                    <div class="step-num">04</div>
+                    <div class="step-icon"><i class="fa-solid fa-diagram-next"></i></div>
+                    <strong>Correlate</strong>
+                    <span>Temporal entity linkage clusters isolated alerts into multi-stage attack chains and incident graphs.</span>
+                </li>
+                <li class="step-card">
+                    <div class="step-num">05</div>
+                    <div class="step-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <strong>Score &amp; Explain</strong>
+                    <span>Severity, confidence and a risk score from five factors, each with a plain-English reason.</span>
+                </li>
+                <li class="step-card">
+                    <div class="step-num">06</div>
+                    <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                    <strong>Respond &amp; Alert</strong>
+                    <span>Small risks are handled automatically. High and critical ones wait for SOC approval, and alert emails go out.</span>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Core Features Grid -->
+        <section id="features" class="cyber-section">
+            <div class="section-heading">
+                <span class="section-tag"><i class="fa-solid fa-microchip"></i> SOC CAPABILITIES</span>
+                <h2 class="section-title">Engineered for high-fidelity security operations</h2>
+            </div>
+            <div class="features-grid">
+                <article class="feature-card cyber-card">
+                    <div class="feature-icon feature-icon-cyan"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3>Automated ATT&amp;CK Mapping</h3>
+                    <p>Every detection rule is mapped directly to MITRE ATT&amp;CK tactics and techniques (T1110, T1078, T1059, T1041, T1021), providing instant tactical posture visibility.</p>
+                </article>
+                <article class="feature-card cyber-card">
+                    <div class="feature-icon feature-icon-purple"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Hybrid ML Detection Ensemble</h3>
+                    <p>A LightGBM, CatBoost and XGBoost ensemble on flow data, and an Isolation Forest for unusual activity. Their results stay suspicious until a rule or threat intelligence supports them.</p>
+                </article>
+                <article class="feature-card cyber-card">
+                    <div class="feature-icon feature-icon-green"><i class="fa-solid fa-envelope-circle-check"></i></div>
+                    <h3>Instant SMTP Alert Engine</h3>
+                    <p>Real-time email alerts dispatched over encrypted SMTP (TLS/STARTTLS) directly to on-call analysts with full incident context, evidence summaries and direct links.</p>
+                </article>
+                <article class="feature-card cyber-card">
+                    <div class="feature-icon feature-icon-orange"><i class="fa-solid fa-user-check"></i></div>
+                    <h3>Analyst Session Management</h3>
+                    <p>Role-based access control for Analysts and Auditors. Every triage update, response approval, and configuration adjustment is recorded in an immutable audit ledger.</p>
+                </article>
+                <article class="feature-card cyber-card">
+                    <div class="feature-icon feature-icon-blue"><i class="fa-solid fa-robot"></i></div>
+                    <h3>NARS Security Copilot</h3>
+                    <p>A read-only assistant that answers from stored data, with a Groq model or locally. Ask about incidents, suspect IPs, threat parameters and impact, and see what it read.</p>
+                </article>
+                <article class="feature-card cyber-card">
+                    <div class="feature-icon feature-icon-red"><i class="fa-solid fa-box-archive"></i></div>
+                    <h3>Append-Only Audit Ledger</h3>
+                    <p>Database triggers refuse changes and deletions to the audit log, so that every analyst decision and automatic step stays on record.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SMTP Real-Time Alert Engine Showcase -->
+        <section id="smtp-section" class="card cyber-card smtp-showcase">
+            <div class="smtp-grid">
+                <div class="smtp-text">
+                    <span class="section-tag"><i class="fa-solid fa-envelope"></i> INTEGRATED EMAIL NOTIFICATIONS</span>
+                    <h2>Automated SMTP Incident Alerting</h2>
+                    <p>When an incident reaches HIGH or CRITICAL risk, ALLSAFE's dedicated background worker constructs a structured security advisory and dispatches it over authenticated SMTP.</p>
+                    <ul class="smtp-feature-list">
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Encrypted Dispatch:</strong> Supports standard STARTTLS (port 587) and SSL/TLS (port 465).</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Forensic Summary:</strong> Contains rule IDs, ATT&amp;CK tags, affected assets, and pending actions.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Deep-Link Navigation:</strong> 1-click jump straight to the incident timeline in the SOC Console.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Storm Protection:</strong> Configurable hourly caps prevent inbox flooding during heavy attack simulations.</li>
+                    </ul>
+                    <div class="smtp-actions">
+                        <a class="btn btn-primary" href="/dashboard#risk"><i class="fa-solid fa-gear"></i> Email status in the console</a>
+                        <a class="btn btn-portal" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Sign In to Manage Alerts</a>
+                    </div>
+                </div>
+                <div class="smtp-preview-card">
+                    <div class="email-mockup-header">
+                        <div class="email-mockup-dots"><span></span><span></span><span></span></div>
+                        <span class="email-mockup-title">Example alert email. Not real data.</span>
+                    </div>
+                    <div class="email-mockup-body">
+                        <div class="email-line"><strong>From:</strong> <span>alerts@example.com</span></div>
+                        <div class="email-line"><strong>To:</strong> <span>soc@example.com</span></div>
+                        <div class="email-line email-subject"><strong>Subject:</strong> <span class="subject-alert">[CRITICAL] ALLSAFE HIGH risk: INC-000021 Multi-Stage Compromise</span></div>
+                        <hr class="email-divider">
+                        <div class="email-content">
+                            <p class="email-p"><strong>Incident UID:</strong> INC-000021 (Risk: 88/100 - CRITICAL)</p>
+                            <p class="email-p"><strong>Detected Techniques:</strong> IOA-001 (Brute Force), IOA-003 (Privilege Escalation), IOA-007 (Data Exfiltration)</p>
+                            <p class="email-p"><strong>Involved Entities:</strong> Host <code>srv-dc01</code>, IP <code>203.0.113.45</code>, User <code>administrator</code></p>
+                            <p class="email-p alert-box">⚠️ Recommended action waiting analyst decision: <strong>Isolate Endpoint srv-dc01</strong></p>
+                            <p class="email-p muted"><small>A detection is evidence to investigate, not proof of compromise.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Threat Parameters & Rules Section -->
+        <section id="parameters" class="card cyber-card">
+            <div class="card-head">
+                <div>
+                    <span class="section-tag"><i class="fa-solid fa-sliders"></i> DETERMINISTIC PARAMETERS</span>
+                    <h2>What makes a log a threat</h2>
+                </div>
+                <a class="btn btn-sm" href="/dashboard#parameters">All rules and limits</a>
+            </div>
+            <p>One log is rarely a threat by itself. Logs become a threat when they meet an IOA rule's specific threshold parameters: source groupings, measurements, volume caps, and time windows.</p>
+            <div id="landing-rules"></div>
+        </section>
+
+        <!-- Detection Coverage & NARS Grid -->
+        <section class="landing-grid">
+            <article class="card cyber-card">
+                <div class="card-head">
+                    <h2><i class="fa-solid fa-table-cells"></i> ATT&amp;CK Coverage Matrix</h2>
+                    <a class="btn btn-sm btn-ghost" href="/dashboard#attack">View Matrix</a>
+                </div>
+                <div id="landing-coverage" class="muted"></div>
+                <p><a class="btn" href="/dashboard#attack">Explore ATT&amp;CK Matrix</a></p>
+            </article>
+            <article class="card cyber-card">
+                <div class="card-head">
+                    <h2><i class="fa-solid fa-robot"></i> NARS AI Analyst Copilot</h2>
+                    <a class="btn btn-sm btn-ghost" href="/dashboard">Chat with NARS</a>
+                </div>
+                <div id="landing-nars" class="muted"></div>
+                <p><a class="btn btn-primary" href="/dashboard">Ask NARS in the Console</a></p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ALL<span>SAFE</span></div>
+                <p class="muted">AI-Driven Cybersecurity Operations Center prototype developed for <strong>Hack4Hire 2026</strong>. Built with Python, Flask, Socket.IO, LightGBM/CatBoost, and Groq LLM.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Console</h4>
+                    <a href="/dashboard">Overview</a>
+                    <a href="/dashboard#simulation">Attack Simulation</a>
+                    <a href="/dashboard#upload">Log Analysis</a>
+                    <a href="/dashboard#reports">SOC Reports</a>
+                </div>
+                <div class="link-group">
+                    <h4>Security Portal</h4>
+                    <a href="/login">Analyst Sign In</a>
+                    <a href="/login#register">Register Analyst</a>
+                    <a href="/dashboard#risk">Email alerts</a>
+                    <a href="/dashboard#audit">Audit Log</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Hack4Hire 2026 • Distributed under MIT License. Response actions run in simulation only.</span>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='landing.js') }}"></script>
+</body>
+</html>

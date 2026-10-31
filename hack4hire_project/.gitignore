@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+nids_model.pkl
+temp/
+nids_model.pkl.gz

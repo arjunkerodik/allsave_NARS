@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <title>ALLSAFE // Analyst Portal &amp; Authentication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page cyber-bg">
+    <div class="login-container">
+        <div class="login-glow"></div>
+        <div class="card form-stack login-card cyber-card">
+            <div class="login-header">
+                <a href="/" class="logo"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ALL<span>SAFE</span></a>
+                <div class="cyber-badge"><i class="fa-solid fa-terminal"></i> HACK4HIRE SOC // ANALYST GATEWAY</div>
+                <p class="login-subtitle">Authenticate to access live telemetry, attack correlation, and human-in-the-loop response actions.</p>
+            </div>
+
+            <div class="auth-tabs" role="tablist">
+                <button type="button" class="auth-tab active" id="tab-btn-login" data-tab="login" role="tab" aria-selected="true"><i class="fa-solid fa-right-to-bracket"></i> Analyst Sign In</button>
+                <button type="button" class="auth-tab" id="tab-btn-register" data-tab="register" role="tab" aria-selected="false"><i class="fa-solid fa-user-plus"></i> Register Analyst</button>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="login-form" class="auth-form-panel">
+                <label>
+                    <span class="field-title"><i class="fa-solid fa-user"></i> Username</span>
+                    <input name="username" required maxlength="64" autocomplete="username" placeholder="e.g. analyst" autofocus>
+                </label>
+                <label>
+                    <span class="field-title"><i class="fa-solid fa-lock"></i> Password</span>
+                    <input name="password" type="password" required autocomplete="current-password" placeholder="Enter analyst password">
+                </label>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-key"></i> Sign In to SOC Console</button>
+
+                <div class="demo-access-box">
+                    <div class="demo-header">
+                        <span><i class="fa-solid fa-bolt"></i> Instant Demo Access</span>
+                    </div>
+                    <button type="button" id="demo-login-btn" class="btn btn-demo btn-block">
+                        <i class="fa-solid fa-user-check"></i> 1-Click Demo Analyst Sign In
+                    </button>
+                    <small class="muted demo-hint">For a demonstration on this machine. No password is needed.</small>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form-panel" hidden>
+                <label>
+                    <span class="field-title"><i class="fa-solid fa-user-tag"></i> Desired Username</span>
+                    <input name="reg_username" required maxlength="64" autocomplete="off" placeholder="1-64 characters, no spaces">
+                </label>
+                <label>
+                    <span class="field-title"><i class="fa-solid fa-id-badge"></i> System Role</span>
+                    <select name="reg_role">
+                        <option value="analyst" selected>Security Analyst (Full Triage &amp; Response Decisions)</option>
+                        <option value="viewer">SOC Auditor (Read-Only Telemetry Access)</option>
+                    </select>
+                </label>
+                <label>
+                    <span class="field-title"><i class="fa-solid fa-lock"></i> Password</span>
+                    <input name="reg_password" type="password" required minlength="10" placeholder="Minimum 10 characters">
+                </label>
+                <label>
+                    <span class="field-title"><i class="fa-solid fa-shield"></i> Confirm Password</span>
+                    <input name="reg_confirm" type="password" required minlength="10" placeholder="Confirm password">
+                </label>
+                <button type="submit" class="btn btn-accent btn-block"><i class="fa-solid fa-user-plus"></i> Create Account &amp; Enter Console</button>
+            </form>
+
+            <div id="login-error" class="notice notice-error" role="alert" hidden></div>
+            <div id="login-success" class="notice notice-good" role="status" hidden></div>
+
+            <div class="login-footer">
+                <a href="/" class="login-back-link"><i class="fa-solid fa-arrow-left"></i> Return to Live Flow &amp; Landing Page</a>
+                <div class="security-stamp"><i class="fa-solid fa-shield-cat"></i> Append-Only Audit Trail Active</div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+ALLSAFE reproducible demonstration. All data is synthetic.
+
+1. Simulation Lab: each risk tier, through the real pipeline
+   Scenario                 Events Alerts Incidents  Risk Level    Priority  Missed Unexpected
+   Low-Risk Signal               1      1         0     - -        -              0          0
+   Port Scanning                20      1         1    51 MEDIUM   P3             0          0
+   Data Exfiltration            14      4         1    78 HIGH     P2             0          0
+   Multi-Stage Attack           44     11         1    98 CRITICAL P1             0          0
+   Benign Activity              13      0         0     - -        -              0          0
+
+  PASS  low_signal produced exactly its expected detections
+  PASS  port_scan produced exactly its expected detections
+  PASS  port_scan is MEDIUM risk  (51)
+  PASS  exfil produced exactly its expected detections
+  PASS  exfil is HIGH risk  (78)
+  PASS  multi_stage produced exactly its expected detections
+  PASS  multi_stage is CRITICAL risk  (98)
+  PASS  benign produced exactly its expected detections
+  PASS  a low-risk signal opens no incident
+  PASS  normal activity raises nothing
+
+2. Response: the SOC decides high and critical risk, small risks are automatic, and nothing real ever runs
+  PASS  critical risk: every action waits for SOC approval  (11 actions)
+  PASS  running an action without approval is refused
+  PASS  after approval it runs in simulation and is verified
+  PASS  the real blocklist is untouched
+  PASS  the audit log recorded it all
+  PASS  suspicious_process is MEDIUM risk, so the policy treats it as small  (50)
+  PASS  medium risk: safe steps ran automatically in simulation  (2 actions)
+  PASS  medium risk: disruptive actions are held, not run  (2 actions)
+  PASS  the audit log recorded the automatic steps
+
+3. Log analysis: each sample file through the real upload path
+   File                                      Type                                Rows  Bad  Dup Alerts  Verdict
+   clean_activity.csv                        Mixed: Application security even     400    0    0      0  NO_THREATS_DETECTED
+   brute_force_windows.csv                   Windows authentication events         15    0    0      2  THREATS_DETECTED
+   linux_auth.log                            Linux authentication events            9    0    0      3  THREATS_DETECTED
+   firewall_ufw.log                          Firewall events                       20    0    0      1  THREATS_DETECTED
+   suspicious_network.csv                    Network flow events                   10    0    0      1  SUSPICIOUS_ACTIVITY
+   ioc_match.jsonl                           Mixed: Network flow events, Othe       4    0    0      3  THREATS_DETECTED
+   privilege_escalation.jsonl                Mixed: Linux authentication even       3    0    0      1  THREATS_DETECTED
+   exfiltration.csv                          Network flow events                   15    0    0      3  THREATS_DETECTED
+   application_access.csv                    Application security events           11    0    0      1  SUSPICIOUS_ACTIVITY
+   malformed_records.csv                     Application security events           11    5    0      0  NO_THREATS_DETECTED
+   duplicate_records.csv                     Application security events           10    0    5      0  NO_THREATS_DETECTED
+   unsupported_fields.csv                    Application security events            5    0    0      0  NO_THREATS_DETECTED
+   missing_timestamps.csv                    Application security events            9    3    0      0  NO_THREATS_DETECTED
+   network_flows_cicids.csv                  Network flow events                  200    0    0      0  SUSPICIOUS_ACTIVITY
+
+  PASS  clean_activity.csv is NO_THREATS_DETECTED  (NO_THREATS_DETECTED)
+  PASS  brute_force_windows.csv is THREATS_DETECTED  (THREATS_DETECTED)
+  PASS  linux_auth.log is THREATS_DETECTED  (THREATS_DETECTED)
+  PASS  firewall_ufw.log is THREATS_DETECTED  (THREATS_DETECTED)
+  PASS  suspicious_network.csv is SUSPICIOUS_ACTIVITY  (SUSPICIOUS_ACTIVITY)
+  PASS  ioc_match.jsonl is THREATS_DETECTED  (THREATS_DETECTED)
+  PASS  privilege_escalation.jsonl is THREATS_DETECTED  (THREATS_DETECTED)
+  PASS  exfiltration.csv is THREATS_DETECTED  (THREATS_DETECTED)
+  PASS  application_access.csv is SUSPICIOUS_ACTIVITY  (SUSPICIOUS_ACTIVITY)
+  PASS  malformed_records.csv is NO_THREATS_DETECTED  (NO_THREATS_DETECTED)
+  PASS  duplicate_records.csv is NO_THREATS_DETECTED  (NO_THREATS_DETECTED)
+  PASS  unsupported_fields.csv is NO_THREATS_DETECTED  (NO_THREATS_DETECTED)
+  PASS  missing_timestamps.csv is NO_THREATS_DETECTED  (NO_THREATS_DETECTED)
+  PASS  a field mapping makes unfamiliar column names readable
+
+   Other log formats, from data/samples/formats
+   File                                        Rows  Bad Alerts  Verdict
+   zeek_conn.log                                 30    0      1  THREATS_DETECTED
+  PASS  zeek_conn.log is THREATS_DETECTED  (THREATS_DETECTED)
+   aws_cloudtrail.json                            7    0      2  THREATS_DETECTED
+  PASS  aws_cloudtrail.json is THREATS_DETECTED  (THREATS_DETECTED)
+   winlogbeat_ecs.jsonl                           8    0      1  THREATS_DETECTED
+  PASS  winlogbeat_ecs.jsonl is THREATS_DETECTED  (THREATS_DETECTED)
+   nginx_error.log                                6    0      1  THREATS_DETECTED
+  PASS  nginx_error.log is THREATS_DETECTED  (THREATS_DETECTED)
+   syslog_rfc5424.log                             8    0      1  THREATS_DETECTED
+  PASS  syslog_rfc5424.log is THREATS_DETECTED  (THREATS_DETECTED)
+   suricata_eve.json                             12    0      1  SUSPICIOUS_ACTIVITY
+  PASS  suricata_eve.json is SUSPICIOUS_ACTIVITY  (SUSPICIOUS_ACTIVITY)
+
+4. The saved network model, on data it can read
+   Status COMPLETED, 200 flows classified, model version 33d735ec14d8
+   Distribution: {'BENIGN': 195, 'DoS Slowhttptest': 1, 'SSH-Patator': 4}
+   These flows have random values, so this shows the model runs on compatible data. It says nothing about accuracy.
+  PASS  compatible flows were classified  (COMPLETED)
+  PASS  no prediction confidence is claimed
+  PASS  Windows logs were not fed to it
+
+5. A labelled, generated dataset, measured against its ground truth
+   Events                   TP   21  FP    0  FN    0  precision 1.0  recall 1.0  F1 1.0
+   Alerts                   TP    9  FP    0  FN    0  precision 1.0  recall 1.0  F1 1.0
+   Incidents                TP    4  FP    0  FN    0  precision 1.0  recall 1.0  F1 1.0
+   Anomaly model, events    TP   15  FP    4  FN    6  precision 0.7895  recall 0.7143  F1 0.75
+   Detection latency: 1.902 seconds. Processing: 7.16 seconds.
+   Measured on synthetic data written by the same team as the rules, so this shows the pipeline works as designed.
+  PASS  no rule was missed, and none fired unexpectedly
+
+6. The anomaly model, measured on seeded data it did not train on
+   False alarms: 3 of 2460 normal windows (0.12%)
+   Attack windows flagged: 6 of 22 (recall 0.2727)
+   Low recall is expected: a single command is not statistically unusual, and the rules cover those.
+  PASS  the false alarm rate is low on normal activity
+
+7. Reports come from stored results
+  PASS  the new report includes the analyst decision
+  PASS  the clean dataset has a PDF report saying so
+
+8. Threat intelligence feed: imported, and stored events searched without creating alerts
+   8 rows, 5 usable. Left out: {'private or reserved address': 1, 'repeated in this file': 1, 'unsupported type: cve': 1}
+   Retro-hunt: 9 of 2880 stored events contain 2 of its indicators
+  PASS  the feed is recognised, and bad entries are left out
+  PASS  the retro-hunt finds stored events
+  PASS  the retro-hunt creates no alerts
+   Analysis: 5 indicators, 40% are domains, the most common claim is command and control (1), 1 was reported by more than one source.
+  PASS  the feed itself is analyzed
+   Pipeline test: THREATS_DETECTED, 300 logs, 6 alerts, 4 incidents
+  PASS  planting its indicators in synthetic logs is detected
+
+9. NARS answers from stored data, and cannot act
+   Mode: local. Asked to explain INC-000003, it read: get_incident
+  PASS  it explains an incident with its stored score
+  PASS  it does not invent an incident
+  PASS  asked to approve, it refuses and nothing changes
+
+10. Threat parameters, simulation impact, live flow, attack graph and coverage are computed from stored data
+   Multi-stage impact: The threat affected 6 of 6 known assets: 1 data lost, 1 compromised, 4 accessed.
+     IOA-001   matching logs                              normal        0  attack        12  limit                5
+     IOA-002   matching logs before the follow-up log     normal        0  attack        12  limit                5
+     IOA-003   matching logs                              normal        0  attack         2  limit                1
+     IOA-004   matching logs                              normal        0  attack         1  limit                1
+     IOA-007   total bytes sent                           normal   0.1 MB  attack   90.0 MB  limit          50.0 MB
+     IOA-009   different destination IP values            normal        0  attack         4  limit                3
+  PASS  attack logs cross limits that normal logs do not
+  PASS  the benign run affects nothing
+   One flagged log: THREAT, measured against 18 rules
+  PASS  one log can be explained against the parameters
+  PASS  the live flow counts every stored log once
+   INC-000003 graph: 13 entities, 13 connections
+   Coverage: 19 techniques in 10 of 14 tactics, 17 tested by a scenario, 15 have fired
+  PASS  the graph has entities and connections
+  PASS  the gaps stay visible
+
+ALL CHECKS PASSED

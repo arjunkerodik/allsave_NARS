@@ -1,0 +1,301 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2297 >>
+stream
+BT 40 800 Td 13 TL
+/F2 9 Tf
+(ALLSAFE Security Analysis Report: clean_activity.csv) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Analysis ID: ds-6eaacd9a439f) Tj T*
+(- Report ID: RPT-28C7F15520) Tj T*
+(- Generated: 2026-10-31T04:31:16.634174+00:00) Tj T*
+(- Log file: clean_activity.csv) Tj T*
+(- Log type: Mixed: Application security events, Network flow events, Endpoint and) Tj T*
+(    process events) Tj T*
+(- Analysis started: 2026-10-31T04:31:15.997469+00:00) Tj T*
+(- Analysis completed: 2026-10-31T04:31:16.525978+00:00) Tj T*
+() Tj T*
+/F2 9 Tf
+(Overall security assessment) Tj T*
+/F1 9 Tf
+() Tj T*
+(NO THREATS DETECTED) Tj T*
+() Tj T*
+(No suspicious activity was detected by the enabled detection engines during this) Tj T*
+(    analysis. This does not guarantee that the environment is completely free of) Tj T*
+(    threats.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Executive summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(clean_activity.csv: 400 of 400 records were processed, producing 0 alert\(s\) and 0) Tj T*
+(    incident\(s\). No incident was created. 0 recommended action\(s\) are waiting for an) Tj T*
+(    analyst. No action has changed a real system.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Threat overview) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Attack categories: none) Tj T*
+(- Rules fired: none) Tj T*
+() Tj T*
+/F2 9 Tf
+(Processing summary) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Status: COMPLETED) Tj T*
+(- Total uploaded records: 400) Tj T*
+(- Successfully processed records: 400) Tj T*
+(- Rejected records: 0) Tj T*
+(- Duplicate records: 0) Tj T*
+() Tj T*
+/F2 9 Tf
+(Data quality) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Malformed records: 0) Tj T*
+(- Invalid timestamps: 0) Tj T*
+(- Missing timestamps: 0) Tj T*
+(- Flows with no timestamp, kept: 0) Tj T*
+(- Missing optional values: src_ip 79, dst_ip 305, user 95) Tj T*
+(- Fields with no equivalent in the common schema: none) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection engines) Tj T*
+/F1 9 Tf
+() Tj T*
+/F2 9 Tf
+(Executed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- IOC enrichment: evaluated 321 of 400 event\(s\), 0 finding\(s\)) Tj T*
+(- IOA behavior rules: evaluated 400 of 400 event\(s\), 0 finding\(s\)) Tj T*
+(- UEBA baselines: evaluated 205 of 400 event\(s\), 0 finding\(s\)) Tj T*
+(- Anomaly model: evaluated 400 of 400 event\(s\), 0 finding\(s\)) Tj T*
+() Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 1 of 4) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 2245 >>
+stream
+BT 40 800 Td 13 TL
+/F2 9 Tf
+(Skipped or failed) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Supervised ML \(saved network model\) \(SKIPPED\): This data has no records with all 78) Tj T*
+(    CIC-IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Finding classification) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Confirmed detections: 0 alert\(s\) over 0 event\(s\), 0 incident\(s\)) Tj T*
+(- Suspicious activity: 0 alert\(s\) over 0 event\(s\), 0 anomaly window\(s\), 0 flow\(s\)) Tj T*
+(    classified as attacks) Tj T*
+(- Benign activity \(normal events\): 400 event\(s\). These events triggered no applicable) Tj T*
+(    detection condition. That is not proof they are safe.) Tj T*
+(- Data quality issues: 0 bad record\(s\), 0 duplicate\(s\)) Tj T*
+(- Detection limitations: 1) Tj T*
+(  - Supervised ML \(saved network model\): This data has no records with all 78 CIC-) Tj T*
+(    IDS2017 flow features the model needs. Logs of other kinds are never fed to it.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Alerts: 0) Tj T*
+(- Incidents: 0) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOC matches \(0\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- 321 event\(s\) were checked against the threat intelligence database.) Tj T*
+(- No known indicator was matched. This does not mean these events are safe: the feed) Tj T*
+(    only holds known indicators.) Tj T*
+() Tj T*
+/F2 9 Tf
+(IOA rule matches \(0\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None.) Tj T*
+() Tj T*
+/F2 9 Tf
+(UEBA findings \(0\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None.) Tj T*
+() Tj T*
+/F2 9 Tf
+(ML classification results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- The saved network model classified nothing in this data. See the detection engines) Tj T*
+(    above for why.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Anomaly detection results) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Unusual activity windows: 0. Statistically unusual activity, not confirmed attacks.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Incident investigation) Tj T*
+/F1 9 Tf
+() Tj T*
+(No incident was created.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Affected users and hosts) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Users: none named) Tj T*
+(- Hosts: none named) Tj T*
+() Tj T*
+/F2 9 Tf
+(Risk analysis) Tj T*
+/F1 9 Tf
+() Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 2 of 4) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 3123 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- Severity distribution \(alerts\): none) Tj T*
+(- Incident risk distribution: CRITICAL 0, HIGH 0, MEDIUM 0, LOW 0) Tj T*
+(- Alert risk distribution: CRITICAL 0, HIGH 0, MEDIUM 0, LOW 0) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real. Each) Tj T*
+(    incident above lists the factors behind its score.) Tj T*
+() Tj T*
+/F2 9 Tf
+(MITRE ATT&CK mappings) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended remediation) Tj T*
+/F1 9 Tf
+() Tj T*
+(Historical analysis is read-only. Nothing below has been done, and any disruptive step) Tj T*
+(    needs an analyst to approve it.) Tj T*
+() Tj T*
+(- None required by these findings.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Recommended actions \(simulation only\)) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Analyst decisions) Tj T*
+/F1 9 Tf
+() Tj T*
+(- None yet.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Model performance) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Event level: TP 0, FP 0, FN 0, TN 400, precision not measurable, recall not) Tj T*
+(    measurable, F1 not measurable, false-positive rate 0.0) Tj T*
+(- Alert level: TP 0, FP 0, FN 0, precision not measurable, recall not measurable, F1 not) Tj T*
+(    measurable) Tj T*
+(- Incident level: TP 0, FP 0, FN 0, precision not measurable, recall not measurable, F1) Tj T*
+(    not measurable) Tj T*
+(- Detection latency: not measurable, because no attack was detected) Tj T*
+(- These numbers come from labelled data, and risk scores play no part in them.) Tj T*
+() Tj T*
+/F2 9 Tf
+(Known limitations) Tj T*
+/F1 9 Tf
+() Tj T*
+(- Detection combines behavior rules, threat intelligence matches, statistical baselines) Tj T*
+(    and two models. None of them proves an attack happened, and none proves that one did) Tj T*
+(    not.) Tj T*
+(- The saved network model runs only on flow data with its 78 CIC-IDS2017 features. It) Tj T*
+(    has not been validated here, no preprocessing pipeline was saved with it, and its) Tj T*
+(    output is uncalibrated, so no accuracy or prediction confidence is claimed.) Tj T*
+(- The anomaly model was trained on synthetic normal activity, and does not run on live) Tj T*
+(    telemetry. Its findings are statistical anomalies, not confirmed attacks.) Tj T*
+(- Threat intelligence only covers known indicators, and the bundled feed is synthetic.) Tj T*
+(    No match does not mean an event is safe.) Tj T*
+(- Performance metrics compare results with labels on synthetic or supplied data. They do) Tj T*
+(    not predict performance on real attacks.) Tj T*
+(- The synthetic scenarios and the detection rules were written by the same team, so) Tj T*
+(    scenario results show the pipeline works as designed.) Tj T*
+(- Behavioral checks need history. An entity with too little history is not judged.) Tj T*
+(- Window-based rules cite every matching event in their window, so a normal event inside) Tj T*
+(    an attack window counts as an event-level false positive.) Tj T*
+(- Risk is an investigation priority, not the probability that an attack is real.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 3 of 4) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 379 >>
+stream
+BT 40 800 Td 13 TL
+/F1 9 Tf
+(- Historical analysis is read-only. Every response action is a recommendation that needs) Tj T*
+(    an analyst, and runs only in simulation. No firewall, account, host or process is) Tj T*
+(    changed.) Tj T*
+(- Analyst names are self-reported: there are no user accounts.) Tj T*
+ET
+BT /F1 8 Tf 40 28 Td (ALLSAFE security report, page 4 of 4) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000135 00000 n 
+0000000230 00000 n 
+0000000330 00000 n 
+0000002679 00000 n 
+0000002815 00000 n 
+0000005112 00000 n 
+0000005248 00000 n 
+0000008423 00000 n 
+0000008560 00000 n 
+0000008991 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+9129
+%%EOF

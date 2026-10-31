@@ -1,0 +1,3 @@
+{"timestamp": "2026-01-15T09:00:00Z", "hostname": "app-07", "user": "deploy", "process_name": "sudo", "command_line": "sudo su -", "event_type": "process_start"}
+{"timestamp": "2026-01-15T09:00:40Z", "hostname": "app-07", "user": "deploy", "process_name": "usermod", "command_line": "usermod -aG sudo deploy", "event_type": "process_start"}
+{"timestamp": "2026-01-15T09:01:30Z", "hostname": "app-07", "user": "deploy", "process_name": "ls", "command_line": "ls -la /var/log", "event_type": "process_start"}

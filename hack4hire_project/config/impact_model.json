@@ -1,0 +1,255 @@
+{
+  "_comment": "What each detection means for the simulated environment. Level 1 means something was targeted, 2 access or discovery, 3 control of an asset, 4 data leaving. These are the team's judgement of what the matched logs imply, not measurements. Confidentiality, integrity and availability are marked C, I and A.",
+  "levels": {
+    "1": "Targeted",
+    "2": "Accessed",
+    "3": "Compromised",
+    "4": "Data lost"
+  },
+  "rules": {
+    "IOA-001": {
+      "assets": [
+        "user",
+        "hostname"
+      ],
+      "level": 1,
+      "effect": "Repeated failed logins against it",
+      "cia": []
+    },
+    "IOA-002": {
+      "assets": [
+        "user",
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "Logged in after repeated failures, so the password is probably known to the attacker",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-003": {
+      "assets": [
+        "user",
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "Privileges were raised",
+      "cia": [
+        "C",
+        "I"
+      ]
+    },
+    "IOA-004": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "A new account was created, which can survive a password reset",
+      "cia": [
+        "I"
+      ]
+    },
+    "IOA-005": {
+      "assets": [
+        "dst_ip"
+      ],
+      "level": 1,
+      "effect": "Its ports were scanned",
+      "cia": []
+    },
+    "IOA-006": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "It connected out on a port that is commonly used for attacker tools",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-007": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 4,
+      "effect": "Large outbound transfer above the limit",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-008": {
+      "assets": [
+        "hostname",
+        "user"
+      ],
+      "level": 3,
+      "effect": "A suspicious process ran",
+      "cia": [
+        "I"
+      ]
+    },
+    "IOA-009": {
+      "assets": [
+        "dst_ip"
+      ],
+      "level": 2,
+      "effect": "Reached from an internal host on an administration port",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-010": {
+      "assets": [
+        "hostname",
+        "user"
+      ],
+      "level": 3,
+      "effect": "A remote execution tool ran",
+      "cia": [
+        "I"
+      ]
+    },
+    "IOA-011": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "Credentials in memory were accessed",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-012": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "A web shell was uploaded",
+      "cia": [
+        "I"
+      ]
+    },
+    "IOA-013": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "The web server started a shell",
+      "cia": [
+        "I"
+      ]
+    },
+    "IOA-014": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "Regular outbound connections, which may be a control channel",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-015": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 1,
+      "effect": "One source tried many accounts",
+      "cia": []
+    },
+    "IOA-016": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "Files were gathered into an archive",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOA-017": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 1,
+      "effect": "Sensitive application paths were probed",
+      "cia": []
+    },
+    "UEBA-001": {
+      "assets": [
+        "user"
+      ],
+      "level": 2,
+      "effect": "Logged in from a source it has never used",
+      "cia": [
+        "C"
+      ]
+    },
+    "UEBA-002": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "Sent far more data than its own history",
+      "cia": [
+        "C"
+      ]
+    },
+    "UEBA-003": {
+      "assets": [
+        "user"
+      ],
+      "level": 1,
+      "effect": "Logged in at an unusual time for this account",
+      "cia": []
+    },
+    "IOC-IP": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "It communicated with an address on a threat feed",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOC-DOMAIN": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "It contacted a domain on a threat feed",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOC-URL": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 2,
+      "effect": "It contacted a URL on a threat feed",
+      "cia": [
+        "C"
+      ]
+    },
+    "IOC-HASH": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 3,
+      "effect": "A file with a hash on a threat feed was seen",
+      "cia": [
+        "I"
+      ]
+    },
+    "IOA-018": {
+      "assets": [
+        "hostname"
+      ],
+      "level": 1,
+      "effect": "Another tool raised an alert about it",
+      "cia": []
+    }
+  }
+}

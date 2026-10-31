@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <title>ALLSAFE // SOC Command Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='vendor/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/chart.umd.js') }}"></script>
+    <script src="{{ url_for('static', filename='flow.js') }}"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="logo" href="/"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ALL<span>SAFE</span></a>
+        <nav aria-label="Main">
+            <p class="nav-group">Monitor</p>
+            <button class="nav-item" data-action="nav" data-view="overview"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i> Overview</button>
+            <button class="nav-item" data-action="nav" data-view="events"><i class="fa-solid fa-stream" aria-hidden="true"></i> Live Stream</button>
+            <p class="nav-group">Analyze</p>
+            <button class="nav-item" data-action="nav" data-view="upload"><i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i> Log Analysis</button>
+            <button class="nav-item" data-action="nav" data-view="detection"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> Threat Detection</button>
+            <button class="nav-item" data-action="nav" data-view="parameters"><i class="fa-solid fa-sliders" aria-hidden="true"></i> Threat Parameters</button>
+            <button class="nav-item" data-action="nav" data-view="simulation"><i class="fa-solid fa-flask" aria-hidden="true"></i> Simulation Lab</button>
+            <p class="nav-group">Respond</p>
+            <button class="nav-item" data-action="nav" data-view="investigations"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> Investigations <span class="count" id="badge-open" hidden></span></button>
+            <button class="nav-item" data-action="nav" data-view="approvals"><i class="fa-solid fa-user-check" aria-hidden="true"></i> Response <span class="count count-alert" id="badge-pending" hidden></span></button>
+            <button class="nav-item" data-action="nav" data-view="reports"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Reports</button>
+            <details class="nav-more" id="nav-more"><summary>More</summary>
+                <button class="nav-item" data-action="nav" data-view="intel"><i class="fa-solid fa-database" aria-hidden="true"></i> Threat Intelligence</button>
+                <button class="nav-item" data-action="nav" data-view="risk"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Risk Settings <span class="count" id="badge-notifications" hidden></span></button>
+                <button class="nav-item" data-action="nav" data-view="attack"><i class="fa-solid fa-table-cells" aria-hidden="true"></i> ATT&amp;CK Coverage</button>
+                <button class="nav-item" data-action="nav" data-view="audit"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> Audit Log</button>
+            </details>
+        </nav>
+        <p class="sidebar-note" id="mode-note-sidebar">Response actions run only in simulation. No real system is changed.</p>
+    </aside>
+
+    <div class="shell">
+        <header class="topbar">
+            <h1 id="view-title">Security Overview</h1>
+            <div class="topbar-right">
+                <label class="analyst">Analyst <input id="analyst-name" type="text" maxlength="64" placeholder="Your name" autocomplete="off"></label>
+                <button class="btn btn-sm" id="logout" data-action="logout" hidden>Sign out</button>
+                <span id="conn-status" class="status-pill" role="status"><i class="fa-solid fa-circle" aria-hidden="true"></i> Connecting</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="view" id="view-overview">
+                <div class="tiles tiles-4" id="tiles"></div>
+                <div id="latest-log"></div>
+                <article class="card">
+                    <div class="card-head"><h2>Highest-risk open incidents</h2><button class="btn btn-ghost btn-sm" data-action="nav" data-view="investigations">All investigations</button></div>
+                    <div id="overview-incidents"></div>
+                </article>
+                <div class="filter-row">
+                    <label>Time range for charts
+                        <select id="overview-range">
+                            <option value="15">Last 15 minutes</option>
+                            <option value="60" selected>Last hour</option>
+                            <option value="360">Last 6 hours</option>
+                            <option value="1440">Last 24 hours</option>
+                            <option value="0">All logs</option>
+                        </select>
+                    </label>
+                    <span class="muted" id="overview-range-note"></span>
+                </div>
+                <div class="chart-grid">
+                    <article class="card span-2" id="card-volume">
+                        <div class="card-head"><h2>Logs arriving, by source</h2><button class="btn btn-ghost btn-sm" data-action="toggle-table" data-chart="volume">View table</button></div>
+                        <div class="chart-box tall"><canvas id="chart-volume" aria-label="Line chart of logs arriving over time by source"></canvas></div>
+                        <div class="table-twin" id="table-volume" hidden></div>
+                        <div class="empty" id="empty-volume" hidden>No logs arrived in this time range.</div>
+                    </article>
+                    <article class="card" id="card-severity">
+                        <div class="card-head"><h2>Alerts by severity</h2><button class="btn btn-ghost btn-sm" data-action="toggle-table" data-chart="severity">View table</button></div>
+                        <div class="chart-box"><canvas id="chart-severity" aria-label="Bar chart of alerts by severity"></canvas></div>
+                        <div class="table-twin" id="table-severity" hidden></div>
+                        <div class="empty" id="empty-severity" hidden>No alerts in this time range.</div>
+                    </article>
+                    <article class="card" id="card-rules">
+                        <div class="card-head"><h2>Top detections</h2><button class="btn btn-ghost btn-sm" data-action="toggle-table" data-chart="rules">View table</button></div>
+                        <div class="chart-box"><canvas id="chart-rules" aria-label="Bar chart of alerts by detection rule"></canvas></div>
+                        <div class="table-twin" id="table-rules" hidden></div>
+                        <div class="empty" id="empty-rules" hidden>No detections in this time range.</div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="view" id="view-events" hidden>
+                <div class="stream-stats" id="flow-stats" aria-label="Logs in this time range"></div>
+                <article class="card flow-card" id="flow-card">
+                    <div class="card-head flow-head">
+                        <div class="flow-title"><span class="live-dot" aria-hidden="true"></span><h2>Live data flow</h2><span class="muted" id="flow-rate" role="status"></span></div>
+                        <div class="flow-controls">
+                            <label>Range <select id="flow-range"><option value="15">15 min</option><option value="60" selected>1 hour</option><option value="360">6 hours</option><option value="1440">24 hours</option><option value="0">All logs</option></select></label>
+                            <label>Origin <select id="flow-origin"><option value="">All</option><option value="live">Live</option><option value="simulation">Simulation</option><option value="dataset">Log files</option></select></label>
+                        </div>
+                    </div>
+                    <div class="flow-wrap"><div id="live-flow"></div></div>
+                    <details class="flow-more"><summary>How to read this, and the numbers as a table</summary>
+                        <p class="muted">Log type, then verdict, then outcome. Band widths use a square-root scale so that small flows stay visible, and labels give true counts. Each moving dot is one real log arriving now. When none arrive, nothing moves.</p>
+                        <div class="table-wrap short" id="flow-table"></div>
+                    </details>
+                </article>
+                <div class="stream-head">
+                    <h2>Log stream</h2>
+                    <span class="muted" id="stream-stats" role="status"></span>
+                </div>
+                <form class="filter-row stream-filters" id="events-filter">
+                    <label class="grow">Search <input type="search" name="q" placeholder="IP, user, host, process, command..."></label>
+                    <label>Source <select name="source"><option value="">All</option></select></label>
+                    <label>Event type <select name="event_type"><option value="">All</option></select></label>
+                    <label>Origin <select name="origin"><option value="">All</option></select></label>
+                    <label class="check"><input type="checkbox" name="detected" value="1"> Detections only</label>
+                    <label class="check"><input type="checkbox" name="exclude_system" value="1" checked> Hide system metrics</label>
+                    <button type="button" class="btn" id="events-pause" data-action="toggle-pause"><i class="fa-solid fa-pause" aria-hidden="true"></i> Pause</button>
+                </form>
+                <div class="table-wrap stream-table">
+                    <table>
+                        <thead><tr><th>Time</th><th>Verdict</th><th>Source</th><th>Type</th><th>Summary</th><th>Detection</th><th>Incident</th><th>Origin</th></tr></thead>
+                        <tbody id="events-body"></tbody>
+                    </table>
+                </div>
+                <div class="table-foot"><button class="btn" data-action="events-older" id="events-older">Load older logs</button><span class="muted" id="capture-note"></span></div>
+            </section>
+
+            <section class="view" id="view-detection" hidden>
+                <form class="filter-row" id="alerts-filter">
+                    <label>Search <input type="search" name="q" placeholder="Rule, explanation, entity..."></label>
+                    <label>Severity <select name="severity"><option value="">All</option><option>CRITICAL</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></label>
+                    <label>Method <select name="detection_type"><option value="">All</option><option value="IOA">IOA rule</option><option value="IOC">IOC match</option><option value="UEBA">Behavioral baseline</option></select></label>
+                    <label>Rule <select name="rule_id"><option value="">All</option></select></label>
+                </form>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Last seen</th><th>Severity</th><th>Rule</th><th>Why it was flagged</th><th>Confidence</th><th>Events</th><th>Incident</th></tr></thead>
+                        <tbody id="alerts-body"></tbody>
+                    </table>
+                </div>
+                <h2 class="section-title">Detection rules in force</h2>
+                <p class="muted">Loaded from <code>config/detection_rules.json</code>. Edit that file and restart to change them.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Rule</th><th>Name</th><th>Logic</th><th>Severity</th><th>MITRE ATT&amp;CK</th><th>Alerts</th><th>Last fired</th><th></th></tr></thead>
+                        <tbody id="rules-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="view" id="view-investigations" hidden>
+                <form class="filter-row" id="incidents-filter">
+                    <label>Search <input type="search" name="q" placeholder="Incident, host, IP, user..."></label>
+                    <label>Status <select name="status"><option value="OPEN">Open</option><option value="">All</option><option value="ACTIVE">Active</option><option value="INVESTIGATING">Investigating</option><option value="RESOLVED">Resolved</option></select></label>
+                    <label>Severity <select name="severity"><option value="">All</option><option>CRITICAL</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></label>
+                    <label>Risk <select name="risk"><option value="">All</option><option value="HIGH_PLUS">High and critical</option></select></label>
+                    <label>From <select name="data"><option value="">All</option><option value="logs">Log files</option><option value="simulation">Simulations</option><option value="live">Live monitoring</option></select></label>
+                    <label>Sort <select name="sort"><option value="risk">Highest risk</option><option value="recent">Newest</option></select></label>
+                </form>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Incident</th><th>Title</th><th>Severity</th><th class="num">Confidence</th><th class="num">Risk</th><th>Response</th><th>From</th><th>Status</th><th>Last activity</th></tr></thead>
+                        <tbody id="incidents-body"></tbody>
+                    </table>
+                </div>
+                <div id="incident-detail"><p class="empty">Select an incident to investigate it.</p></div>
+            </section>
+
+            <section class="view" id="view-approvals" hidden>
+                <div class="tiles tiles-4" id="approvals-tiles"></div>
+                <div class="policy-strip">
+                    <div class="policy-card policy-soc"><i class="fa-solid fa-user-shield" aria-hidden="true"></i><div><strong>Critical and high risk: the SOC decides</strong><span>Every open action waits for an analyst's approval. If an incident started small, its safe first steps may already have run.</span></div></div>
+                    <div class="policy-card policy-auto"><i class="fa-solid fa-robot" aria-hidden="true"></i><div><strong>Medium and low risk: handled automatically</strong><span>Safe steps run on their own and are logged. Disruptive actions, such as a block, are held, and go to the SOC if the risk rises.</span></div></div>
+                </div>
+                <form class="filter-row" id="approvals-filter">
+                    <label>Show <select name="status"><option value="PENDING">Waiting for SOC approval</option><option value="AUTOMATED">Handled automatically</option><option value="HELD">Held at small risk</option><option value="NEEDS_INVESTIGATION">Needs investigation</option><option value="APPROVED">Approved, not run</option><option value="EXECUTED">Executed</option><option value="FAILED">Failed</option><option value="REJECTED">Rejected</option><option value="UNDONE">Real block undone</option><option value="">All</option></select></label>
+                    <span class="muted" id="mode-note-response">Responses run only in simulation. No firewall, account or process on any real system is changed.</span>
+                </form>
+                <div id="approvals-body"></div>
+            </section>
+
+            <section class="view" id="view-parameters" hidden>
+                <p class="notice" id="parameters-principle"></p>
+                <div class="tiles" id="parameters-classes"></div>
+                <h2 class="section-title">Rule parameters: when logs become a threat</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Rule</th><th>Name</th><th>Logs that count</th><th>Grouped by</th><th>Measured</th><th class="num">Limit</th><th class="num">Window</th><th>Severity</th><th class="num">Confidence</th><th class="num">Alerts</th></tr></thead>
+                        <tbody id="parameters-rules"></tbody>
+                    </table>
+                </div>
+                <article class="card" id="parameters-indicators"></article>
+                <article class="card" id="parameters-models"></article>
+                <h2 class="section-title">Machine learning models, and how they were measured</h2>
+                <div class="two-col" id="risk-models"></div>
+                <h2 class="section-title">Behavioral checks: an entity against its own history</h2>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Check</th><th>Name</th><th>When it fires</th><th class="num">History needed</th><th>Severity</th><th class="num">Alerts</th></tr></thead>
+                        <tbody id="parameters-behavioral"></tbody>
+                    </table>
+                </div>
+                <p class="muted" id="parameters-risk"></p>
+            </section>
+
+            <section class="view" id="view-attack" hidden>
+                <div class="tiles tiles-4" id="attack-tiles"></div>
+                <p class="notice"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> A technique is listed when a rule looks for it, and "Tested" means a synthetic scenario exercises that rule. This shows what is covered and where the gaps are. It does not measure how well a rule detects real attacks, and ATT&amp;CK techniques that no rule maps to are not listed.</p>
+                <div class="filter-row attack-legend" id="attack-legend"></div>
+                <div class="attack-grid" id="attack-grid"></div>
+            </section>
+
+            <section class="view" id="view-simulation" hidden>
+                <div class="tiles" id="validation-tiles"></div>
+                <p class="muted"><span id="validation-scope"></span> These results compare each run with its recorded ground truth. The scenarios were written alongside the rules, so they show the pipeline works as designed, not how it performs on real attacks.</p>
+                <form class="card filter-row" id="sim-controls">
+                    <label>Intensity <select name="intensity"></select></label>
+                    <label>Speed <select name="speed"></select></label>
+                    <label>Background events (optional) <input type="number" name="background_events" min="0" max="5000" placeholder="From intensity"></label>
+                    <label>Seed (optional) <input type="number" name="seed" min="0" placeholder="Random"></label>
+                </form>
+                <div class="card" id="sim-progress" hidden></div>
+                <div id="sim-result"></div>
+                <article class="card portal" id="solution-portal">
+                    <h2><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Solution Portal</h2>
+                    <p class="muted">Every threat ALLSAFE can detect, how to fix it, and who decides. Choose a threat to see its solution.</p>
+                    <p class="notice" id="solution-run-note" hidden></p>
+                    <form class="filter-row" id="solution-filter">
+                        <label class="grow">Search <input type="search" name="q" placeholder="Threat, technique or fix..."></label>
+                        <label>Scenario <select name="scenario"><option value="">All threats</option></select></label>
+                        <label>Tactic <select name="tactic"><option value="">All tactics</option></select></label>
+                    </form>
+                    <p class="muted" id="solution-count" role="status"></p>
+                    <div class="portal-list" id="solution-list"></div>
+                </article>
+                <h2 class="section-title">Scenarios</h2>
+                <div class="scenario-grid" id="scenarios"></div>
+                <h2 class="section-title">Run history</h2>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Started</th><th>Scenario</th><th>Result</th><th>Events</th><th>Expected</th><th>Fired</th><th>Missed</th><th>Unexpected</th><th>Incident</th></tr></thead>
+                        <tbody id="runs-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="view" id="view-intel" hidden>
+                <div class="two-col">
+                    <form class="card form-stack" id="ioc-form">
+                        <h2>Add an indicator</h2>
+                        <label>Type <select name="ioc_type"><option value="ip">IP address</option><option value="domain">Domain</option><option value="url">URL</option><option value="file_hash">File hash</option></select></label>
+                        <label>Value <input name="value" required maxlength="2048"></label>
+                        <label>Severity <select name="severity"><option>MEDIUM</option><option>LOW</option><option>HIGH</option></select></label>
+                        <label>Confidence (0-100) <input name="confidence" type="number" min="0" max="100" value="60" required></label>
+                        <label>Source <input name="source" maxlength="200" placeholder="Feed or analyst"></label>
+                        <label>Description <input name="description" maxlength="1000"></label>
+                        <button type="submit" class="btn btn-primary">Add indicator</button>
+                    </form>
+                    <form class="card form-stack" id="ioc-import">
+                        <h2>Import a feed</h2>
+                        <p class="muted">A JSON list of indicators, each with <code>ioc_type</code> and <code>value</code>. To import a CSV or JSON feed as a file and search stored events for it, upload it on <button type="button" class="link-button" data-action="nav" data-view="upload">Log Analysis</button>. Use synthetic or publicly sourced feeds only.</p>
+                        <label>JSON <textarea name="json" rows="8" required spellcheck="false"></textarea></label>
+                        <button type="submit" class="btn btn-primary">Import</button>
+                        <div id="ioc-result"></div>
+                    </form>
+                </div>
+                <h2 class="section-title">Feeds loaded</h2>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Feed</th><th class="num">Indicators</th><th>Types</th><th class="num">Alerts</th><th>Added</th><th></th></tr></thead>
+                        <tbody id="ioc-feeds"></tbody>
+                    </table>
+                </div>
+                <h2 class="section-title">Indicators</h2>
+                <div class="filter-row"><label>Search <input type="search" id="ioc-search" placeholder="Value, source, description..."></label><span class="muted" id="ioc-count"></span></div>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Type</th><th>Value</th><th>Severity</th><th>Confidence</th><th>Source</th><th>Description</th><th>Alerts</th></tr></thead>
+                        <tbody id="ioc-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="view" id="view-upload" hidden>
+                <div class="upload-grid">
+                    <form class="card form-stack" id="upload-form">
+                        <h2>Add any log file</h2>
+                        <label class="dropzone" id="upload-drop">
+                            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                            <strong id="upload-file-name">Drop a log file here, or click to choose</strong>
+                            <span class="muted" id="upload-limit"></span>
+                            <input type="file" name="file" id="upload-file" required>
+                        </label>
+                        <p class="muted">Any text log, plus Windows EVTX and XML, syslog, SSH, Apache, nginx, IIS, Zeek, Suricata, Snort, CEF, LEEF, CloudTrail, firewall logs, PCAP, CSV and JSON, also inside a .gz or .zip. The log type is worked out from the content, and a threat intelligence feed is recognised too. Use public or synthetic data only.</p>
+                        <details class="block"><summary>Advanced options</summary>
+                            <label>Source for records that do not name one
+                                <select name="source"><option value="">Work it out from the content</option><option value="application">Application</option><option value="network">Network</option><option value="endpoint">Endpoint</option></select>
+                            </label>
+                            <label>Field mapping (optional JSON)
+                                <textarea name="mapping" rows="3" spellcheck="false" placeholder='{"event_time": "timestamp", "process": "process_name"}'></textarea>
+                            </label>
+                        </details>
+                        <div class="status-control">
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> Analyze log</button>
+                            <button type="button" class="btn" data-action="validate-dataset">Check the file only</button>
+                        </div>
+                    </form>
+                    <form class="card form-stack" id="generate-form">
+                        <h2>No log file? Generate one</h2>
+                        <p class="muted">Labelled synthetic logs from a seeded generator, so that the result can be scored.</p>
+                        <label>Profile <select name="profile"></select></label>
+                        <div class="form-row">
+                            <label>Logs <input type="number" name="count" min="1" max="20000" value="500" required></label>
+                            <label>Seconds <input type="number" name="duration_seconds" min="60" max="2592000" value="3600" required></label>
+                            <label>Seed <input type="number" name="seed" min="0" placeholder="Random"></label>
+                        </div>
+                        <button type="submit" class="btn">Generate and analyze</button>
+                    </form>
+                </div>
+                <div class="card" id="dataset-progress" hidden></div>
+                <div id="upload-result"></div>
+                <h2 class="section-title">Analyzed logs</h2>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Added</th><th>Log file</th><th>Kind</th><th>Result</th><th class="num">Logs</th><th class="num">Alerts</th><th class="num">Incidents</th></tr></thead>
+                        <tbody id="datasets-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="view" id="view-risk" hidden>
+                <div class="tiles tiles-4" id="risk-tiles"></div>
+                <p class="notice"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Risk is an investigation priority. It is not the probability that an attack is real. Automation is decided by what an action could affect, not by the score alone.</p>
+                <div class="two-col">
+                    <form class="card form-stack" id="risk-form">
+                        <h2>Scoring settings</h2>
+                        <p class="muted">Starting values, not a security standard. Weights must add up to 100. Saving scores open incidents again and is recorded in the audit log.</p>
+                        <div class="settings-grid" id="risk-settings"></div>
+                        <button type="submit" class="btn btn-primary">Save and rescore</button>
+                    </form>
+                    <article class="card">
+                        <h2>Actions that always need an analyst</h2>
+                        <p class="muted">Whatever the risk score. They run only in simulation.</p>
+                        <div id="risk-approval"></div>
+                    </article>
+                </div>
+                <article class="card" id="email-card"></article>
+                <article class="card">
+                    <h2>System health</h2>
+                    <dl class="facts" id="overview-health" style="margin-top:8px"></dl>
+                </article>
+                <h2 class="section-title">Response policy by risk level</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Risk</th><th>Score</th><th>Priority</th><th>Done automatically</th><th>Notification</th><th>Analyst</th></tr></thead>
+                        <tbody id="risk-policy"></tbody>
+                    </table>
+                </div>
+                <div class="card-head section-title"><h2 class="section-title">Notifications</h2><button class="btn btn-sm" data-action="read-notifications">Mark all as read</button></div>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Time</th><th>Risk</th><th>Message</th><th>Incident</th></tr></thead>
+                        <tbody id="risk-notifications"></tbody>
+                    </table>
+                </div>
+                <h2 class="section-title">Recent automatic steps</h2>
+                <div class="table-wrap short">
+                    <table>
+                        <thead><tr><th>Time</th><th>Subject</th><th>Risk</th><th>Step</th></tr></thead>
+                        <tbody id="risk-automation"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="view" id="view-reports" hidden>
+                <p class="muted">Each report is built from stored results at the moment it was generated. A new version picks up analyst decisions made since then.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Generated</th><th>Report</th><th>ID</th><th>Download</th><th></th></tr></thead>
+                        <tbody id="reports-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="view" id="view-audit" hidden>
+                <form class="filter-row" id="audit-filter">
+                    <label>Actor <input type="search" name="actor" placeholder="Exact name"></label>
+                    <label>Action <select name="action"><option value="">All</option><option>incident_created</option><option>incident_status_changed</option><option>automation_applied</option><option>analyst_notified</option><option>risk_settings_changed</option><option>response_marked_for_investigation</option><option>response_recommended</option><option>response_approved</option><option>response_modified</option><option>response_rejected</option><option>response_executed</option><option>response_failed</option><option>response_verified</option><option>response_verification_failed</option><option>response_refused</option><option>nars_question</option><option>response_auto_approved</option><option>response_held</option><option>response_escalated</option><option>email_test</option><option>ioc_feed_imported</option><option>ioc_feed_removed</option><option>login_succeeded</option><option>login_failed</option></select></label>
+                    <label>Incident ID <input type="number" name="incident_id" min="1"></label>
+                </form>
+                <p class="muted">Append-only: the database refuses changes and deletions. Analyst names are self-reported unless user accounts are turned on.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Time</th><th>Actor</th><th>Action</th><th>Incident</th><th>Details</th></tr></thead>
+                        <tbody id="audit-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <aside id="drawer" class="drawer" hidden aria-label="Details">
+        <div class="drawer-head"><h2 id="drawer-title"></h2><button class="btn btn-ghost btn-sm" data-action="close-drawer" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Close</button></div>
+        <div id="drawer-body"></div>
+    </aside>
+    <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+    <button class="nars-launcher" id="nars-launcher" data-action="nars-toggle" aria-controls="nars-panel" aria-expanded="false"><i class="fa-solid fa-robot" aria-hidden="true"></i> Ask NARS</button>
+    <aside id="nars-panel" class="nars-panel" hidden aria-label="NARS assistant">
+        <div class="nars-head">
+            <div><strong><i class="fa-solid fa-robot" aria-hidden="true"></i> NARS</strong> <span class="tag" id="nars-mode"></span></div>
+            <div>
+                <button class="btn btn-ghost btn-sm" data-action="nars-clear">Clear</button>
+                <button class="btn btn-ghost btn-sm" data-action="nars-toggle" aria-label="Close NARS"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Close</button>
+            </div>
+        </div>
+        <p class="muted nars-note" id="nars-note"></p>
+        <div class="nars-log" id="nars-log" role="log" aria-live="polite"></div>
+        <div class="nars-suggestions" id="nars-suggestions"></div>
+        <form class="nars-form" id="nars-form">
+            <textarea id="nars-input" rows="2" maxlength="1000" placeholder="Ask about an incident, IP, user, rule..." aria-label="Question for NARS"></textarea>
+            <button type="submit" class="btn btn-primary" id="nars-send" aria-label="Send"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+        </form>
+    </aside>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

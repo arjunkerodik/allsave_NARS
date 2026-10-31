@@ -1,0 +1,12 @@
+timestamp,src_ip,method,path,status_code,hostname,user_agent
+2026-01-15T09:00:00Z,203.0.113.88,GET,/.env,404,web-05,scanner
+2026-01-15T09:00:20Z,203.0.113.88,GET,/wp-admin/install.php,404,web-05,scanner
+2026-01-15T09:00:40Z,203.0.113.88,GET,/../../etc/passwd,404,web-05,scanner
+2026-01-15T09:01:00Z,203.0.113.88,GET,/phpmyadmin/index.php,404,web-05,scanner
+2026-01-15T09:01:20Z,203.0.113.88,GET,/.git/config,404,web-05,scanner
+2026-01-15T09:03:20Z,10.0.3.2,GET,/home,200,web-05,browser
+2026-01-15T09:03:50Z,10.0.3.3,GET,/home,200,web-05,browser
+2026-01-15T09:04:20Z,10.0.3.4,GET,/home,200,web-05,browser
+2026-01-15T09:04:50Z,10.0.3.5,GET,/home,200,web-05,browser
+2026-01-15T09:05:20Z,10.0.3.6,GET,/home,200,web-05,browser
+2026-01-15T09:05:50Z,10.0.3.7,GET,/home,200,web-05,browser
